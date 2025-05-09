@@ -1,0 +1,65 @@
+
+# Swift 스타일 가이드에 맞춘 SwiftFormat 설정
+
+# 들여쓰기 및 띄어쓰기
+--indent 2              # 들여쓰기는 2 space 사용
+--trimwhitespace always # 불필요한 공백 제거
+--linebreaks lf         # 줄바꿈 문자 통일
+--commas inline         # 콜론은 오른쪽에만 공백
+--operatorfunc spaced   # 연산자 오버로딩 함수 정의시 연산자와 괄호 사이 한 칸 띄우기
+--self init-only
+--hexliteralcase lowercase
+--typedelimiter space-after          # 타입 선언 시 콜론 뒤에만 공백 삽입
+
+# file options
+--exclude Pods, TimeCamera/AppDelegate.swift, TimeCamera/SceneDelegate.swift
+
+# 줄바꿈
+--wraparguments before-first  # 함수 파라미터가 여러 개일 때 줄바꿈 스타일
+--wrapcollections before-first # 컬렉션 선언 시 줄바꿈
+--closingparen balanced       # 괄호 닫기 위치 설정
+--funcattributes prev-line    # 함수 속성 위치
+
+# 괄호 및 중괄호
+--allman false                # 중괄호를 같은 줄에 배치
+--elseposition same-line      # else를 이전 중괄호와 같은 줄에 배치
+
+# 네이밍 및 타입 관련
+--enumnamespaces always       # enum 케이스 스타일
+--swiftversion 5.9           # Swift 버전 설정
+
+# 유용한 다른 룰
+--header ""                  # 파일 헤더 제거 (빈 헤더 사용)
+--semicolons never           # 세미콜론 사용 안함
+--shortoptionals always      # 옵셔널 축약형 사용 (String? 대신 String?)
+--ifdef no-indent            # #if defined 들여쓰기 없앰
+--trailingclosures          # 마지막 인자가 클로저일 때 트레일링 클로저 문법 사용
+--importgrouping testable-bottom # import 정렬 (내장 프레임워크 우선)
+--emptybraces no-space       # 빈 중괄호 스타일 (예: {})
+--decimalgrouping 3          # 숫자 그룹핑
+
+# 다음 룰은 비활성화
+--disable redundantSelf      # self를 명시적으로 사용하는 스타일 가이드에 맞춰 비활성화
+
+# MARK 스타일링
+--markcategories false       # MARK 카테고리 사용 안함
+--markextensions always      # extension에 MARK 추가
+--extensionacl on-declarations # extension ACL 위치
+
+# 네이밍 검사 (활성화하면 이름 지정 규칙을 검사할 수 있음)
+--rules redundantSelf,trailingSpace
+
+# 파일 끝의 빈 줄
+--lineaftermarks true       # MARK 다음 빈 줄
+--nospaceoperators           # 특정 연산자 앞뒤 공백 없음 (/=, -=, +=, *=, >>=, <<=, &=)
+--ranges no-space            # 범위 연산자 공백 없음
+--xcodeindentation enabled   # Xcode 들여쓰기 스타일 사용
+
+# 다음은 옵션 예시이며, 프로젝트 요구사항에 맞게 수정할 수 있습니다
+--header "// {file}\n// Copyright © {year} YourCompanyName. All rights reserved."
+
+# 특정 파일이나 경로 제외 (예시)
+--exclude Pods,Generated,*.generated.swift
+
+# 파일 확장자 지정
+--swiftversion 5.9
