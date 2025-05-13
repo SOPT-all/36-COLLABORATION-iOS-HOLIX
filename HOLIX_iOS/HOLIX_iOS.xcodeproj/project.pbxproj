@@ -14,7 +14,6 @@
 		2F5B86912DCDD37F00C3ABF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B868A2DCDD37F00C3ABF6 /* LaunchScreen.storyboard */; };
 		2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B86842DCDD37F00C3ABF6 /* AppDelegate.swift */; };
 		2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B86852DCDD37F00C3ABF6 /* SceneDelegate.swift */; };
-		2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */; };
 		2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B869C2DCDD3D500C3ABF6 /* SnapKit */; };
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
@@ -31,12 +30,16 @@
 		2F5B86872DCDD37F00C3ABF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F5B86882DCDD37F00C3ABF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Pretendard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2F5783552DD376030075A288 /* Base */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Base;
+			sourceTree = "<group>";
+		};
 		B06030202DD2660C002205F5 /* Font */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Font;
@@ -98,7 +101,7 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */,
+				2F5783552DD376030075A288 /* Base */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				2F5783552DD376030075A288 /* Base */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
@@ -250,7 +254,6 @@
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
-				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
