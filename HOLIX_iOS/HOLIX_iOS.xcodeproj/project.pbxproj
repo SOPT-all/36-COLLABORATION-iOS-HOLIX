@@ -16,6 +16,7 @@
 		2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B869C2DCDD3D500C3ABF6 /* SnapKit */; };
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
+		B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +29,16 @@
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
+		B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Pretendard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B06030202DD2660C002205F5 /* Font */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Font;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2F5B86642DCDD05500C3ABF6 /* Frameworks */ = {
@@ -73,6 +83,7 @@
 		2F5B868B2DCDD37F00C3ABF6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B06030202DD2660C002205F5 /* Font */,
 				2F5B86872DCDD37F00C3ABF6 /* Assets.xcassets */,
 				2F5B868A2DCDD37F00C3ABF6 /* LaunchScreen.storyboard */,
 				2F5B86882DCDD37F00C3ABF6 /* Info.plist */,
@@ -106,18 +117,19 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		2F5B86992DCDD3AE00C3ABF6 /* Extention */ = {
+		2F5B86992DCDD3AE00C3ABF6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */,
 			);
-			path = Extention;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		2F5B869A2DCDD3AE00C3ABF6 /* Global */ = {
 			isa = PBXGroup;
 			children = (
 				2F5B86982DCDD3AE00C3ABF6 /* Component */,
-				2F5B86992DCDD3AE00C3ABF6 /* Extention */,
+				2F5B86992DCDD3AE00C3ABF6 /* Extension */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -137,6 +149,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
 			packageProductDependencies = (
@@ -228,6 +243,7 @@
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
+				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
