@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57833F2DD34C270075A288 /* ImageLiterals.swift */; };
+		2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5783412DD34C340075A288 /* IconLiterals.swift */; };
 		2F5B86802DCDD25500C3ABF6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B867F2DCDD25500C3ABF6 /* .gitignore */; };
 		2F5B868F2DCDD37F00C3ABF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86872DCDD37F00C3ABF6 /* Assets.xcassets */; };
 		2F5B86912DCDD37F00C3ABF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B868A2DCDD37F00C3ABF6 /* LaunchScreen.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F57833F2DD34C270075A288 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		2F5783412DD34C340075A288 /* IconLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLiterals.swift; sourceTree = "<group>"; };
 		2F5B86672DCDD05500C3ABF6 /* HOLIX_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HOLIX_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5B867F2DCDD25500C3ABF6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = SOURCE_ROOT; };
 		2F5B86842DCDD37F00C3ABF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */,
+				2F57833F2DD34C270075A288 /* ImageLiterals.swift */,
+				2F5783412DD34C340075A288 /* IconLiterals.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
+				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
+				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
