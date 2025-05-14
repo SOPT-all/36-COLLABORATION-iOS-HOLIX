@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private let tableView = TopTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
+    private let topTabBar = TopTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
 
     // MARK: - LifeCycle
 
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     // MARK: - Setup
 
     func setUp() {
-        view.addSubview(tableView)
+        view.addSubview(topTabBar)
     }
 
     // MARK: - SetStyle
@@ -37,8 +37,7 @@ class HomeViewController: UIViewController {
     // MARK: - SetLayout
 
     func setLayout() {
-        tableView.snp.makeConstraints {
-            //$0.top.equalToSuperview() 이거 하니까 컬뷰안보임
+        topTabBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)

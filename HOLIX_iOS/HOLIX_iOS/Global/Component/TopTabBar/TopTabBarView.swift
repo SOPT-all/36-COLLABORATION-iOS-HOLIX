@@ -16,10 +16,16 @@ final class TopTabBarView: UIView {
 
     private var items: [String]
     private var selectedIndex: Int = 0
+    private var indicatorLeadingConstraint: Constraint?
+    private var indicatorWidthConstraint: Constraint?
 
     // MARK: - UI Components
 
-    private lazy var tabCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private lazy var tabCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
+    private let indicatorView = UIView()
 
     init(items: [String]) {
         self.items = items
@@ -28,6 +34,10 @@ final class TopTabBarView: UIView {
         setDelegate()
         setStyle()
         setLayout()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.selectItem(at: 0)
+        }
     }
 
     required init?(coder: NSCoder) {
@@ -37,7 +47,7 @@ final class TopTabBarView: UIView {
     // MARK: - Setup
 
     private func setUI() {
-        addSubview(tabCollectionView)
+        addSubviews(tabCollectionView, indicatorView)
     }
 
     // MARK: - SetDelegate
@@ -61,6 +71,10 @@ final class TopTabBarView: UIView {
             $0.backgroundColor = .clear
             $0.register(TopTabCell.self, forCellWithReuseIdentifier: TopTabCell.identifier)
         }
+
+        indicatorView.do {
+            $0.backgroundColor = .systemBlue
+        }
     }
 
     // MARK: - SetLayout
@@ -69,13 +83,65 @@ final class TopTabBarView: UIView {
         tabCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+
+        indicatorView.snp.makeConstraints {
+            $0.height.equalTo(2)
+            $0.bottom.equalTo(tabCollectionView.snp.bottom)
+            self.indicatorLeadingConstraint = $0.leading.equalToSuperview().constraint
+            self.indicatorWidthConstraint = $0.width.equalTo(0).constraint
+        }
+    }
+
+    func selectItem(at index: Int) {
+        guard index >= 0 && index < items.count else { return }
+        selectedIndex = index
+        tabCollectionView.reloadData()
+
+        tabCollectionView.layoutIfNeeded()
+
+        tabCollectionView.scrollToItem(
+            at: IndexPath(item: index, section: 0),
+            at: .centeredHorizontally,
+            animated: true
+        )
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.updateIndicatorPosition(animated: true)
+        }
+    }
+
+    func refreshIndicator() {
+        layoutIfNeeded()
+        updateIndicatorPosition(animated: false)
+    }
+
+    // MARK: - Indicator Update
+
+    private func updateIndicatorPosition(animated: Bool) {
+        guard let cell = tabCollectionView.cellForItem(at: IndexPath(item: selectedIndex, section: 0)) else { return }
+
+        let cellFrameInView = cell.convert(cell.bounds, to: self)
+
+        indicatorLeadingConstraint?.update(offset: cellFrameInView.origin.x)
+        indicatorWidthConstraint?.update(offset: cellFrameInView.width)
+
+        if animated {
+            UIView.animate(withDuration: 0.25) {
+                self.layoutIfNeeded()
+            }
+        } else {
+            layoutIfNeeded()
+        }
     }
 }
+
 
 // MARK: - UICollectionView Delegate & DataSource
 
 extension TopTabBarView: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectItem(at: indexPath.item)
+    }
 }
 
 extension TopTabBarView: UICollectionViewDataSource {
@@ -98,7 +164,6 @@ extension TopTabBarView: UICollectionViewDataSource {
         }
 
         let title = items[indexPath.item]
-        print("등록된 셀 ID: \(TopTabCell.identifier)") // "TopTabCell" 나와야 함
         cell.configure(title: title, isSelected: indexPath.item == selectedIndex)
         return cell
     }
@@ -108,9 +173,6 @@ extension TopTabBarView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let title = items[indexPath.item]
-
-        //let width = (title as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: 15)]).width + 20
         return CGSize(width: 64, height: 40)
     }
 }

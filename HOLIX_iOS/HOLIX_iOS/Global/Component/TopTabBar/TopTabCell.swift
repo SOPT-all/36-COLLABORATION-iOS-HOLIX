@@ -18,7 +18,7 @@ final class TopTabCell: UICollectionViewCell {
 
     // MARK: - UI Components
 
-    private let titleLabel = UILabel()
+    let titleLabel = UILabel()
 
     // MARK: - LifeCycle
 
@@ -59,7 +59,6 @@ final class TopTabCell: UICollectionViewCell {
 
 extension TopTabCell {
     func configure(title: String, isSelected: Bool) {
-        print("Cell 바인딩 \(title)")
         titleLabel.text = title
         titleLabel.font = isSelected
             ? UIFont.pretendard(size: 15, weight: .Bold)
