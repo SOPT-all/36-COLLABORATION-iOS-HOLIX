@@ -60,9 +60,7 @@ final class TopTabCell: UICollectionViewCell {
 extension TopTabCell {
     func configure(title: String, isSelected: Bool) {
         titleLabel.text = title
-        titleLabel.font = isSelected
-            ? UIFont.pretendard(size: 15, weight: .Bold)
-            : UIFont.pretendard(size: 15, weight: .Regular)
-        titleLabel.textColor = isSelected ? .blue : .gray
+        titleLabel.font = isSelected ? .pretendard(.body1_sb_15) : .pretendard(.body3_r_15)
+        titleLabel.textColor = .black
     }
 }

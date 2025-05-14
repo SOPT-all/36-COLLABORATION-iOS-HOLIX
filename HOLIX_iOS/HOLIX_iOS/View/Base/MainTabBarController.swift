@@ -19,7 +19,6 @@ final class MainTabBarController: UITabBarController {
     }
 
     // MARK: - Setup
-    /// 추후 소은이 Font 리팩토링 끝나면 setupTabBarAppearance 수정 해야함
 
     private func setupTabBar() {
         tabBar.backgroundColor = .white
@@ -30,13 +29,13 @@ final class MainTabBarController: UITabBarController {
         let appearance = UITabBarItem.appearance()
 
         appearance.setTitleTextAttributes([
-            .font: UIFont.pretendard(size: 11, weight: .Bold),
-            .foregroundColor: UIColor.gray
+            .font: UIFont.pretendard(.label3_r_11),
+            .foregroundColor: UIColor.gray04
         ], for: .normal)
 
         appearance.setTitleTextAttributes([
-            .font: UIFont.pretendard(size: 11, weight: .Bold),
-            .foregroundColor: UIColor.systemBlue
+            .font: UIFont.pretendard(.label3_r_11),
+            .foregroundColor: UIColor.main_blue
         ], for: .selected)
     }
 
