@@ -10,7 +10,7 @@ import UIKit
 final class MainTabBarController: UITabBarController {
 
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
@@ -20,7 +20,7 @@ final class MainTabBarController: UITabBarController {
 
     // MARK: - Setup
     /// 추후 소은이 Font 리팩토링 끝나면 setupTabBarAppearance 수정 해야함
-    
+
     private func setupTabBar() {
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
@@ -41,7 +41,7 @@ final class MainTabBarController: UITabBarController {
     }
 
     private func setupViewControllers() {
-        let homeVC = ViewController()
+        let homeVC = HomeViewController()
         homeVC.tabBarItem = UITabBarItem(
             title: "홈",
             image: IconLiterals.ic_home.withRenderingMode(.alwaysOriginal),

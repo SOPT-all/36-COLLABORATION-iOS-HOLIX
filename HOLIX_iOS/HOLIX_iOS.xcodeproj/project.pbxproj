@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57833F2DD34C270075A288 /* ImageLiterals.swift */; };
 		2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5783412DD34C340075A288 /* IconLiterals.swift */; };
+		2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5784192DD43E9D0075A288 /* NSObject+ClassName.swift */; };
+		2F57841C2DD43EB20075A288 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57841B2DD43EB20075A288 /* UIView.swift */; };
 		2F5B86802DCDD25500C3ABF6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B867F2DCDD25500C3ABF6 /* .gitignore */; };
 		2F5B868F2DCDD37F00C3ABF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86872DCDD37F00C3ABF6 /* Assets.xcassets */; };
 		2F5B86912DCDD37F00C3ABF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B868A2DCDD37F00C3ABF6 /* LaunchScreen.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		2F57833F2DD34C270075A288 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		2F5783412DD34C340075A288 /* IconLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLiterals.swift; sourceTree = "<group>"; };
+		2F5784192DD43E9D0075A288 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		2F57841B2DD43EB20075A288 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2F5B86672DCDD05500C3ABF6 /* HOLIX_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HOLIX_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F5B867F2DCDD25500C3ABF6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = SOURCE_ROOT; };
 		2F5B86842DCDD37F00C3ABF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,16 @@
 		2F5783552DD376030075A288 /* Base */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2F5783912DD43A880075A288 /* TopTabBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TopTabBar;
+			sourceTree = "<group>";
+		};
+		2F57841E2DD4446F0075A288 /* Home */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -101,6 +115,7 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F57841E2DD4446F0075A288 /* Home */,
 				2F5783552DD376030075A288 /* Base */,
 			);
 			path = View;
@@ -120,6 +135,7 @@
 		2F5B86982DCDD3AE00C3ABF6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2F5783912DD43A880075A288 /* TopTabBar */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -130,6 +146,8 @@
 				B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */,
 				2F57833F2DD34C270075A288 /* ImageLiterals.swift */,
 				2F5783412DD34C340075A288 /* IconLiterals.swift */,
+				2F5784192DD43E9D0075A288 /* NSObject+ClassName.swift */,
+				2F57841B2DD43EB20075A288 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,6 +179,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2F5783552DD376030075A288 /* Base */,
+				2F5783912DD43A880075A288 /* TopTabBar */,
+				2F57841E2DD4446F0075A288 /* Home */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
@@ -251,9 +271,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
+				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
+				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
