@@ -19,6 +19,7 @@
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
+		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Pretendard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 		2F5B86982DCDD3AE00C3ABF6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
+				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
 				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
