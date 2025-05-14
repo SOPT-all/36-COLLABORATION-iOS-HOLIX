@@ -9,21 +9,40 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-    private let customNavigationBar = CustomNavigationBar(haveMenuButton: true)
-    
+    //private let customNavigationBar = CustomNavigationBar(haveMenuButton: true)
+    private let testButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        setupAddSubview()
         setupUI()
+        setStyle()
+        setAddTarget()
+    }
+    
+    private func setupAddSubview() {
+        self.view.addSubview(testButton)
     }
     
     private func setupUI() {
-        self.view.addSubview(customNavigationBar)
-        
-        customNavigationBar.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).offset(-20)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(50)
+        testButton.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.width.equalTo(200)
+            $0.height.equalTo(100)
         }
+    }
+
+    private func setStyle() {
+        testButton.backgroundColor = .green
+        testButton.setTitle("push", for: .normal)
+    }
+    
+    private func setAddTarget() {
+        testButton.addTarget(self, action: #selector(testButtonDidTap), for: .touchUpInside)
+    }
+    
+    @objc func testButtonDidTap() {
+        let vc = TestViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

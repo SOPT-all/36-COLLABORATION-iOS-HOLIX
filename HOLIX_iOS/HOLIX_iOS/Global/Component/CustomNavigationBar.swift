@@ -8,11 +8,18 @@
 import UIKit
 import SnapKit
 
+protocol CustomNavigationBarDelegate: AnyObject {
+    func didTapBackButton()
+    func didTapSearchButton()
+    func didTapMenuButton()
+}
+
 final class CustomNavigationBar: UIView {
     
     // MARK: - Properties
     
     private var haveMenuButton: Bool = false
+    weak var delegate: CustomNavigationBarDelegate?
     
     // MARK: - UI Components
     
@@ -39,6 +46,7 @@ final class CustomNavigationBar: UIView {
         setupAddSubview()
         setupUI()
         setStyle()
+        setAddTarget()
     }
     
     // MARK: - SetupAddSubview
@@ -115,13 +123,16 @@ final class CustomNavigationBar: UIView {
     
     @objc private func backButtonDidTap() {
         print("backButton 클릭됨")
+        delegate?.didTapBackButton()
     }
     
     @objc private func searchButtonDidTap() {
         print("searchButton 클릭됨")
+        delegate?.didTapSearchButton()
     }
     
     @objc private func menuButtonDidTap() {
         print("menuButton 클릭됨")
+        delegate?.didTapMenuButton()
     }
 }
