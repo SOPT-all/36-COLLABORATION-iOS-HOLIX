@@ -8,70 +8,22 @@
 import UIKit
 
 extension UIColor {
-    static var main_blue: UIColor {
-        return UIColor(hex: "#3269FF")
-    }
-    
-    static var light_blue: UIColor {
-        return UIColor(hex: "F3F4FF")
-    }
-    
-    static var blue: UIColor {
-        return UIColor(hex: "#004BFB")
-    }
-    
-    static var skyblue: UIColor {
-        return UIColor(hex: "#1ABFFB")
-    }
-    
-    static var lime: UIColor {
-        return UIColor(hex: "#DEFF4E")
-    }
-    
-    static var green: UIColor {
-        return UIColor(hex: "#34C759")
-    }
-    
-    static var background: UIColor {
-        return UIColor(hex: "#434343",alpha: 0.3)
-    }
-    
-    static var alert_red: UIColor {
-        return UIColor(hex: "#FF4040")
-    }
-    
-    static var light_red: UIColor {
-        return UIColor(hex: "#FFEDED")
-    }
-    
-    static var gray01: UIColor {
-        return UIColor(hex: "#F5F5FB")
-    }
-    
-    static var gray02: UIColor {
-        return UIColor(hex: "#EEEEF4")
-    }
-    
-    static var gray03: UIColor {
-        return UIColor(hex: "#E0E0E6")
-    }
-    
-    static var gray04: UIColor {
-        return UIColor(hex: "#BDBDC3")
-    }
-    
-    static var gray05: UIColor {
-        return UIColor(hex: "9E9EA4")
-    }
-    
-    static var gray06: UIColor {
-        return UIColor(hex: "#616167")
-    }
-    
-    static var gray07: UIColor {
-        return UIColor(hex: "#424248")
-    }
-    
+    static var main_blue = UIColor(hex: "#3269FF")
+    static var light_blue = UIColor(hex: "#F3F4FF")
+    static var blue = UIColor(hex: "#004BFB")
+    static var skyblue = UIColor(hex: "#1ABFFB")
+    static var lime = UIColor(hex: "#DEFF4E")
+    static var green = UIColor(hex: "#34C759")
+    static var background = UIColor(hex: "#434343",alpha: 0.3)
+    static var alert_red = UIColor(hex: "#FF4040")
+    static var light_red = UIColor(hex: "#FFEDED")
+    static var gray01 = UIColor(hex: "#F5F5FB")
+    static var gray02 = UIColor(hex: "#EEEEF4")
+    static var gray03 = UIColor(hex: "#E0E0E6")
+    static var gray04 = UIColor(hex: "#BDBDC3")
+    static var gray05 = UIColor(hex: "#9E9EA4")
+    static var gray06 = UIColor(hex: "#616167")
+    static var gray07 = UIColor(hex: "#424248")
 }
 
 extension UIColor {
