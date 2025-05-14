@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class TestViewController: UIViewController {
-    private let customNavigationBar = CustomNavigationBar(haveMenuButton: true)
+    private let customNavigationBar = CustomNavigationBar(hasMenuButton: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         setAddSubview()

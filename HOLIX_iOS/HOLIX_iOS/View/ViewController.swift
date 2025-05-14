@@ -6,10 +6,11 @@
 //
 
 import UIKit
+
 import SnapKit
 
 class ViewController: UIViewController {
-    //private let customNavigationBar = CustomNavigationBar(haveMenuButton: true)
+    //private let customNavigationBar = CustomNavigationBar(hasMenuButton: true)
     private let testButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -6,7 +6,9 @@
 //
 
 import UIKit
+
 import SnapKit
+import Then
 
 protocol CustomNavigationBarDelegate: AnyObject {
     func didTapBackButton()
@@ -18,7 +20,7 @@ final class CustomNavigationBar: UIView {
     
     // MARK: - Properties
     
-    private var haveMenuButton: Bool = false
+    private var hasMenuButton: Bool = false
     weak var delegate: CustomNavigationBarDelegate?
     
     // MARK: - UI Components
@@ -39,35 +41,68 @@ final class CustomNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(titleLabel: String = "", haveMenuButton: Bool) {
+    init(titleLabel: String = "", hasMenuButton: Bool) {
         super.init(frame: .zero)
-        self.haveMenuButton = haveMenuButton
+        self.hasMenuButton = hasMenuButton
         self.titleLabel.text = titleLabel
-        setupAddSubview()
-        setupUI()
+        setUI()
         setStyle()
+        setLayout()
         setAddTarget()
     }
     
-    // MARK: - SetupAddSubview
+    // MARK: - SetUI
     
-    private func setupAddSubview() {
+    private func setUI() {
         [backButton,titleLabel,buttonStackView].forEach {
             self.addSubview($0)
         }
         
         self.buttonStackView.addArrangedSubview(searchButton)
         
-        if haveMenuButton {
+        if hasMenuButton {
             self.buttonStackView.addArrangedSubview(menuButton)
             menuButton.snp.makeConstraints {
                 $0.size.equalTo(30)
             }
         }
     }
-    // MARK: - SetupUI
     
-    private func setupUI() {
+    // MARK: - SetStyle
+    
+    private func setStyle() {
+        self.backgroundColor = .white
+        
+        backButton.do {
+            $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            $0.tintColor = .black
+        }
+        
+        titleLabel.do {
+            $0.textColor = .black
+            $0.font = .pretendard(size: 16)
+        }
+        
+        searchButton.do {
+            $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+            $0.tintColor = .black
+        }
+        
+        menuButton.do {
+            $0.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+            $0.tintColor = .black
+        }
+        
+        buttonStackView.do {
+            $0.axis = .horizontal
+            $0.distribution = .fillEqually
+            $0.spacing = 5
+        }
+    }
+    
+    // MARK: - SetLayout
+    
+    private func setLayout() {
         backButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.size.equalTo(20)
@@ -81,33 +116,12 @@ final class CustomNavigationBar: UIView {
         
         buttonStackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.trailing.equalToSuperview().inset(20)
         }
         
         searchButton.snp.makeConstraints {
             $0.size.equalTo(30)
         }
-    }
-    
-    // MARK: - SetStyle
-    
-    private func setStyle() {
-        self.backgroundColor = .white
-        backButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        backButton.tintColor = .black
-        
-        titleLabel.textColor = .black
-        titleLabel.font = .pretendard(size: 16)
-        
-        searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        searchButton.tintColor = .black
-        menuButton.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
-        menuButton.tintColor = .black
-        
-        buttonStackView.axis = .horizontal
-        buttonStackView.distribution = .fillEqually
-        buttonStackView.spacing = 5
-        
     }
     
     // MARK: - SetAddTarget
