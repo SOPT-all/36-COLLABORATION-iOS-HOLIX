@@ -27,6 +27,8 @@ final class TopTabBarView: UIView {
     )
     private let indicatorView = UIView()
 
+    // MARK: - LifeCycle
+
     init(items: [String]) {
         self.items = items
         super.init(frame: .zero)
@@ -47,7 +49,9 @@ final class TopTabBarView: UIView {
     // MARK: - Setup
 
     private func setUI() {
-        addSubviews(tabCollectionView, indicatorView)
+        addSubview(tabCollectionView)
+        tabCollectionView.addSubview(indicatorView)
+        tabCollectionView.bringSubviewToFront(indicatorView)
     }
 
     // MARK: - SetDelegate
@@ -85,8 +89,8 @@ final class TopTabBarView: UIView {
         }
 
         indicatorView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(38)
             $0.height.equalTo(2)
-            $0.bottom.equalTo(tabCollectionView.snp.bottom)
             self.indicatorLeadingConstraint = $0.leading.equalToSuperview().constraint
             self.indicatorWidthConstraint = $0.width.equalTo(0).constraint
         }
@@ -110,31 +114,29 @@ final class TopTabBarView: UIView {
         }
     }
 
+    // MARK: - Indicator Update
+
     func refreshIndicator() {
         layoutIfNeeded()
         updateIndicatorPosition(animated: false)
     }
 
-    // MARK: - Indicator Update
-
     private func updateIndicatorPosition(animated: Bool) {
         guard let cell = tabCollectionView.cellForItem(at: IndexPath(item: selectedIndex, section: 0)) else { return }
+        let cellFrame = cell.frame
 
-        let cellFrameInView = cell.convert(cell.bounds, to: self)
-
-        indicatorLeadingConstraint?.update(offset: cellFrameInView.origin.x)
-        indicatorWidthConstraint?.update(offset: cellFrameInView.width)
+        indicatorLeadingConstraint?.update(offset: cellFrame.origin.x)
+        indicatorWidthConstraint?.update(offset: cellFrame.width)
 
         if animated {
             UIView.animate(withDuration: 0.25) {
-                self.layoutIfNeeded()
+                self.tabCollectionView.layoutIfNeeded()
             }
         } else {
-            layoutIfNeeded()
+            tabCollectionView.layoutIfNeeded()
         }
     }
 }
-
 
 // MARK: - UICollectionView Delegate & DataSource
 
