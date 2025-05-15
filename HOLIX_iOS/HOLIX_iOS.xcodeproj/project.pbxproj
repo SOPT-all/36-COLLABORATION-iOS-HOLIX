@@ -20,6 +20,8 @@
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
+		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
+		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
 		B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */; };
 		B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Pretendard.swift"; sourceTree = "<group>"; };
 		B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Pretendard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +125,8 @@
 			children = (
 				2F57841E2DD4446F0075A288 /* Home */,
 				2F5783552DD376030075A288 /* Base */,
+				2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */,
+				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				2F5783912DD43A880075A288 /* TopTabBar */,
+				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -283,7 +290,10 @@
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
+				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
+				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
+				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
