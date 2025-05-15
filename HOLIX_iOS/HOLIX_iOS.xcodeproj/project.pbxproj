@@ -62,6 +62,11 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		46EAB1EF2DD5C9060084C5A8 /* ClubDetail */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClubDetail;
+			sourceTree = "<group>";
+		};
 		B06030202DD2660C002205F5 /* Font */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Font;
@@ -123,9 +128,9 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46EAB1EF2DD5C9060084C5A8 /* ClubDetail */,
 				2F57841E2DD4446F0075A288 /* Home */,
 				2F5783552DD376030075A288 /* Base */,
-				2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */,
 				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
@@ -194,6 +199,7 @@
 				2F5783552DD376030075A288 /* Base */,
 				2F5783912DD43A880075A288 /* TopTabBar */,
 				2F57841E2DD4446F0075A288 /* Home */,
+				46EAB1EF2DD5C9060084C5A8 /* ClubDetail */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
@@ -291,7 +297,6 @@
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
-				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
