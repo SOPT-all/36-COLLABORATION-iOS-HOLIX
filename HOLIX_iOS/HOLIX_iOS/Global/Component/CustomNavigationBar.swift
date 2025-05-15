@@ -41,10 +41,11 @@ final class CustomNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(titleLabel: String = "", hasMenuButton: Bool) {
+    init(titleLabel: String = "", hasMenuButton: Bool, tintColor: UIColor = .black) {
         super.init(frame: .zero)
         self.hasMenuButton = hasMenuButton
         self.titleLabel.text = titleLabel
+        self.tintColor = tintColor
         setUI()
         setStyle()
         setLayout()
@@ -75,7 +76,7 @@ final class CustomNavigationBar: UIView {
         
         backButton.do {
             $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-            $0.tintColor = .black
+            $0.tintColor = .tintColor
         }
         
         titleLabel.do {
@@ -85,12 +86,12 @@ final class CustomNavigationBar: UIView {
         
         searchButton.do {
             $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-            $0.tintColor = .black
+            $0.tintColor = .tintColor
         }
         
         menuButton.do {
             $0.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
-            $0.tintColor = .black
+            $0.tintColor = .tintColor
         }
         
         buttonStackView.do {
