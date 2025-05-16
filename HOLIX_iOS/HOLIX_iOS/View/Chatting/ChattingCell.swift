@@ -10,97 +10,116 @@ import UIKit
 import SnapKit
 import Then
 
-final class ChattingCell: UITableViewCell {
-   
-    // MARK: - Properties
-    private var isSender: Bool = false
-    
-    // MARK: - UI Components
-    
-    private let bubbleView: BubbleLabelView
+enum ChattingCellType {
+    case sender
+    case receiver
+}
+
+ class ChattingCell: UITableViewCell {
+
+    // MARK: - UI
+    private var bubbleView: BubbleLabelView?
     private let profileImageView = UIImageView()
     private let nicknameLabel = UILabel()
-    
-    // MARK: - Lifecycle
-    
-    init(isSender: Bool) {
-        self.bubbleView = BubbleLabelView(isSender: isSender)
-        super.init(style: .default, reuseIdentifier: nil)
-        self.selectionStyle = .none
-        setUI(isSender: isSender)
-        setStyle(isSender: isSender)
-        setLayout(isSender: isSender)
+    private let introductionLabel = UILabel()
+    private let infoStackView = UIStackView()
+    private let timeLabel = UILabel()
+
+    // MARK: - Init
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        backgroundColor = .clear
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - SetUI
-    
-    private func setUI(isSender: Bool) {
-        self.addSubview(bubbleView)
-        if isSender {
+    // MARK: - Configure
+    func configure(with message: String, nickname: String? = nil, profileImage: String? = nil, isSender: Bool) {
 
-        } else {
-            self.addSubviews(profileImageView,nicknameLabel)
-        }
-    }
-    
-    // MARK: - SetStyle
-    
-    private func setStyle(isSender: Bool) {
+        bubbleView?.removeFromSuperview()
+        profileImageView.removeFromSuperview()
+        nicknameLabel.removeFromSuperview()
+        introductionLabel.removeFromSuperview()
+        infoStackView.removeFromSuperview()
+        infoStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        timeLabel.removeFromSuperview()
+
+        let bubble = BubbleLabelView(isSender: isSender)
+        self.bubbleView = bubble
+        self.addSubviews(bubble,timeLabel)
+
         if isSender {
-            
-        } else {
-            profileImageView.do {
-                $0.layer.cornerRadius = 16
-                $0.clipsToBounds = true
-            }
-            
-            nicknameLabel.do {
-                $0.font = .pretendard(.body6_m_13)
-                $0.textColor = .darkGray
-            }
-        }
-    }
-    
-    // MARK: - SetLayout
-    
-    private func setLayout(isSender: Bool) {
-        if isSender {
-            bubbleView.snp.makeConstraints {
-                $0.top.bottom.equalToSuperview().inset(4)
+            bubble.snp.makeConstraints {
+                $0.top.equalToSuperview().inset(4)
                 $0.trailing.equalToSuperview().inset(12)
                 $0.leading.greaterThanOrEqualToSuperview().offset(80)
             }
+            timeLabel.snp.makeConstraints {
+                $0.top.equalTo(bubble.snp.bottom).offset(8)
+                $0.trailing.equalTo(bubble.snp.trailing)
+                $0.bottom.equalToSuperview().inset(4)
+            }
+            
+            timeLabel.font = .pretendard(.label1_b_11)
+            timeLabel.textColor = .lightGray
+            timeLabel.text = "오후 19:22"
         } else {
+
+            self.addSubviews(profileImageView,infoStackView)
+            infoStackView.addArrangedSubview(nicknameLabel)
+            infoStackView.addArrangedSubview(introductionLabel)
+            
+            infoStackView.axis = .horizontal
+            infoStackView.spacing = 4
+            infoStackView.alignment = .center
+
+
+            profileImageView.layer.cornerRadius = 16
+            profileImageView.clipsToBounds = true
+            profileImageView.image = UIImage(named: profileImage ?? "")
+
+            nicknameLabel.font = .pretendard(.body6_m_13)
+            nicknameLabel.textColor = .darkGray
+            nicknameLabel.text = nickname
+            
+            introductionLabel.text = "· 안녕하세요"
+            introductionLabel.textColor = .lightGray
+            introductionLabel.font = .pretendard(.label1_b_11)
+            
+
             profileImageView.snp.makeConstraints {
                 $0.leading.equalToSuperview().offset(12)
                 $0.top.equalToSuperview().offset(4)
                 $0.size.equalTo(32)
             }
-            
-            nicknameLabel.snp.makeConstraints {
+
+            infoStackView.snp.makeConstraints {
                 $0.leading.equalTo(profileImageView.snp.trailing).offset(8)
                 $0.top.equalToSuperview().offset(4)
+                $0.trailing.lessThanOrEqualToSuperview().offset(-12)
             }
 
-            bubbleView.snp.makeConstraints {
+            bubble.snp.makeConstraints {
                 $0.top.equalTo(nicknameLabel.snp.bottom).offset(4)
                 $0.leading.equalTo(profileImageView.snp.trailing).offset(8)
                 $0.trailing.lessThanOrEqualToSuperview().offset(-50)
-                $0.bottom.equalToSuperview().inset(4)
             }
+            
+            timeLabel.snp.makeConstraints {
+                $0.top.equalTo(bubble.snp.bottom).offset(4)
+                $0.leading.equalTo(bubble.snp.leading)
+                $0.bottom.equalToSuperview().inset(4)
+                
+            }
+            
+            timeLabel.font = .pretendard(.label1_b_11)
+            timeLabel.textColor = .lightGray
+            timeLabel.text = "오후 19:22"
         }
-    }
-    
-    
-    func configure(with message: String, nickname: String? = nil, profileImage: UIImage? = nil, isSender: Bool) {
-        bubbleView.configure(with: message)
-        nicknameLabel.text = nickname
-        if let profileImage = profileImage {
-            profileImageView.image = profileImage
-        }
+
+        bubble.configure(with: message)
     }
 }

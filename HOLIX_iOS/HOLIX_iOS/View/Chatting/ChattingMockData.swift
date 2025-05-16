@@ -115,6 +115,66 @@ final class DummyChattingData {
                 chattingType: .user,
                 isMine: true,
                 createdAt: formatter.date(from: "2025-05-13T06:06:51.963861")!
+            ),
+            ChattingResponseDTO(
+                chattingId: 8,
+                clubId: 1,
+                userName: "임재현",
+                introduction: "저는 임재현입니다..",
+                imageUrl: "https://example.com/img1.png",
+                contents: "채팅 추가!",
+                likes: 0,
+                chattingType: .user,
+                isMine: true,
+                createdAt: formatter.date(from: "2025-05-13T06:06:51.963861")!
+            ),
+            ChattingResponseDTO(
+                chattingId: 9,
+                clubId: 1,
+                userName: "임재현",
+                introduction: "저는 임재현입니다..",
+                imageUrl: "https://example.com/img1.png",
+                contents: "채팅 추가!",
+                likes: 0,
+                chattingType: .user,
+                isMine: true,
+                createdAt: formatter.date(from: "2025-05-13T06:06:51.963861")!
+            ),
+            ChattingResponseDTO(
+                chattingId: 10,
+                clubId: 1,
+                userName: "임재현",
+                introduction: "저는 임재현입니다..",
+                imageUrl: "https://example.com/img1.png",
+                contents: "채팅 추가!김솝트님 반갑습니다!김솝트님 반갑습니다!김솝트님 반갑습니다!김솝트님 반갑습니다!김솝트님 반갑습니다!김솝트님 반갑습니다!",
+                likes: 0,
+                chattingType: .user,
+                isMine: false,
+                createdAt: formatter.date(from: "2025-05-13T06:06:51.963861")!
+            ),
+            ChattingResponseDTO(
+                chattingId: 11,
+                clubId: 1,
+                userName: "임재현",
+                introduction: "저는 임재현입니다..",
+                imageUrl: "https://example.com/img1.png",
+                contents: "채팅 추가!",
+                likes: 0,
+                chattingType: .user,
+                isMine: true,
+                createdAt: formatter.date(from: "2025-05-13T06:06:51.963861")!
+            ),
+            ChattingResponseDTO(
+                chattingId: 12,
+                clubId: 1,
+                userName: "임재현",
+                introduction: "저는 임재현입니다..",
+                imageUrl: "https://example.com/img1.png",
+                contents: "채팅 추가!",
+                likes: 0,
+                chattingType: .user,
+                isMine: true,
+                createdAt: formatter.date(from: "2025-05-13T06:06:51.963861")!
             )
         ]
     }
