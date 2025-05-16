@@ -1,0 +1,100 @@
+//
+//  MyClubView.swift
+//  HOLIX_iOS
+//
+//  Created by 쏘 on 5/16/25.
+//
+
+import UIKit
+
+import SnapKit
+import Then
+
+final class MyClubView: UIView {
+
+    // MARK: - Properties
+
+    private var itemData = MyClubModel.dummy()
+    final let cellWidth: CGFloat = 165
+    final let cellHeight: CGFloat = 174
+
+    // MARK: - UI Components
+
+    private lazy var clubCollectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: UICollectionViewFlowLayout()
+    )
+
+    // MARK: - LifeCycle
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUI()
+        setDelegate()
+        setStyle()
+        setLayout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Setup
+
+    private func setUI() {
+        addSubview(clubCollectionView)
+        clubCollectionView.register(MyClubCell.self, forCellWithReuseIdentifier: MyClubCell.identifier)
+
+    }
+
+    // MARK: - SetDelegate
+
+    private func setDelegate() {
+        clubCollectionView.delegate = self
+        clubCollectionView.dataSource = self
+
+    }
+
+    // MARK: - SetStyle
+
+    private func setStyle() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.sectionInset = .zero
+
+
+    }
+
+    // MARK: - SetLayout
+
+    private func setLayout() {
+        clubCollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+
+        }
+    }
+}
+
+// MARK: - UICollectionView Delegate & DataSource
+
+extension MyClubView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
+
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+}
+
+extension MyClubView: UICollectionViewDataSource {
+    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
+
+        return itemData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyClubCell.identifier, for: indexPath) as? MyClubCell else { return MyClubCell() }
+        cell.dataBind(itemData[indexPath.item])
+
+        return cell
+    }
+}
