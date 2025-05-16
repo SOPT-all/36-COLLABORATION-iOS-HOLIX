@@ -19,6 +19,8 @@
 		2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B869C2DCDD3D500C3ABF6 /* SnapKit */; };
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
+		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
+		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -39,6 +41,8 @@
 		2F5B86882DCDD37F00C3ABF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
+		4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabelView.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +127,9 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4646CA842DD6FDA400E21D3D /* Chatting */,
 				2F57841E2DD4446F0075A288 /* Home */,
 				2F5783552DD376030075A288 /* Base */,
-				2F5B868C2DCDD37F00C3ABF6 /* ViewController.swift */,
 				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
@@ -147,6 +151,7 @@
 			children = (
 				2F5783912DD43A880075A288 /* TopTabBar */,
 				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
+				4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -172,6 +177,14 @@
 				2F5B86992DCDD3AE00C3ABF6 /* Extension */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		4646CA842DD6FDA400E21D3D /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */,
+			);
+			path = Chatting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,15 +299,16 @@
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
+				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
-				2F5B86942DCDD37F00C3ABF6 /* ViewController.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
+				4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
