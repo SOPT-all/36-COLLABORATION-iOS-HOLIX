@@ -22,6 +22,7 @@
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
+		46EAB24B2DD6E32F0084C5A8 /* NoticeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EAB24A2DD6E32F0084C5A8 /* NoticeButton.swift */; };
 		B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */; };
 		B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		46EAB24A2DD6E32F0084C5A8 /* NoticeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeButton.swift; sourceTree = "<group>"; };
 		B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Pretendard.swift"; sourceTree = "<group>"; };
 		B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Pretendard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 			children = (
 				2F5783912DD43A880075A288 /* TopTabBar */,
 				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
+				46EAB24A2DD6E32F0084C5A8 /* NoticeButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
+				46EAB24B2DD6E32F0084C5A8 /* NoticeButton.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
