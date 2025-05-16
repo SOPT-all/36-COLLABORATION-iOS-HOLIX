@@ -11,7 +11,9 @@ import SnapKit
 import Then
 
 final class ChattingViewController: UIViewController {
+    let mockChattingData = DummyChattingData.generate()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(mockChattingData)
     }
 }

@@ -22,6 +22,7 @@
 		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
 		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB602DD735EF00E21D3D /* ChattingCell.swift */; };
+		4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB622DD7397900E21D3D /* ChattingMockData.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -45,6 +46,7 @@
 		4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabelView.swift; sourceTree = "<group>"; };
 		4646CB602DD735EF00E21D3D /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
+		4646CB622DD7397900E21D3D /* ChattingMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMockData.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */,
 				4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */,
 				4646CB602DD735EF00E21D3D /* ChattingCell.swift */,
+				4646CB622DD7397900E21D3D /* ChattingMockData.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
+				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */,
