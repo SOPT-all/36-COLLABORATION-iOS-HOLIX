@@ -11,6 +11,7 @@ class MyClubViewController: UIViewController {
 
     // MARK: - Properties
     private let myClub = MyClubView()
+    private let recommendedClub = RecommendedClubView()
 
     // MARK: - UI Components
 
@@ -28,7 +29,7 @@ class MyClubViewController: UIViewController {
     // MARK: - Setup
 
     func setUp() {
-        view.addSubviews(topTabBar, myClub)
+        view.addSubviews(topTabBar, myClub, recommendedClub)
     }
 
     // MARK: - SetStyle
@@ -49,6 +50,11 @@ class MyClubViewController: UIViewController {
             $0.top.equalTo(topTabBar.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(364)
+        }
+        recommendedClub.snp.makeConstraints {
+            $0.top.equalTo(myClub.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
