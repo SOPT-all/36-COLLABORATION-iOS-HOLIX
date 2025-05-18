@@ -84,8 +84,8 @@ final class RecommendedClubView: UIView {
         recommendedTableView.snp.makeConstraints {
             $0.top.equalTo(recommendedLable.snp.bottom).offset(16)
             $0.leading.trailing.bottom.equalToSuperview()
+            $0.height.equalTo(CGFloat(itemData.count) * cellHeight)
         }
-
     }
 }
 
@@ -94,14 +94,13 @@ extension RecommendedClubView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemData.count
     }
 }
 
 extension RecommendedClubView: UITableViewDataSource {
-    
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecommendedClubCell.identifier, for: indexPath) as? RecommendedClubCell else { return UITableViewCell() }
