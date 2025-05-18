@@ -23,6 +23,7 @@ final class HomeViewController: UIViewController {
         ImageLiterals.pagebutton_05,
         ImageLiterals.pagebutton_06
     ]
+    private let categoryBoxMenuData = CategoryBoxMenuResponse.mockData()
 
     // MARK: - UI Components
 
@@ -37,6 +38,8 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
         setUp()
         setStyle()
         setLayout()
@@ -98,13 +101,14 @@ final class HomeViewController: UIViewController {
         homeCollectionView.do {
             $0.register(SearchCategoryCell.self, forCellWithReuseIdentifier: SearchCategoryCell.identifier)
             $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
+            $0.register(CategoryBoxCell.self, forCellWithReuseIdentifier: CategoryBoxCell.identifier)
         }
     }
 
     // MARK: - Layout Configuration
 
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        return CompositionalLayoutFactory.create()
+        return HomeSectionLayoutFactory.create()
     }
 
     //MARK: - Banner Section Indicator Method
@@ -170,6 +174,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return 1
         case .banner:
             return bannerData.count
+        case .categoryBoxMenu:
+            return categoryBoxMenuData.count
         }
     }
 
@@ -189,6 +195,15 @@ extension HomeViewController: UICollectionViewDataSource {
                 withReuseIdentifier: BannerCell.identifier,
                 for: indexPath) as! BannerCell
             cell.configure(image: bannerData[indexPath.item].Image)
+            return cell
+        case .categoryBoxMenu:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: CategoryBoxCell.identifier,
+                for: indexPath) as! CategoryBoxCell
+            cell.configure(
+                image: categoryBoxMenuData[indexPath.item].Image,
+                labelName: categoryBoxMenuData[indexPath.item].name
+            )
             return cell
         }
     }

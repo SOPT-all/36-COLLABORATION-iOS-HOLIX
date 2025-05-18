@@ -20,6 +20,15 @@
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
 		2F648C782DD998B500A31931 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C772DD998B500A31931 /* UITextField.swift */; };
+		2F648C832DD9A3FA00A31931 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C7B2DD9A3FA00A31931 /* BannerCell.swift */; };
+		2F648C842DD9A3FA00A31931 /* CategoryBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C7C2DD9A3FA00A31931 /* CategoryBoxCell.swift */; };
+		2F648C852DD9A3FA00A31931 /* SearchCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C7D2DD9A3FA00A31931 /* SearchCategoryCell.swift */; };
+		2F648C862DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C7F2DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift */; };
+		2F648C872DD9A3FA00A31931 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C812DD9A3FA00A31931 /* HomeViewController.swift */; };
+		2F648C8B2DD9A40000A31931 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C882DD9A40000A31931 /* MainTabBarController.swift */; };
+		2F648C8C2DD9A40000A31931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C892DD9A40000A31931 /* ViewController.swift */; };
+		2F648C8F2DD9A40600A31931 /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C8D2DD9A40600A31931 /* BannerResponse.swift */; };
+		2F648C912DD9A99E00A31931 /* CategoryBoxMenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C902DD9A99E00A31931 /* CategoryBoxMenuResponse.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -41,6 +50,15 @@
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
 		2F648C772DD998B500A31931 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		2F648C7B2DD9A3FA00A31931 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		2F648C7C2DD9A3FA00A31931 /* CategoryBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxCell.swift; sourceTree = "<group>"; };
+		2F648C7D2DD9A3FA00A31931 /* SearchCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCell.swift; sourceTree = "<group>"; };
+		2F648C7F2DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionLayoutFactory.swift; sourceTree = "<group>"; };
+		2F648C812DD9A3FA00A31931 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2F648C882DD9A40000A31931 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2F648C892DD9A40000A31931 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2F648C8D2DD9A40600A31931 /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
+		2F648C902DD9A99E00A31931 /* CategoryBoxMenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxMenuResponse.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -49,24 +67,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F3B54062DD5ECFD00E3DFDB /* Model */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2F5783552DD376030075A288 /* Base */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Base;
-			sourceTree = "<group>";
-		};
 		2F5783912DD43A880075A288 /* TopTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopTabBar;
-			sourceTree = "<group>";
-		};
-		2F57841E2DD4446F0075A288 /* Home */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Home;
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -130,8 +133,8 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2F57841E2DD4446F0075A288 /* Home */,
-				2F5783552DD376030075A288 /* Base */,
+				2F648C822DD9A3FA00A31931 /* Home */,
+				2F648C8A2DD9A40000A31931 /* Base */,
 				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
@@ -140,7 +143,7 @@
 		2F5B868E2DCDD37F00C3ABF6 /* HOLIX_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2F3B54062DD5ECFD00E3DFDB /* Model */,
+				2F648C8E2DD9A40600A31931 /* Model */,
 				2F5B86862DCDD37F00C3ABF6 /* App */,
 				2F5B869A2DCDD3AE00C3ABF6 /* Global */,
 				2F5B868B2DCDD37F00C3ABF6 /* Resource */,
@@ -182,6 +185,52 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		2F648C7E2DD9A3FA00A31931 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2F648C7B2DD9A3FA00A31931 /* BannerCell.swift */,
+				2F648C7C2DD9A3FA00A31931 /* CategoryBoxCell.swift */,
+				2F648C7D2DD9A3FA00A31931 /* SearchCategoryCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2F648C802DD9A3FA00A31931 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				2F648C7F2DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		2F648C822DD9A3FA00A31931 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2F648C7E2DD9A3FA00A31931 /* Cell */,
+				2F648C802DD9A3FA00A31931 /* Layout */,
+				2F648C812DD9A3FA00A31931 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2F648C8A2DD9A40000A31931 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2F648C882DD9A40000A31931 /* MainTabBarController.swift */,
+				2F648C892DD9A40000A31931 /* ViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2F648C8E2DD9A40600A31931 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F648C8D2DD9A40600A31931 /* BannerResponse.swift */,
+				2F648C902DD9A99E00A31931 /* CategoryBoxMenuResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,10 +248,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F3B54062DD5ECFD00E3DFDB /* Model */,
-				2F5783552DD376030075A288 /* Base */,
 				2F5783912DD43A880075A288 /* TopTabBar */,
-				2F57841E2DD4446F0075A288 /* Home */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
@@ -294,11 +340,20 @@
 			files = (
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
+				2F648C8F2DD9A40600A31931 /* BannerResponse.swift in Sources */,
+				2F648C8B2DD9A40000A31931 /* MainTabBarController.swift in Sources */,
+				2F648C8C2DD9A40000A31931 /* ViewController.swift in Sources */,
 				2F648C782DD998B500A31931 /* UITextField.swift in Sources */,
+				2F648C832DD9A3FA00A31931 /* BannerCell.swift in Sources */,
+				2F648C842DD9A3FA00A31931 /* CategoryBoxCell.swift in Sources */,
+				2F648C852DD9A3FA00A31931 /* SearchCategoryCell.swift in Sources */,
+				2F648C862DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift in Sources */,
+				2F648C872DD9A3FA00A31931 /* HomeViewController.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
+				2F648C912DD9A99E00A31931 /* CategoryBoxMenuResponse.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
