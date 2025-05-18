@@ -19,6 +19,7 @@
 		2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B869C2DCDD3D500C3ABF6 /* SnapKit */; };
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
+		2F648C782DD998B500A31931 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C772DD998B500A31931 /* UITextField.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -39,6 +40,7 @@
 		2F5B86882DCDD37F00C3ABF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
+		2F648C772DD998B500A31931 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */,
 				2F5784192DD43E9D0075A288 /* NSObject+ClassName.swift */,
 				2F57841B2DD43EB20075A288 /* UIView.swift */,
+				2F648C772DD998B500A31931 /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			files = (
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
+				2F648C782DD998B500A31931 /* UITextField.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,

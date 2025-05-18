@@ -8,7 +8,8 @@
 import UIKit
 
 enum HomeSectionType: Int, CaseIterable {
-    case banner = 0
+    case searchCategory = 0
+    case banner
 //    case categoryMenu
 //    case popularStudy
 //    case recommendedContent
@@ -21,6 +22,8 @@ struct CompositionalLayoutFactory {
             let section: NSCollectionLayoutSection
 
             switch HomeSectionType(rawValue: sectionNumber) {
+            case .searchCategory:
+                section = makeSearchCategorySection()
             case .banner:
                 section = makeBannerSection()
             case .none:
@@ -29,6 +32,23 @@ struct CompositionalLayoutFactory {
 
             return section
         }
+    }
+
+    private static func makeSearchCategorySection() -> NSCollectionLayoutSection {
+
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(90))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        return section
     }
 
     private static func makeBannerSection() -> NSCollectionLayoutSection {
