@@ -10,6 +10,8 @@ import UIKit
 class MyClubMainViewController: UIViewController {
 
     // MARK: - Properties
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     private let myClub = MyClubView()
     private let recommendedClub = RecommendedClubView()
 
@@ -29,21 +31,33 @@ class MyClubMainViewController: UIViewController {
     // MARK: - Setup
 
     func setUp() {
-        view.addSubviews(topTabBar, myClub, recommendedClub)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubviews(topTabBar, myClub, recommendedClub)
     }
 
     // MARK: - SetStyle
 
     func setStyle() {
         view.backgroundColor = .white
+
     }
 
     // MARK: - SetLayout
 
     func setLayout() {
+
+        scrollView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+
         topTabBar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)
         }
         myClub.snp.makeConstraints {
@@ -54,7 +68,8 @@ class MyClubMainViewController: UIViewController {
         recommendedClub.snp.makeConstraints {
             $0.top.equalTo(myClub.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalToSuperview()
         }
     }
 }
+
