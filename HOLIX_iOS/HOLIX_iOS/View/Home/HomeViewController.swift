@@ -104,6 +104,9 @@ final class HomeViewController: UIViewController {
             $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
             $0.register(CategoryBoxCell.self, forCellWithReuseIdentifier: CategoryBoxCell.identifier)
             $0.register(ContentCardCell.self, forCellWithReuseIdentifier: ContentCardCell.identifier)
+            $0.register(HomeSectionHeader.self,
+                        forSupplementaryViewOfKind: HomeSectionHeader.elementKind,
+                        withReuseIdentifier: HomeSectionHeader.identifier)
         }
     }
 
@@ -183,6 +186,8 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
 
+    //MARK: - Cell Configure
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let sectionType = HomeSectionType(rawValue: indexPath.section) else {
             return UICollectionViewCell()
@@ -219,5 +224,39 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.configure(with: item)
             return cell
         }
+    }
+
+    //MARK: - Header Configure
+
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+
+        guard let sectionType = HomeSectionType(rawValue: indexPath.section) else {
+            return UICollectionReusableView()
+        }
+
+        switch sectionType {
+        case .banner:
+            return UICollectionReusableView()
+        case .searchCategory:
+            return UICollectionReusableView()
+        case .categoryBoxMenu:
+            return UICollectionReusableView()
+        case .popularStudy:
+            if kind == HomeSectionHeader.elementKind {
+                guard let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: HomeSectionHeader.identifier,
+                    for: indexPath
+                ) as? HomeSectionHeader else {
+                    assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
+                    return UICollectionReusableView()
+                }
+                header.configure(title: studyItemData[indexPath.item].title)
+                return header
+            }
+        }
+        return UICollectionReusableView()
     }
 }
