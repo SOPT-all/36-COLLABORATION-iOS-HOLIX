@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyClubViewController: UIViewController {
+class MyClubMainViewController: UIViewController {
 
     // MARK: - Properties
     private let myClub = MyClubView()
