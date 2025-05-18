@@ -11,7 +11,7 @@ enum HomeSectionType: Int, CaseIterable {
     case searchCategory = 0
     case banner
     case categoryBoxMenu
-    //    case popularStudy
+    case popularStudy
     //    case recommendedContent
 }
 
@@ -28,10 +28,11 @@ struct HomeSectionLayoutFactory {
                 section = makeBannerSection()
             case .categoryBoxMenu:
                 section = makeCategoryBoxMenuSection()
+            case .popularStudy:
+                section = makePopularStudySection()
             case .none:
                 section = makeBannerSection()
             }
-
             return section
         }
     }
@@ -95,6 +96,30 @@ struct HomeSectionLayoutFactory {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17)
+        return section
+    }
+
+    private static func makePopularStudySection() -> NSCollectionLayoutSection {
+
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(228),
+            heightDimension: .absolute(277)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 0)
+        section.interGroupSpacing = 15 // 그룹 별 간격
+        section.orthogonalScrollingBehavior = .continuous
         return section
     }
 }

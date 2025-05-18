@@ -24,6 +24,7 @@ final class HomeViewController: UIViewController {
         ImageLiterals.pagebutton_06
     ]
     private let categoryBoxMenuData = CategoryBoxMenuResponse.mockData()
+    private let studyItemData = StudyItemModel.mockData()
 
     // MARK: - UI Components
 
@@ -102,6 +103,7 @@ final class HomeViewController: UIViewController {
             $0.register(SearchCategoryCell.self, forCellWithReuseIdentifier: SearchCategoryCell.identifier)
             $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
             $0.register(CategoryBoxCell.self, forCellWithReuseIdentifier: CategoryBoxCell.identifier)
+            $0.register(ContentCardCell.self, forCellWithReuseIdentifier: ContentCardCell.identifier)
         }
     }
 
@@ -176,6 +178,8 @@ extension HomeViewController: UICollectionViewDataSource {
             return bannerData.count
         case .categoryBoxMenu:
             return categoryBoxMenuData.count
+        case .popularStudy:
+            return studyItemData.count
         }
     }
 
@@ -204,6 +208,15 @@ extension HomeViewController: UICollectionViewDataSource {
                 image: categoryBoxMenuData[indexPath.item].Image,
                 labelName: categoryBoxMenuData[indexPath.item].name
             )
+            return cell
+        case .popularStudy:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyItemData[indexPath.item].items.first else {
+                return cell
+            }
+            cell.configure(with: item)
             return cell
         }
     }
