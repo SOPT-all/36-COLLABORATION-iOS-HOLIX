@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 final class CategoryBoxCell: UICollectionViewCell {
 
     // MARK: - Properties
@@ -23,7 +26,7 @@ final class CategoryBoxCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
+        setUp()
         setStyle()
         setLayout()
     }
@@ -34,7 +37,7 @@ final class CategoryBoxCell: UICollectionViewCell {
 
     // MARK: - Setup
 
-    private func setUI() {
+    private func setUp() {
         categoryBackgroundView
             .addSubviews(
                 categoryImage,

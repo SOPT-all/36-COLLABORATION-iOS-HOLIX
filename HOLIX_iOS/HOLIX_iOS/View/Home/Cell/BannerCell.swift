@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 final class BannerCell: UICollectionViewCell {
 
     // MARK: - Properties
@@ -21,7 +24,7 @@ final class BannerCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
+        setUp()
         setStyle()
         setLayout()
     }
@@ -32,7 +35,7 @@ final class BannerCell: UICollectionViewCell {
 
     // MARK: - Setup
 
-    private func setUI() {
+    private func setUp() {
         contentView.addSubview(bannerImage)
     }
 

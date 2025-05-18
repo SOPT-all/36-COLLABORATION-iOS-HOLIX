@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 final class SearchCategoryCell: UICollectionViewCell {
 
     // MARK: - Properties
@@ -23,7 +26,7 @@ final class SearchCategoryCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
+        setUp()
         setStyle()
         setLayout()
     }
@@ -34,7 +37,7 @@ final class SearchCategoryCell: UICollectionViewCell {
 
     // MARK: - Setup
 
-    private func setUI() {
+    private func setUp() {
         contentView
             .addSubviews(
                 menuButton,

@@ -7,6 +7,9 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 final class ContentCardCell: UICollectionViewCell {
 
     // MARK: - Properties
@@ -27,7 +30,7 @@ final class ContentCardCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUI()
+        setUp()
         setStyle()
         setLayout()
     }
@@ -38,7 +41,7 @@ final class ContentCardCell: UICollectionViewCell {
 
     // MARK: - Setup
 
-    private func setUI() {
+    private func setUp() {
         labelStackView.addArrangedSubview(studyTitleLabel)
         labelStackView.addArrangedSubview(studyLeaderLabel)
         labelStackView.addArrangedSubview(priceLabel)
