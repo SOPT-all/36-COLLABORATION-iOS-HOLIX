@@ -35,7 +35,12 @@ final class SearchCategoryCell: UICollectionViewCell {
     // MARK: - Setup
 
     private func setUI() {
-        contentView.addSubviews(menuButton, searchTextField, topTabBar)
+        contentView
+            .addSubviews(
+                menuButton,
+                searchTextField,
+                topTabBar
+            )
     }
 
     // MARK: - SetStyle
