@@ -95,7 +95,7 @@ struct HomeSectionLayoutFactory {
         group.interItemSpacing = .fixed(7) // 아이템 간 간격
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 17)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 20, trailing: 17)
         return section
     }
 
@@ -117,9 +117,23 @@ struct HomeSectionLayoutFactory {
         )
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 17, bottom: 0, trailing: 0)
         section.interGroupSpacing = 15 // 그룹 별 간격
         section.orthogonalScrollingBehavior = .continuous
+
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(22)
+        )
+
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: HomeSectionHeader.elementKind,
+            alignment: .top
+        )
+
+        section.boundarySupplementaryItems = [header]
+
         return section
     }
 }
