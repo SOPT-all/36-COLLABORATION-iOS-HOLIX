@@ -15,6 +15,7 @@ final class ChattingViewController: UIViewController {
     private let customNavigationBar = CustomNavigationBar(titleLabel:"iOS 개발자로써 성공하고 싶은 사람들" ,hasMenuButton: true)
     private var chattingList = DummyChattingData.generate()
     private let tableView = UITableView()
+    private let textView = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,23 @@ final class ChattingViewController: UIViewController {
         setStyle()
         setLayout()
         setupTableView()
+        setupDismissKeyboardGesture()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyboardNotifications()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardNotifications()
+    }
+
+    
     private func setUI() {
-        self.view.addSubviews(customNavigationBar,tableView)
+        self.view.addSubviews(customNavigationBar,tableView,textView)
 
     }
     
@@ -51,8 +64,14 @@ final class ChattingViewController: UIViewController {
         tableView.snp.makeConstraints {
             $0.top.equalTo(customNavigationBar.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(300)
+            $0.bottom.equalToSuperview().inset(80)
         }
+        
+        textView.snp.makeConstraints {
+            $0.top.equalTo(tableView.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+        textView.backgroundColor = .red
     }
     
     private func setupTableView() {
@@ -63,6 +82,16 @@ final class ChattingViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .white
         tableView.register(ChattingCell.self, forCellReuseIdentifier: "ChattingCell")
+    }
+    
+    private func setupDismissKeyboardGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 }
@@ -84,4 +113,48 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
         )
         return cell
     }
+}
+
+extension ChattingViewController {
+    private func addKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillShowNotification,
+                                                  object: nil)
+        NotificationCenter.default.removeObserver(self,
+                                                  name: UIResponder.keyboardWillHideNotification,
+                                                  object: nil)
+    }
+
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+
+        let keyboardHeight = keyboardFrame.height
+
+        UIView.animate(withDuration: duration) {
+            self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
+        }
+    }
+
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+
+        UIView.animate(withDuration: duration) {
+            self.view.transform = .identity
+        }
+    }
+    
 }
