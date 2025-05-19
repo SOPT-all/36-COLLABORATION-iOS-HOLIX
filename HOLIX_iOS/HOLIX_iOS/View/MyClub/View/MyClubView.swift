@@ -15,8 +15,8 @@ final class MyClubView: UIView {
     // MARK: - Properties
 
     private var itemData = MyClubModel.dummy()
-    final let cellWidth: CGFloat = 165
-    final let cellHeight: CGFloat = 174
+    final let cellWidth: CGFloat = UIScreen.main.bounds.width * 165 / 375
+    final let cellHeight: CGFloat = UIScreen.main.bounds.height * 174 / 812
 
     // MARK: - UI Components
 
