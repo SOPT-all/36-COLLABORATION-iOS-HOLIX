@@ -21,12 +21,18 @@ class MyClubMainViewController: UIViewController {
 
     // MARK: - LifeCycle
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         setStyle()
         setLayout()
     }
+
 
     // MARK: - Setup
 
