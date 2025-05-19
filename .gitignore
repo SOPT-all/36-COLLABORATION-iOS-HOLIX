@@ -109,3 +109,6 @@ xcuserdata
 **/.DS_Store
 **/._.DS_Store
 *.pbxproj binary merge=union
+
+# Config 파일 무시
+*.xcconfig
