@@ -17,7 +17,7 @@ enum ChattingCellType {
 
  class ChattingCell: UITableViewCell {
 
-    // MARK: - UI
+     // MARK: - UI Components
     private var bubbleView: BubbleLabelView?
     private let profileImageView = UIImageView()
     private let nicknameLabel = UILabel()
@@ -25,7 +25,8 @@ enum ChattingCellType {
     private let infoStackView = UIStackView()
     private let timeLabel = UILabel()
 
-    // MARK: - Init
+     // MARK: - Lifecycle
+     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none

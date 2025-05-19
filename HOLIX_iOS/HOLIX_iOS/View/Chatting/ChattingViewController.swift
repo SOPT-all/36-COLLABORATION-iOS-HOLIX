@@ -11,11 +11,20 @@ import SnapKit
 import Then
 
 final class ChattingViewController: UIViewController {
+    
+    // MARK: - UI Components
    
     private let customNavigationBar = CustomNavigationBar(titleLabel:"iOS 개발자로써 성공하고 싶은 사람들" ,hasMenuButton: true)
     private var chattingList = DummyChattingData.generate()
     private let tableView = UITableView()
-    private let textView = UITextView()
+    private let textView = CustomTextView()
+    
+    // MARK: - Properties
+    
+    private var customTextViewHeightConstraint: Constraint?
+    private var customTextViewBottomConstraint: Constraint?
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +32,9 @@ final class ChattingViewController: UIViewController {
         setStyle()
         setLayout()
         setupTableView()
+        setupScrollView()
         setupDismissKeyboardGesture()
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,12 +46,16 @@ final class ChattingViewController: UIViewController {
         super.viewWillDisappear(animated)
         removeKeyboardNotifications()
     }
-
+    
+    
+    // MARK: - SetUI
     
     private func setUI() {
         self.view.addSubviews(customNavigationBar,tableView,textView)
 
     }
+    
+    // MARK: - SetStyle
     
     private func setStyle() {
         self.view.backgroundColor = .white
@@ -51,8 +65,12 @@ final class ChattingViewController: UIViewController {
             $0.showsVerticalScrollIndicator = false
         }
         
-
+        textView.do {
+            $0.backgroundColor = .white
+        }
     }
+    
+    // MARK: - SetLayout
     
     private func setLayout() {
         customNavigationBar.snp.makeConstraints {
@@ -64,14 +82,24 @@ final class ChattingViewController: UIViewController {
         tableView.snp.makeConstraints {
             $0.top.equalTo(customNavigationBar.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(80)
+            $0.bottom.equalTo(textView.snp.top)
         }
         
         textView.snp.makeConstraints {
-            $0.top.equalTo(tableView.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(tableView.snp.bottom).offset(8)
+            $0.leading.trailing.equalToSuperview()
+            self.customTextViewBottomConstraint = $0.bottom.equalToSuperview().constraint
         }
-        textView.backgroundColor = .red
+        
+        textView.onHeightChange = { [weak self] newHeight in
+            guard let self = self else { return }
+            
+            self.customTextViewHeightConstraint?.update(offset: newHeight)
+            
+            UIView.animate(withDuration: 0.2) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
     private func setupTableView() {
@@ -84,17 +112,17 @@ final class ChattingViewController: UIViewController {
         tableView.register(ChattingCell.self, forCellReuseIdentifier: "ChattingCell")
     }
     
-    private func setupDismissKeyboardGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapGesture.cancelsTouchesInView = false
-        view.addGestureRecognizer(tapGesture)
+    private func setupScrollView() {
+        textView.addTag(title: "Swift")
+        textView.addTag(title: "UIKit")
+        textView.addTag(title: "1234")
+        textView.addTag(title: "UIK12312it")
+        textView.addTag(title: "Swi1ft")
+        textView.addTag(title: "UIKit")
     }
-
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
-    }
-
 }
+
+// MARK: - UITableViewDelegate,UITableViewDataSource
 
 extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
   
@@ -115,7 +143,10 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+// MARK: - Keyboard
+
 extension ChattingViewController {
+    
     private func addKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(_:)),
@@ -142,19 +173,33 @@ extension ChattingViewController {
               let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
 
         let keyboardHeight = keyboardFrame.height
+        self.customTextViewBottomConstraint?.update(offset: -3)
 
         UIView.animate(withDuration: duration) {
             self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
+            self.textView.movePlusButtonToBottom(true)
         }
     }
 
     @objc private func keyboardWillHide(_ notification: Notification) {
         guard let userInfo = notification.userInfo,
               let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
-
+        self.customTextViewBottomConstraint?.update(offset: 0)
         UIView.animate(withDuration: duration) {
             self.view.transform = .identity
+            self.textView.movePlusButtonToBottom(false)
         }
+    }
+    
+    
+    private func setupDismissKeyboardGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

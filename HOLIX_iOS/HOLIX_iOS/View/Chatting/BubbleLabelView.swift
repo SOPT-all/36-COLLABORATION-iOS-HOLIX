@@ -35,8 +35,6 @@ final class BubbleLabelView: UIView {
 
     private func setUI() {
         self.addSubview(messageLabel)
-
-     
     }
     
     // MARK: - SetStyle
