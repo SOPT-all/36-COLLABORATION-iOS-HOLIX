@@ -69,6 +69,7 @@ final class MyClubCell: UICollectionViewCell {
             $0.textColor = .black
             $0.font = .pretendard(.body4_b_13)
             $0.numberOfLines = 2
+            $0.lineBreakMode = .byCharWrapping
         }
 
         memberLabel.do {
@@ -114,4 +115,3 @@ extension MyClubCell {
         memberLabel.text = itemData.member
     }
 }
-
