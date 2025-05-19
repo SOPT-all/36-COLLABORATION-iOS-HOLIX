@@ -69,7 +69,7 @@ class MyClubMainViewController: UIViewController {
         myClub.snp.makeConstraints {
             $0.top.equalTo(topTabBar.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(364)
+            $0.height.equalTo(UIScreen.main.bounds.height * 364 / 812)
         }
         recommendedClub.snp.makeConstraints {
             $0.top.equalTo(myClub.snp.bottom).offset(20)
