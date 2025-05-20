@@ -26,6 +26,17 @@ enum ImageLiterals {
     static var club_photo_03: UIImage { .load(name: "img_club_photo_3_ios") }
     static var club_photo_04: UIImage { .load(name: "img_club_photo_4_ios") }
 
+    static var class_01: UIImage { .load(name: "img_class_ios_01") }
+    static var class_02: UIImage { .load(name: "img_class_ios_02") }
+    static var class_03: UIImage { .load(name: "img_class_ios_03") }
+    static var class_04: UIImage { .load(name: "img_class_ios_04") }
+    static var class_05: UIImage { .load(name: "img_class_ios_05") }
+    static var class_06: UIImage { .load(name: "img_class_ios_06") }
+    static var class_07: UIImage { .load(name: "img_class_ios_07") }
+    static var class_08: UIImage { .load(name: "img_class_ios_08") }
+    static var class_09: UIImage { .load(name: "img_class_ios_09") }
+    static var class_10: UIImage { .load(name: "img_class_ios_10") }
+
     static var home_thumnail_01: UIImage { .load(name: "img_home_thumnail_ios_01") }
     static var home_thumnail_02: UIImage { .load(name: "img_home_thumnail_ios_02") }
     static var home_thumnail_03: UIImage { .load(name: "img_home_thumnail_ios_03") }
