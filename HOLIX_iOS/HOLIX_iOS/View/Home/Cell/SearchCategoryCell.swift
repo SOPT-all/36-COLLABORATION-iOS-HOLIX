@@ -20,7 +20,7 @@ final class SearchCategoryCell: UICollectionViewCell {
 
     private let menuButton = UIButton()
     private let searchTextField = UITextField()
-    private let topTabBar = TopTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
+    private let topTabBar = CategoryTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
 
     // MARK: - LifeCycle
 

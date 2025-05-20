@@ -1,5 +1,5 @@
 //
-//  TopTabCell.swift
+//  CategoryTabBarCell.swift
 //  HOLIX_iOS
 //
 //  Created by 정정욱 on 5/14/25.
@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-final class TopTabCell: UICollectionViewCell {
+final class CategoryTabBarCell: UICollectionViewCell {
 
     // MARK: - Properties
 
-    static let identifier = TopTabCell.className
+    static let identifier = CategoryTabBarCell.className
 
     // MARK: - UI Components
 
@@ -57,7 +57,7 @@ final class TopTabCell: UICollectionViewCell {
     }
 }
 
-extension TopTabCell {
+extension CategoryTabBarCell {
     func configure(title: String, isSelected: Bool) {
         titleLabel.text = title
         titleLabel.font = isSelected ? .pretendard(.body1_sb_15) : .pretendard(.body3_r_15)

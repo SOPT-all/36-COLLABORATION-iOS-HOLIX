@@ -1,5 +1,5 @@
 //
-//  TopTabBarView.swift
+//  CategoryTopTabBar.swift
 //  HOLIX_iOS
 //
 //  Created by 정정욱 on 5/14/25.
@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class TopTabBarView: UIView {
+final class CategoryTabBarView: UIView {
 
     // MARK: - Properties
 
@@ -73,7 +73,7 @@ final class TopTabBarView: UIView {
             $0.collectionViewLayout = layout
             $0.showsHorizontalScrollIndicator = false
             $0.backgroundColor = .clear
-            $0.register(TopTabCell.self, forCellWithReuseIdentifier: TopTabCell.identifier)
+            $0.register(CategoryTabBarCell.self, forCellWithReuseIdentifier: CategoryTabBarCell.identifier)
         }
 
         indicatorView.do {
@@ -140,13 +140,13 @@ final class TopTabBarView: UIView {
 
 // MARK: - UICollectionView Delegate & DataSource
 
-extension TopTabBarView: UICollectionViewDelegate {
+extension CategoryTabBarView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectItem(at: indexPath.item)
     }
 }
 
-extension TopTabBarView: UICollectionViewDataSource {
+extension CategoryTabBarView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -159,9 +159,9 @@ extension TopTabBarView: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: TopTabCell.identifier,
+            withReuseIdentifier: CategoryTabBarCell.identifier,
             for: indexPath
-        ) as? TopTabCell else {
+        ) as? CategoryTabBarCell else {
             return UICollectionViewCell()
         }
 
@@ -171,7 +171,7 @@ extension TopTabBarView: UICollectionViewDataSource {
     }
 }
 
-extension TopTabBarView: UICollectionViewDelegateFlowLayout {
+extension CategoryTabBarView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
