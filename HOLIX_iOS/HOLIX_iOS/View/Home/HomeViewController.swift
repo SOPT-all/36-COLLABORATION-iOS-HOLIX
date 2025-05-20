@@ -15,9 +15,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Properties
 
     private let hideThreshold: CGFloat = 80
-    private var topSearchHeaderConstraint: Constraint?
-    private var categoryTopTabBarConstraint: Constraint?
-    private var currentVisibilityState: TopHeaderVisibilityState = .visible
+    private var isTopHeaderHidden = false
 
     private let bannerData = BannerResponse.mockData()
     private let bannerPageIndicatorImage = [
@@ -100,13 +98,13 @@ final class HomeViewController: UIViewController {
 
     private func setLayout() {
         topSearchHeaderView.snp.makeConstraints {
-            topSearchHeaderConstraint = $0.top.equalTo(view.safeAreaLayoutGuide).constraint
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)
         }
 
         categoryTopTabBar.snp.makeConstraints {
-            categoryTopTabBarConstraint = $0.top.equalTo(topSearchHeaderView.snp.bottom).constraint
+            $0.top.equalTo(topSearchHeaderView.snp.bottom).offset(5)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)
         }
@@ -137,7 +135,7 @@ final class HomeViewController: UIViewController {
         return HomeSectionLayoutFactory.create()
     }
 
-    //MARK: - Banner Section Indicator Method
+    // MARK: - Banner Section Indicator Method
 
     private func updateBannerOverlayPosition() {
         let indexPath = IndexPath(item: 0, section: HomeSectionType.banner.rawValue)
@@ -163,59 +161,30 @@ final class HomeViewController: UIViewController {
         bannerPageLabel.text = "\(currentPage + 1)/\(bannerData.count)"
         bannerPageIndicatorImageView.image = bannerPageIndicatorImage[currentPage]
     }
-}
 
-// MARK: - TopSearchHeader Transition
+    // MARK: - TopHeader Transition
 
-private extension HomeViewController {
-    enum TopHeaderVisibilityState {
-        case visible
-        case hidden
+    private func setTopHeader(hidden: Bool) {
+        guard hidden != isTopHeaderHidden else { return }
+        isTopHeaderHidden = hidden
 
-        var alpha: CGFloat {
-            switch self {
-            case .visible: return 1
-            case .hidden: return 0
+        UIView.animate(withDuration: 0.3) {
+            self.topSearchHeaderView.alpha = hidden ? 0 : 1
+            self.topSearchHeaderView.isHidden = hidden
+
+            self.categoryTopTabBar.snp.remakeConstraints {
+                $0.top.equalTo(hidden ? self.view.safeAreaLayoutGuide : self.topSearchHeaderView.snp.bottom)
+                $0.leading.trailing.equalToSuperview()
+                $0.height.equalTo(40)
             }
-        }
 
-        var offset: CGFloat {
-            switch self {
-            case .visible: return 0
-            case .hidden: return -48
+            self.homeCollectionView.snp.remakeConstraints {
+                $0.top.equalTo(self.categoryTopTabBar.snp.bottom)
+                $0.leading.trailing.bottom.equalToSuperview()
             }
-        }
-    }
 
-    private func updateTabBarConstraints(for state: TopHeaderVisibilityState) {
-        categoryTopTabBarConstraint?.deactivate()
-
-        categoryTopTabBar.snp.remakeConstraints {
-            switch state {
-            case .visible:
-                categoryTopTabBarConstraint = $0.top.equalTo(topSearchHeaderView.snp.bottom).constraint
-            case .hidden:
-                categoryTopTabBarConstraint = $0.top.equalTo(view.safeAreaLayoutGuide).constraint
-            }
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(40)
-        }
-
-        topSearchHeaderConstraint?.update(offset: state.offset)
-    }
-
-    private func animateTopHeaderTransition(to state: TopHeaderVisibilityState) {
-        guard currentVisibilityState != state else { return }
-
-        view.layoutIfNeeded()
-        updateTabBarConstraints(for: state)
-
-        UIView.animate(withDuration: 0.25) {
-            self.topSearchHeaderView.alpha = state.alpha
             self.view.layoutIfNeeded()
         }
-
-        currentVisibilityState = state
     }
 }
 
@@ -224,14 +193,8 @@ private extension HomeViewController {
 extension HomeViewController: UICollectionViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-
-        if offsetY > hideThreshold && currentVisibilityState != .hidden {
-            animateTopHeaderTransition(to: .hidden)
-        } else if offsetY <= hideThreshold && currentVisibilityState != .visible {
-            animateTopHeaderTransition(to: .visible)
-        }
-
+        let offset = scrollView.contentOffset.y
+        setTopHeader(hidden: offset > hideThreshold)
         updateBannerOverlayPosition()
     }
 
