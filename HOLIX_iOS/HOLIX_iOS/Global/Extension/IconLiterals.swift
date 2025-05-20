@@ -8,6 +8,9 @@
 import UIKit
 
 enum IconLiterals {
+
+    static var ic_hambeger: UIImage { .load(name: "ic_hambeger_ios") }
+    static var ic_search_gray: UIImage { .load(name: "ic_search_gray_ios") }
     static var ic_active: UIImage { .load(name: "ic_active_ios") }
     static var ic_alert_active: UIImage { .load(name: "ic_alert_ios_active") }
     static var ic_alert: UIImage { .load(name: "ic_alert_ios") }

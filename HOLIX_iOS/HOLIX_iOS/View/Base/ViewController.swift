@@ -20,11 +20,11 @@ class ViewController: UIViewController {
         setStyle()
         setAddTarget()
     }
-    
+
     private func setupAddSubview() {
         self.view.addSubview(testButton)
     }
-    
+
     private func setupUI() {
         testButton.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
@@ -37,11 +37,11 @@ class ViewController: UIViewController {
         testButton.backgroundColor = .green
         testButton.setTitle("push", for: .normal)
     }
-    
+
     private func setAddTarget() {
         testButton.addTarget(self, action: #selector(testButtonDidTap), for: .touchUpInside)
     }
-    
+
     @objc func testButtonDidTap() {
         let vc = TestViewController()
         self.navigationController?.pushViewController(vc, animated: true)
