@@ -16,7 +16,7 @@ final class MyClubView: UIView {
 
     private var itemData = MyClubModel.dummy()
     final let cellWidth: CGFloat = UIScreen.main.bounds.width * 165 / 375
-    final let cellHeight: CGFloat = UIScreen.main.bounds.height * 174 / 812
+    final let cellHeight: CGFloat = 174
 
     // MARK: - UI Components
 
@@ -97,4 +97,16 @@ extension MyClubView: UICollectionViewDataSource {
 
         return cell
     }
+}
+
+// MARK: - 계산 함수
+extension MyClubView {
+    func calculatedHeight() -> CGFloat {
+            let itemCount = itemData.count
+            let rows = Int(ceil(Double(itemCount) / 2.0))
+            let spacing: CGFloat = 10
+            let inset: CGFloat = 16
+
+            return CGFloat(rows) * (cellHeight + spacing) - spacing + inset
+        }
 }

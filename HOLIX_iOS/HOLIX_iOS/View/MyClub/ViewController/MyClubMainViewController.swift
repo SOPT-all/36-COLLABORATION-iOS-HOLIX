@@ -45,9 +45,7 @@ class MyClubMainViewController: UIViewController {
     // MARK: - SetStyle
 
     func setStyle() {
-        view.backgroundColor = .white
-
-    }
+        view.backgroundColor = .white    }
 
     // MARK: - SetLayout
 
@@ -66,11 +64,13 @@ class MyClubMainViewController: UIViewController {
             $0.top.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)
         }
+
         myClub.snp.makeConstraints {
             $0.top.equalTo(topTabBar.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(UIScreen.main.bounds.height * 364 / 812)
+            $0.height.equalTo(myClub.calculatedHeight())
         }
+
         recommendedClub.snp.makeConstraints {
             $0.top.equalTo(myClub.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
