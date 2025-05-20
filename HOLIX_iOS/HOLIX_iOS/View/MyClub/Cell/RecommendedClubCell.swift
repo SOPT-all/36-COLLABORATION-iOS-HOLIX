@@ -78,8 +78,9 @@ final class RecommendedClubCell: UITableViewCell {
             $0.textAlignment = .center
             $0.layer.cornerRadius = 3
             $0.layer.masksToBounds = true
+            $0.setContentHuggingPriority(UILayoutPriority.required, for: .horizontal)
+            $0.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
         }
-
     }
 
     // MARK: - SetLayout
@@ -106,15 +107,14 @@ final class RecommendedClubCell: UITableViewCell {
         memberLabel.snp.makeConstraints {
             $0.top.equalTo(hostLabel.snp.bottom)
             $0.leading.equalTo(thumbnail.snp.trailing).offset(11)
-            $0.width.equalTo(105)
             $0.height.equalTo(15)
         }
 
         statusLabel.snp.makeConstraints {
             $0.top.equalTo(hostLabel.snp.bottom)
             $0.leading.equalTo(memberLabel.snp.trailing).offset(4)
-            $0.width.equalTo(37)
             $0.height.equalTo(19)
+            $0.width.equalTo(37)
         }
     }
 }
