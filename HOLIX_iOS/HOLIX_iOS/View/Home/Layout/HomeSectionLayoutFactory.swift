@@ -12,7 +12,6 @@ enum HomeSectionType: Int, CaseIterable {
     case banner
     case categoryBoxMenu
     case popularStudy
-    //    case recommendedContent
 }
 
 struct HomeSectionLayoutFactory {
@@ -51,27 +50,26 @@ struct HomeSectionLayoutFactory {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
         return section
     }
 
     private static func makeBannerSection() -> NSCollectionLayoutSection {
 
-        // 아이템 사이즈
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        // 그룹 사이즈
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(382))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
-        // 섹션 사이즈
         let section = NSCollectionLayoutSection(group: group) // 섹션의 크기는 내부 그룹이 결정
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.orthogonalScrollingBehavior = .paging
+        
         return section
     }
 
@@ -87,7 +85,6 @@ struct HomeSectionLayoutFactory {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(72)
         )
-
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: Array(repeating: item, count: 4)
@@ -96,6 +93,7 @@ struct HomeSectionLayoutFactory {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 20, trailing: 17)
+        
         return section
     }
 
@@ -125,7 +123,6 @@ struct HomeSectionLayoutFactory {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(22)
         )
-
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: HomeSectionHeader.elementKind,

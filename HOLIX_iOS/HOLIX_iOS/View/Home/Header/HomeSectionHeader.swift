@@ -65,7 +65,7 @@ final class HomeSectionHeader: UICollectionReusableView {
 
         seeMoreButton.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel)
-            $0.trailing.equalToSuperview().inset(3.5)
+            $0.trailing.equalToSuperview().inset(15)
         }
     }
 }

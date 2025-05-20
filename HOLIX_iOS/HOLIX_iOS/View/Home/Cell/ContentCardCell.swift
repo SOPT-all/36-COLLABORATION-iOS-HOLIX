@@ -167,4 +167,3 @@ extension ContentCardCell {
         updateTags()
     }
 }
-
