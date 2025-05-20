@@ -8,8 +8,7 @@
 import UIKit
 
 enum HomeSectionType: Int, CaseIterable {
-    case searchCategory = 0
-    case banner
+    case banner = 0
     case categoryBoxMenu
     case popularStudy
 }
@@ -19,10 +18,7 @@ struct HomeSectionLayoutFactory {
     static func create() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { sectionNumber, _ in
             let section: NSCollectionLayoutSection
-
             switch HomeSectionType(rawValue: sectionNumber) {
-            case .searchCategory:
-                section = makeSearchCategorySection()
             case .banner:
                 section = makeBannerSection()
             case .categoryBoxMenu:

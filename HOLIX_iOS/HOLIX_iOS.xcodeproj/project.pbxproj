@@ -96,9 +96,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F5783912DD43A880075A288 /* TopTabBar */ = {
+		2F5783912DD43A880075A288 /* CategoryTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TopTabBar;
+			path = CategoryTabBar;
+			sourceTree = "<group>";
+		};
+		2F648EDF2DDC85A500A31931 /* Component */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -186,7 +191,7 @@
 		2F5B86982DCDD3AE00C3ABF6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				2F5783912DD43A880075A288 /* TopTabBar */,
+				2F5783912DD43A880075A288 /* CategoryTabBar */,
 				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
 			);
 			path = Component;
@@ -238,6 +243,7 @@
 		2F648C822DD9A3FA00A31931 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2F648EDF2DDC85A500A31931 /* Component */,
 				2F648CE82DD9FB3B00A31931 /* Header */,
 				2F648C7E2DD9A3FA00A31931 /* Cell */,
 				2F648C802DD9A3FA00A31931 /* Layout */,
@@ -351,7 +357,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F5783912DD43A880075A288 /* TopTabBar */,
+				2F5783912DD43A880075A288 /* CategoryTabBar */,
+				2F648EDF2DDC85A500A31931 /* Component */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
