@@ -50,7 +50,7 @@ struct HomeSectionLayoutFactory {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        
+
         return section
     }
 
@@ -69,7 +69,7 @@ struct HomeSectionLayoutFactory {
         let section = NSCollectionLayoutSection(group: group) // 섹션의 크기는 내부 그룹이 결정
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.orthogonalScrollingBehavior = .paging
-        
+
         return section
     }
 
@@ -93,7 +93,7 @@ struct HomeSectionLayoutFactory {
 
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 17, bottom: 20, trailing: 17)
-        
+
         return section
     }
 
