@@ -68,11 +68,9 @@ final class ClubDetailViewController: UIViewController {
         }
         
         iconImageView.snp.makeConstraints {
-            //$0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.top.equalTo(self.customNavigationBar.snp.bottom)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(200)
-            
+            $0.height.equalTo(view.snp.height).multipliedBy(0.25)
         }
         
         clubInfoView.snp.makeConstraints {

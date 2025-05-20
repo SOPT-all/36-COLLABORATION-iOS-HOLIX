@@ -37,7 +37,7 @@ final class ClubInfoView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        self.backgroundColor = .red
+        self.backgroundColor = .white
         setUI()
         setStyle()
         setLayout()
@@ -81,7 +81,7 @@ final class ClubInfoView: UIView {
         
         horiziontalStackView.do {
             $0.axis = .horizontal
-            $0.alignment = .fill
+            $0.alignment = .center
             $0.distribution = .equalSpacing
             $0.spacing = 0
         }
@@ -144,11 +144,11 @@ final class ClubInfoView: UIView {
             horiziontalStackView.addArrangedSubview(verticalStackView)
             
             if i < 3 {
-                let divier = DividerView(backgroundColor: .light_blue,height: 1.0,axis: .vertical)
+                let divier = DividerView(backgroundColor: .gray02,height: 1.0,axis: .vertical)
                 horiziontalStackView.addArrangedSubview(divier)
                 
                 divier.snp.makeConstraints {
-                    $0.height.equalTo(30)
+                    $0.height.equalTo(20)
                 }
             }
         }
