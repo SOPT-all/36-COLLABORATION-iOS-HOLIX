@@ -47,7 +47,7 @@ final class MainTabBarController: UITabBarController {
             selectedImage: IconLiterals.ic_home_active.withRenderingMode(.alwaysOriginal)
         )
 
-        let clubVC = ViewController()
+        let clubVC = MyClubMainViewController()
         clubVC.tabBarItem = UITabBarItem(
             title: "내 클럽",
             image: IconLiterals.ic_my.withRenderingMode(.alwaysOriginal),
