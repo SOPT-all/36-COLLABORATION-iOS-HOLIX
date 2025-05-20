@@ -50,8 +50,16 @@ final class ClubInfoView: UIView {
     // MARK: - SetUI
     
     private func setUI() {
-        self.addSubviews(titleLabel,memberIcon,memberLabel,noticeButton,horizontalDividerView,horiziontalStackView,
-                         enterButton,speechBubble)
+        self.addSubviews(
+            titleLabel,
+            memberIcon,
+            memberLabel,
+            noticeButton,
+            horizontalDividerView,
+            horiziontalStackView,
+            enterButton,
+            speechBubble
+        )
 
     }
     
@@ -97,8 +105,6 @@ final class ClubInfoView: UIView {
             $0.backgroundColor = .clear
             $0.image = UIImage(named: "speech_bubble_ios")
         }
-
-       
     }
     
     // MARK: - SetLayout
@@ -165,8 +171,6 @@ final class ClubInfoView: UIView {
             $0.width.equalTo(233)
             $0.height.equalTo(49)
         }
-        
-        
     }
     
     private func createVerticalStackView(index: Int,imageNames:[String],labelTexts:[String]) -> UIStackView {

@@ -24,7 +24,6 @@ final class ClubDetailViewController: UIViewController {
         setUI()
         setStyle()
         setLayout()
-        self.view.backgroundColor = .clubHomeBackground
     }
     
     // MARK: - SetUI
@@ -38,6 +37,8 @@ final class ClubDetailViewController: UIViewController {
     // MARK: - SetStyle
     
     private func setStyle() {
+        self.view.backgroundColor = .clubHomeBackground
+        
         iconImageView.do {
             $0.image = UIImage(named: "img_1_ios")
             $0.contentMode = .scaleAspectFit
@@ -53,9 +54,7 @@ final class ClubDetailViewController: UIViewController {
             $0.layer.cornerRadius = 20
             $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             $0.layer.masksToBounds = true
-            
         }
-
     }
     
     // MARK: - SetLayout

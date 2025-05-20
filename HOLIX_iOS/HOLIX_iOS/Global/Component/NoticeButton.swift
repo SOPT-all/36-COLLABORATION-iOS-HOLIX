@@ -34,7 +34,11 @@ final class NoticeButton: UIButton {
     // MARK: - SetUI
     
     private func setUI() {
-        self.addSubviews(iconImageView,textLabel,chevronImageView)
+        self.addSubviews(
+            iconImageView,
+            textLabel,
+            chevronImageView
+        )
     }
     
     // MARK: - SetStyle
