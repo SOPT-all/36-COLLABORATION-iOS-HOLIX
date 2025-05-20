@@ -19,13 +19,6 @@
 		2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B869C2DCDD3D500C3ABF6 /* SnapKit */; };
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
-		2F648D5F2DDB13F200A31931 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648D5E2DDB13F200A31931 /* APIService.swift */; };
-		2F648D612DDB142900A31931 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648D602DDB142900A31931 /* HTTPMethod.swift */; };
-		2F648D632DDB143D00A31931 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648D622DDB143D00A31931 /* NetworkError.swift */; };
-		2F648D652DDB144B00A31931 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648D642DDB144B00A31931 /* Endpoint.swift */; };
-		2F648D672DDB22FA00A31931 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2F648D662DDB22FA00A31931 /* Config.xcconfig */; };
-		2F648DA02DDB27FF00A31931 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648D9F2DDB27FF00A31931 /* HomeService.swift */; };
-		2F648DA22DDB296B00A31931 /* StudyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648DA12DDB296B00A31931 /* StudyResponse.swift */; };
 		2F648C782DD998B500A31931 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C772DD998B500A31931 /* UITextField.swift */; };
 		2F648C832DD9A3FA00A31931 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C7B2DD9A3FA00A31931 /* BannerCell.swift */; };
 		2F648C842DD9A3FA00A31931 /* CategoryBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C7C2DD9A3FA00A31931 /* CategoryBoxCell.swift */; };
@@ -39,6 +32,14 @@
 		2F648C932DD9C01E00A31931 /* HomeItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C922DD9C01E00A31931 /* HomeItemResponse.swift */; };
 		2F648C952DD9C0E700A31931 /* ContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648C942DD9C0E700A31931 /* ContentCardCell.swift */; };
 		2F648CE92DD9FB3B00A31931 /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648CE72DD9FB3B00A31931 /* HomeSectionHeader.swift */; };
+		2F648E8D2DDC54B500A31931 /* StudyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E882DDC54B500A31931 /* StudyResponse.swift */; };
+		2F648E8E2DDC54B500A31931 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E822DDC54B500A31931 /* Endpoint.swift */; };
+		2F648E8F2DDC54B500A31931 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E802DDC54B500A31931 /* APIService.swift */; };
+		2F648E902DDC54B500A31931 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E842DDC54B500A31931 /* NetworkError.swift */; };
+		2F648E912DDC54B500A31931 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E832DDC54B500A31931 /* HTTPMethod.swift */; };
+		2F648E922DDC54B500A31931 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E8A2DDC54B500A31931 /* HomeService.swift */; };
+		2F648E932DDC54B500A31931 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2F648E812DDC54B500A31931 /* Config.xcconfig */; };
+		2F648E942DDC54B500A31931 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2F648E862DDC54B500A31931 /* .gitkeep */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -59,13 +60,6 @@
 		2F5B86882DCDD37F00C3ABF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F5B86892DCDD37F00C3ABF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = "<group>"; };
-		2F648D5E2DDB13F200A31931 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		2F648D602DDB142900A31931 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		2F648D622DDB143D00A31931 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		2F648D642DDB144B00A31931 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		2F648D662DDB22FA00A31931 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		2F648D9F2DDB27FF00A31931 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
-		2F648DA12DDB296B00A31931 /* StudyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyResponse.swift; sourceTree = "<group>"; };
 		2F648C772DD998B500A31931 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2F648C7B2DD9A3FA00A31931 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		2F648C7C2DD9A3FA00A31931 /* CategoryBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxCell.swift; sourceTree = "<group>"; };
@@ -79,6 +73,21 @@
 		2F648C922DD9C01E00A31931 /* HomeItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemResponse.swift; sourceTree = "<group>"; };
 		2F648C942DD9C0E700A31931 /* ContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardCell.swift; sourceTree = "<group>"; };
 		2F648CE72DD9FB3B00A31931 /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
+		2F648D5E2DDB13F200A31931 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		2F648D602DDB142900A31931 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2F648D622DDB143D00A31931 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2F648D642DDB144B00A31931 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2F648D662DDB22FA00A31931 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		2F648D9F2DDB27FF00A31931 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		2F648DA12DDB296B00A31931 /* StudyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyResponse.swift; sourceTree = "<group>"; };
+		2F648E802DDC54B500A31931 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		2F648E812DDC54B500A31931 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		2F648E822DDC54B500A31931 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2F648E832DDC54B500A31931 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2F648E842DDC54B500A31931 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2F648E862DDC54B500A31931 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		2F648E882DDC54B500A31931 /* StudyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyResponse.swift; sourceTree = "<group>"; };
+		2F648E8A2DDC54B500A31931 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +128,7 @@
 				2F5B867F2DCDD25500C3ABF6 /* .gitignore */,
 				2F5B868E2DCDD37F00C3ABF6 /* HOLIX_iOS */,
 				2F5B86682DCDD05500C3ABF6 /* Products */,
+				2F648E692DDC549800A31931 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +173,7 @@
 		2F5B868E2DCDD37F00C3ABF6 /* HOLIX_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2F648E8C2DDC54B500A31931 /* NetWork */,
 				2F648C8E2DD9A40600A31931 /* Model */,
 				2F5B86862DCDD37F00C3ABF6 /* App */,
 				2F5B869A2DCDD3AE00C3ABF6 /* Global */,
@@ -203,52 +214,6 @@
 				2F5B86992DCDD3AE00C3ABF6 /* Extension */,
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		2F648D582DDB13D900A31931 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				2F648D5E2DDB13F200A31931 /* APIService.swift */,
-				2F648D642DDB144B00A31931 /* Endpoint.swift */,
-				2F648D602DDB142900A31931 /* HTTPMethod.swift */,
-				2F648D622DDB143D00A31931 /* NetworkError.swift */,
-				2F648D662DDB22FA00A31931 /* Config.xcconfig */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		2F648D592DDB13D900A31931 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		2F648D5A2DDB13D900A31931 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				2F648DA12DDB296B00A31931 /* StudyResponse.swift */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		2F648D5B2DDB13D900A31931 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				2F648D9F2DDB27FF00A31931 /* HomeService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		2F648D5C2DDB13D900A31931 /* NetWork */ = {
-			isa = PBXGroup;
-			children = (
-				2F648D582DDB13D900A31931 /* Core */,
-				2F648D592DDB13D900A31931 /* Request */,
-				2F648D5A2DDB13D900A31931 /* Response */,
-				2F648D5B2DDB13D900A31931 /* Services */,
-			);
-			path = NetWork;
 			sourceTree = "<group>";
 		};
 		2F648C7E2DD9A3FA00A31931 /* Cell */ = {
@@ -306,6 +271,67 @@
 				2F648CE72DD9FB3B00A31931 /* HomeSectionHeader.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		2F648E692DDC549800A31931 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				2F648D9F2DDB27FF00A31931 /* HomeService.swift */,
+				2F648D5E2DDB13F200A31931 /* APIService.swift */,
+				2F648DA12DDB296B00A31931 /* StudyResponse.swift */,
+				2F648D642DDB144B00A31931 /* Endpoint.swift */,
+				2F648D602DDB142900A31931 /* HTTPMethod.swift */,
+				2F648D622DDB143D00A31931 /* NetworkError.swift */,
+				2F648D662DDB22FA00A31931 /* Config.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		2F648E852DDC54B500A31931 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2F648E802DDC54B500A31931 /* APIService.swift */,
+				2F648E812DDC54B500A31931 /* Config.xcconfig */,
+				2F648E822DDC54B500A31931 /* Endpoint.swift */,
+				2F648E832DDC54B500A31931 /* HTTPMethod.swift */,
+				2F648E842DDC54B500A31931 /* NetworkError.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2F648E872DDC54B500A31931 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				2F648E862DDC54B500A31931 /* .gitkeep */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		2F648E892DDC54B500A31931 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				2F648E882DDC54B500A31931 /* StudyResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		2F648E8B2DDC54B500A31931 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2F648E8A2DDC54B500A31931 /* HomeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2F648E8C2DDC54B500A31931 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				2F648E852DDC54B500A31931 /* Core */,
+				2F648E872DDC54B500A31931 /* Request */,
+				2F648E892DDC54B500A31931 /* Response */,
+				2F648E8B2DDC54B500A31931 /* Services */,
+			);
+			path = NetWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +409,8 @@
 				2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */,
 				2F5B86802DCDD25500C3ABF6 /* .gitignore in Resources */,
 				2F5B868F2DCDD37F00C3ABF6 /* Assets.xcassets in Resources */,
-				2F648D672DDB22FA00A31931 /* Config.xcconfig in Resources */,
+				2F648E932DDC54B500A31931 /* Config.xcconfig in Resources */,
+				2F648E942DDC54B500A31931 /* .gitkeep in Resources */,
 				2F5B86912DCDD37F00C3ABF6 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,8 +443,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F648DA02DDB27FF00A31931 /* HomeService.swift in Sources */,
-				2F648D5F2DDB13F200A31931 /* APIService.swift in Sources */,
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F648C8F2DD9A40600A31931 /* BannerResponse.swift in Sources */,
@@ -427,11 +452,16 @@
 				2F648C832DD9A3FA00A31931 /* BannerCell.swift in Sources */,
 				2F648C842DD9A3FA00A31931 /* CategoryBoxCell.swift in Sources */,
 				2F648C852DD9A3FA00A31931 /* SearchCategoryCell.swift in Sources */,
+				2F648E8D2DDC54B500A31931 /* StudyResponse.swift in Sources */,
+				2F648E8E2DDC54B500A31931 /* Endpoint.swift in Sources */,
+				2F648E8F2DDC54B500A31931 /* APIService.swift in Sources */,
+				2F648E902DDC54B500A31931 /* NetworkError.swift in Sources */,
+				2F648E912DDC54B500A31931 /* HTTPMethod.swift in Sources */,
+				2F648E922DDC54B500A31931 /* HomeService.swift in Sources */,
 				2F648CE92DD9FB3B00A31931 /* HomeSectionHeader.swift in Sources */,
 				2F648C862DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift in Sources */,
 				2F648C872DD9A3FA00A31931 /* HomeViewController.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
-				2F648DA22DDB296B00A31931 /* StudyResponse.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
@@ -442,10 +472,7 @@
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
-				2F648D652DDB144B00A31931 /* Endpoint.swift in Sources */,
-				2F648D612DDB142900A31931 /* HTTPMethod.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
-				2F648D632DDB143D00A31931 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +492,7 @@
 /* Begin XCBuildConfiguration section */
 		2F5B867B2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F648D662DDB22FA00A31931 /* Config.xcconfig */;
+			baseConfigurationReference = 2F648E812DDC54B500A31931 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -498,7 +525,7 @@
 		};
 		2F5B867C2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F648D662DDB22FA00A31931 /* Config.xcconfig */;
+			baseConfigurationReference = 2F648E812DDC54B500A31931 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,7 +558,7 @@
 		};
 		2F5B867D2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F648D662DDB22FA00A31931 /* Config.xcconfig */;
+			baseConfigurationReference = 2F648E812DDC54B500A31931 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -596,7 +623,7 @@
 		};
 		2F5B867E2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F648D662DDB22FA00A31931 /* Config.xcconfig */;
+			baseConfigurationReference = 2F648E812DDC54B500A31931 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
