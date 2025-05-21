@@ -191,12 +191,20 @@
 		4646CA842DD6FDA400E21D3D /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				465E850F2DDD5BBD00FF05BF /* ChattingCell */,
 				4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */,
-				4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */,
-				4646CB602DD735EF00E21D3D /* ChattingCell.swift */,
 				4646CB622DD7397900E21D3D /* ChattingMockData.swift */,
 			);
 			path = Chatting;
+			sourceTree = "<group>";
+		};
+		465E850F2DDD5BBD00FF05BF /* ChattingCell */ = {
+			isa = PBXGroup;
+			children = (
+				4646CB602DD735EF00E21D3D /* ChattingCell.swift */,
+				4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */,
+			);
+			path = ChattingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

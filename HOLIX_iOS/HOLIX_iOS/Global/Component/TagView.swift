@@ -10,16 +10,15 @@ import UIKit
 import SnapKit
 import Then
 
-
 final class TagListView: UIView {
+    
+    // MARK: - Properties
+    var onTap: (() -> Void)?
     
     // MARK: - UI Components
     
     private let tagButton = UIButton()
-      
-    
-    var onTap: (() -> Void)?
-    
+  
     // MARK: - Lifecycle
 
     init(title: String) {

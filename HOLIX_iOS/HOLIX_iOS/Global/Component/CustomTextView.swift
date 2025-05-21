@@ -12,6 +12,13 @@ import Then
 
 final class CustomTextView: UIView {
     
+    // MARK: - Properties
+    
+    private var plusButtonTopConstraint: Constraint?
+    private var sendButtonTopConstraint: Constraint?
+    private var textViewHeightConstraint: Constraint?
+    var onHeightChange: ((CGFloat) -> Void)?
+   
     // MARK: - UI Components
     
     private let plusButton = UIButton()
@@ -19,13 +26,6 @@ final class CustomTextView: UIView {
     private let sendButton = UIButton()
     private let tagScrollView = UIScrollView()
     private let tagStackView = UIStackView()
-    
-    // MARK: - Properties
-    
-    private var plusButtonTopConstraint: Constraint?
-    private var sendButtonTopConstraint: Constraint?
-    private var textViewHeightConstraint: Constraint?
-    var onHeightChange: ((CGFloat) -> Void)?
     
     // MARK: - Lifecycle
     
@@ -54,7 +54,7 @@ final class CustomTextView: UIView {
     private func setStyle() {
         
         plusButton.do {
-            $0.setImage(UIImage(named: "ic_add_circle_ios"), for: .normal)
+            $0.setImage(.icAddCircleIos, for: .normal)
         }
         
         textView.do {
@@ -68,15 +68,13 @@ final class CustomTextView: UIView {
         }
         
         sendButton.do {
-            $0.setImage(UIImage(named: "ic_send_ios"), for: .normal)
+            $0.setImage(.icSendIos, for: .normal)
         }
         
         tagScrollView.do {
             $0.backgroundColor = .clear
             $0.showsVerticalScrollIndicator = true
             $0.showsHorizontalScrollIndicator = true
-            $0.alwaysBounceVertical = false
-            $0.alwaysBounceHorizontal = true
             $0.isScrollEnabled = true
             $0.bounces = true
             $0.clipsToBounds = true
@@ -131,7 +129,6 @@ final class CustomTextView: UIView {
             $0.height.equalTo(26)
         }
     }
-
 }
 
 // MARK: - UITextViewDelegate

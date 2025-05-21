@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import Then
 
-
 final class BubbleLabelView: UIView {
     
     // MARK: - UI Components
@@ -24,7 +23,6 @@ final class BubbleLabelView: UIView {
         setUI()
         setStyle(isSender: isSender)
         setLayout()
-        
     }
 
     required init?(coder: NSCoder) {
@@ -39,7 +37,7 @@ final class BubbleLabelView: UIView {
     
     // MARK: - SetStyle
     
-    private func setStyle(isSender: Bool) {
+     func setStyle(isSender: Bool) {
         
         messageLabel.do {
             $0.numberOfLines = 0
@@ -54,9 +52,7 @@ final class BubbleLabelView: UIView {
         layer.maskedCorners = isSender
             ? [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner]
             : [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner]
-
     }
-    
     
     // MARK: - SetLayout
     

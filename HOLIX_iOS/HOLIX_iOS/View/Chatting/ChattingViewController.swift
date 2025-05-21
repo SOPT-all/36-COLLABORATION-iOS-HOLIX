@@ -12,17 +12,20 @@ import Then
 
 final class ChattingViewController: UIViewController {
     
-    // MARK: - UI Components
-   
-    private let customNavigationBar = CustomNavigationBar(titleLabel:"iOS 개발자로써 성공하고 싶은 사람들" ,hasMenuButton: true)
-    private var chattingList = DummyChattingData.generate()
-    private let tableView = UITableView()
-    private let textView = CustomTextView()
-    
     // MARK: - Properties
     
     private var customTextViewHeightConstraint: Constraint?
     private var customTextViewBottomConstraint: Constraint?
+    
+    // MARK: - UI Components
+   
+    private let customNavigationBar = CustomNavigationBar(
+        titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
+        hasMenuButton: true
+    )
+    private var chattingList = DummyChattingData.generate()
+    private let tableView = UITableView()
+    private let textView = CustomTextView()
     
     // MARK: - Lifecycle
     
@@ -32,9 +35,8 @@ final class ChattingViewController: UIViewController {
         setStyle()
         setLayout()
         setupTableView()
-        setupScrollView()
+        tagScrollView()
         setupDismissKeyboardGesture()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,12 +49,15 @@ final class ChattingViewController: UIViewController {
         removeKeyboardNotifications()
     }
     
-    
     // MARK: - SetUI
     
     private func setUI() {
-        self.view.addSubviews(customNavigationBar,tableView,textView)
-
+        self.view
+            .addSubviews(
+                customNavigationBar,
+                tableView,
+                textView
+            )
     }
     
     // MARK: - SetStyle
@@ -112,7 +117,7 @@ final class ChattingViewController: UIViewController {
         tableView.register(ChattingCell.self, forCellReuseIdentifier: "ChattingCell")
     }
     
-    private func setupScrollView() {
+    private func tagScrollView() {
         textView.addTag(title: "Swift")
         textView.addTag(title: "UIKit")
         textView.addTag(title: "1234")
@@ -131,7 +136,8 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as! ChattingCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else { return UITableViewCell() }
+        
         let chat = chattingList[indexPath.row]
         cell.configure(
             with: chat.contents,
