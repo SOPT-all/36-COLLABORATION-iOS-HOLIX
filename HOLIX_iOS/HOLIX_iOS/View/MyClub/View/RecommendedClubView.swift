@@ -86,10 +86,12 @@ final class RecommendedClubView: UIView {
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(CGFloat(itemData.count) * cellHeight)
         }
+
     }
 }
 
 // MARK: - UITableView Delegate & DataSource
+
 extension RecommendedClubView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight

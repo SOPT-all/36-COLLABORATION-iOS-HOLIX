@@ -107,6 +107,7 @@ final class MyClubCell: UICollectionViewCell {
     }
 }
 
+// MARK: - Configure
 
 extension MyClubCell {
     func dataBind(_ itemData: MyClubModel) {
