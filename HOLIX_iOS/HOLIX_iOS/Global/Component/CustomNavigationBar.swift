@@ -41,7 +41,7 @@ final class CustomNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
+
     init(titleLabel: String = "", hasMenuButton: Bool, tintColor: UIColor = .black) {
 
         super.init(frame: .zero)
