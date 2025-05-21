@@ -60,8 +60,8 @@ final class MyClubCell: UICollectionViewCell {
         }
 
         pinButton.do {
-            $0.setImage(UIImage(systemName: "ic_pin_ios"), for: .normal)
-            $0.setImage(UIImage(systemName: "ic_filled_pin_ios"), for: .selected)
+            $0.setImage(IconLiterals.ic_pin, for: .normal)
+            $0.setImage(IconLiterals.ic_pin_fillied_active, for: .selected)
         }
 
         titleLabel.do {
