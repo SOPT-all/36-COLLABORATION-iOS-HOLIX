@@ -33,7 +33,6 @@ struct HomeSectionLayoutFactory {
     }
 
     private static func makeSearchCategorySection() -> NSCollectionLayoutSection {
-
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
@@ -51,7 +50,6 @@ struct HomeSectionLayoutFactory {
     }
 
     private static func makeBannerSection() -> NSCollectionLayoutSection {
-
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
@@ -70,7 +68,6 @@ struct HomeSectionLayoutFactory {
     }
 
     private static func makeCategoryBoxMenuSection() -> NSCollectionLayoutSection {
-
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0 / 4.0),
             heightDimension: .absolute(72)
@@ -94,7 +91,6 @@ struct HomeSectionLayoutFactory {
     }
 
     private static func makePopularStudySection() -> NSCollectionLayoutSection {
-
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)

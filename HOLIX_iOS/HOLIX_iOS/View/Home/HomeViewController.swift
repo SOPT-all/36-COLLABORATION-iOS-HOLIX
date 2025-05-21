@@ -76,6 +76,7 @@ final class HomeViewController: UIViewController {
             $0.delegate = self
             $0.dataSource = self
             $0.showsHorizontalScrollIndicator = false
+            $0.showsVerticalScrollIndicator = false
         }
 
         bannerPageLabel.do {
@@ -188,13 +189,10 @@ final class HomeViewController: UIViewController {
     }
 }
 
-
 // MARK: - UICollectionView Delegate & DataSource
 
 extension HomeViewController: UICollectionViewDelegate {
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
         // Top 헤더 숨김 처리
         let offsetY = scrollView.contentOffset.y
         setTopHeader(hidden: offsetY > hideThreshold)
@@ -225,7 +223,6 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return HomeSectionType.allCases.count
     }

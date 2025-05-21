@@ -40,6 +40,9 @@
 		2F648E922DDC54B500A31931 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648E8A2DDC54B500A31931 /* HomeService.swift */; };
 		2F648E932DDC54B500A31931 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2F648E812DDC54B500A31931 /* Config.xcconfig */; };
 		2F648E942DDC54B500A31931 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2F648E862DDC54B500A31931 /* .gitkeep */; };
+		2F648EEC2DDDB62800A31931 /* SearchBarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648EEA2DDDB62800A31931 /* SearchBarHeaderView.swift */; };
+		2F648EF02DDDB62D00A31931 /* CategoryTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648EED2DDDB62D00A31931 /* CategoryTabBarCell.swift */; };
+		2F648EF12DDDB62D00A31931 /* CategoryTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648EEE2DDDB62D00A31931 /* CategoryTabBarView.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -88,6 +91,9 @@
 		2F648E862DDC54B500A31931 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		2F648E882DDC54B500A31931 /* StudyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyResponse.swift; sourceTree = "<group>"; };
 		2F648E8A2DDC54B500A31931 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		2F648EEA2DDDB62800A31931 /* SearchBarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHeaderView.swift; sourceTree = "<group>"; };
+		2F648EED2DDDB62D00A31931 /* CategoryTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabBarCell.swift; sourceTree = "<group>"; };
+		2F648EEE2DDDB62D00A31931 /* CategoryTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabBarView.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -96,16 +102,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F5783912DD43A880075A288 /* CategoryTabBar */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CategoryTabBar;
-			sourceTree = "<group>";
-		};
-		2F648EDF2DDC85A500A31931 /* Component */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Component;
-			sourceTree = "<group>";
-		};
 		B06030202DD2660C002205F5 /* Font */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Font;
@@ -191,7 +187,7 @@
 		2F5B86982DCDD3AE00C3ABF6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				2F5783912DD43A880075A288 /* CategoryTabBar */,
+				2F648EEF2DDDB62D00A31931 /* CategoryTabBar */,
 				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
 			);
 			path = Component;
@@ -243,7 +239,7 @@
 		2F648C822DD9A3FA00A31931 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2F648EDF2DDC85A500A31931 /* Component */,
+				2F648EEB2DDDB62800A31931 /* Component */,
 				2F648CE82DD9FB3B00A31931 /* Header */,
 				2F648C7E2DD9A3FA00A31931 /* Cell */,
 				2F648C802DD9A3FA00A31931 /* Layout */,
@@ -340,6 +336,23 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		2F648EEB2DDDB62800A31931 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2F648EEA2DDDB62800A31931 /* SearchBarHeaderView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		2F648EEF2DDDB62D00A31931 /* CategoryTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2F648EED2DDDB62D00A31931 /* CategoryTabBarCell.swift */,
+				2F648EEE2DDDB62D00A31931 /* CategoryTabBarView.swift */,
+			);
+			path = CategoryTabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,8 +370,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F5783912DD43A880075A288 /* CategoryTabBar */,
-				2F648EDF2DDC85A500A31931 /* Component */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
@@ -465,11 +476,14 @@
 				2F648E902DDC54B500A31931 /* NetworkError.swift in Sources */,
 				2F648E912DDC54B500A31931 /* HTTPMethod.swift in Sources */,
 				2F648E922DDC54B500A31931 /* HomeService.swift in Sources */,
+				2F648EEC2DDDB62800A31931 /* SearchBarHeaderView.swift in Sources */,
 				2F648CE92DD9FB3B00A31931 /* HomeSectionHeader.swift in Sources */,
 				2F648C862DD9A3FA00A31931 /* HomeSectionLayoutFactory.swift in Sources */,
 				2F648C872DD9A3FA00A31931 /* HomeViewController.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
+				2F648EF02DDDB62D00A31931 /* CategoryTabBarCell.swift in Sources */,
+				2F648EF12DDDB62D00A31931 /* CategoryTabBarView.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				2F648C912DD9A99E00A31931 /* CategoryBoxMenuResponse.swift in Sources */,
