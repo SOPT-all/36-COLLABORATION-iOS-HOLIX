@@ -35,6 +35,7 @@ final class HomeViewController: UIViewController {
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
     )
+    private let homeRefreshControl = UIRefreshControl()
     private let topSearchHeaderView = SearchBarHeaderView()
     private let categoryTopTabBar = CategoryTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
     private let bannerPageLabel = UILabel()
@@ -84,6 +85,7 @@ final class HomeViewController: UIViewController {
             $0.dataSource = self
             $0.showsHorizontalScrollIndicator = false
             $0.showsVerticalScrollIndicator = false
+            $0.refreshControl = homeRefreshControl
         }
 
         bannerPageLabel.do {
@@ -99,6 +101,10 @@ final class HomeViewController: UIViewController {
         bannerPageIndicatorImageView.do {
             $0.contentMode = .scaleAspectFit
             $0.image = bannerPageIndicatorImage[0]
+        }
+
+        homeRefreshControl.do {
+            $0.addTarget(self, action: #selector(refreshControlTriggered) , for: .valueChanged)
         }
     }
 
@@ -197,14 +203,19 @@ final class HomeViewController: UIViewController {
 
     //MARK: API
 
+    @objc private func refreshControlTriggered() {
+        Task {
+            await fetchHomeData()
+        }
+    }
+
     private func fetchHomeData() async {
         do {
             let response = try await HomeService.shared.getMain()
-
             self.studyData = response
-
             DispatchQueue.main.async {
                 self.homeCollectionView.reloadData()
+                self.homeRefreshControl.endRefreshing()
             }
         } catch {
             print("홈 API 호출 실패: \(error)")
