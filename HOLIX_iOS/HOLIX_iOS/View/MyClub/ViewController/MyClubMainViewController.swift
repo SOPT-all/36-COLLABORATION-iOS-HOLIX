@@ -31,6 +31,7 @@ class MyClubMainViewController: UIViewController {
         setUp()
         setStyle()
         setLayout()
+        fetchClubData()
     }
 
 
@@ -77,5 +78,26 @@ class MyClubMainViewController: UIViewController {
             $0.bottom.equalToSuperview()
         }
     }
+
+    // MARK: - FetchData
+
+    private func fetchClubData() {
+        Task {
+            do {
+                let response = try await ClubService.shared.getClub()
+                let clubs = response.data.clubs
+
+                self.myClub.updateData(clubs)
+                let height = self.myClub.calculatedHeight()
+                self.myClub.snp.updateConstraints {
+                    $0.height.equalTo(height)
+                }
+            } catch {
+                print("클럽 데이터 불러오기 실패: \(error)")
+            }
+        }
+    }
+
+
 }
 
