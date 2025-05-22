@@ -8,9 +8,9 @@
 import Foundation
 
 final class ClubService {
-    
+
     static let shared = ClubService()
-    
+
     func getClub() async throws -> ClubResponse {
         return try await APIService.shared.request(
             path: Endpoint.Club.getMyClubs.path,
