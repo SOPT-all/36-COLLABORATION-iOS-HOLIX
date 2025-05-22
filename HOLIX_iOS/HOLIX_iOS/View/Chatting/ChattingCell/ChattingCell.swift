@@ -20,11 +20,12 @@ class ChattingCell: UITableViewCell {
     // MARK: - Properties
     
     private var isSender = true
+    private var profileImageURL: String?
     
     // MARK: - UI Components
     
     private lazy var bubbleView = BubbleLabelView(isSender: true)
-    private let profileImageView = UIImageView()
+    private var profileImageView = UIImageView()
     private let nicknameLabel = UILabel()
     private let introductionLabel = UILabel()
     private let infoStackView = UIStackView()
@@ -122,7 +123,9 @@ extension ChattingCell {
         with message: String,
         nickname: String? = nil,
         profileImage: String? = nil,
-        isSender: Bool
+        isSender: Bool,
+        introduction: String? = nil,
+        createdAt: String
     ) {
         self.isSender = isSender
         bubbleView.configure(with: message)
@@ -130,6 +133,7 @@ extension ChattingCell {
 
         profileImageView.isHidden = isSender
         infoStackView.isHidden = isSender
+        profileImageURL = profileImage
 
         bubbleView.snp.remakeConstraints {
             $0.top.equalTo(isSender ? contentView.snp.top : nicknameLabel.snp.bottom).offset(4)
@@ -152,11 +156,30 @@ extension ChattingCell {
             $0.bottom.equalToSuperview().inset(4)
         }
 
-        timeLabel.text = "오후 19:22"
+        timeLabel.text = createdAt
 
         if !isSender {
+            setProfileImage(with: profileImageURL ?? "")
             profileImageView.image = UIImage(named: profileImage ?? "")
             nicknameLabel.text = nickname
+            introductionLabel.text = introduction
+        }
+    }
+    
+    func setProfileImage(with url: String) {
+        if let url = URL(string: url) {
+            Task {
+                do {
+                    let (data, _) = try await URLSession.shared.data(from: url)
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self.profileImageView.image = image
+                        }
+                    }
+                } catch {
+                    print("이미지 로딩 실패: \(error)")
+                }
+            }
         }
     }
 }

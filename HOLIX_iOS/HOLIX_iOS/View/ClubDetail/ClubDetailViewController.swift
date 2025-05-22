@@ -24,6 +24,7 @@ final class ClubDetailViewController: UIViewController {
         setUI()
         setStyle()
         setLayout()
+        loadClubInfo(clubId: "3")
     }
 
     // MARK: - SetUI
@@ -41,12 +42,12 @@ final class ClubDetailViewController: UIViewController {
 
         iconImageView.do {
             $0.image = UIImage(named: "img_1_ios")
-            $0.contentMode = .scaleAspectFit
+            $0.contentMode = .scaleAspectFill
             $0.backgroundColor = .clubHomeBackground
         }
 
         customNavigationBar.do {
-            $0.backgroundColor = .clubHomeBackground
+            $0.backgroundColor = .clear
             $0.tintColor = .white
         }
 
@@ -67,7 +68,7 @@ final class ClubDetailViewController: UIViewController {
         }
 
         iconImageView.snp.makeConstraints {
-            $0.top.equalTo(self.customNavigationBar.snp.bottom)
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(view.snp.height).multipliedBy(0.25)
         }
@@ -75,6 +76,55 @@ final class ClubDetailViewController: UIViewController {
         clubInfoView.snp.makeConstraints {
             $0.top.equalTo(iconImageView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+}
+
+
+extension ClubDetailViewController {
+    
+    func fetchClubDetail(clubId: String) async throws -> ClubDetailResponse? {
+        do {
+            let detail = try await ClubChattingService.shared.getClubDetail(clubId: clubId)
+            print("클럽 정보 조회 성공: \(detail)")
+            return detail
+        } catch {
+            print("클럽 정보 조회 실패: \(error)")
+            return nil
+        }
+    }
+    
+    func loadClubInfo(clubId: String) {
+        Task {
+            do {
+                guard let detail = try await fetchClubDetail(clubId: clubId) else {
+                    print("클럽 정보가 없습니다")
+                    return
+                }
+                updateUI(with: detail)
+            } catch {
+                print("에러: \(error)")
+            }
+        }
+    }
+
+    
+    func updateUI(with detail: ClubDetailResponse) {
+        clubInfoView.configure(with: detail)
+        
+        if let url = URL(string: detail.data.url) {
+            Task {
+                do {
+                    let (data, _) = try await URLSession.shared.data(from: url)
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self.iconImageView.image = image
+                        }
+                    }
+                } catch {
+                    print("이미지 로딩 실패: \(error)")
+                }
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ final class NoticeButton: UIButton {
     // MARK: - UI Components
 
     private let iconImageView = UIImageView()
-    private let textLabel = UILabel()
+    var textLabel = UILabel()
     private let chevronImageView = UIImageView()
 
     // MARK: - LifeCycle
