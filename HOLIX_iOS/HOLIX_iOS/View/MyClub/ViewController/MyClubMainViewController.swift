@@ -59,7 +59,8 @@ class MyClubMainViewController: UIViewController {
     func setLayout() {
 
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
 
         contentView.snp.makeConstraints {
