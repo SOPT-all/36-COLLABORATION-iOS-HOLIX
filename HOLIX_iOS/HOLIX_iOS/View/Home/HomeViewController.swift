@@ -119,7 +119,8 @@ final class HomeViewController: UIViewController {
 
         homeCollectionView.snp.makeConstraints {
             $0.top.equalTo(categoryTopTabBar.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 
@@ -127,7 +128,6 @@ final class HomeViewController: UIViewController {
 
     private func setRegister() {
         homeCollectionView.do {
-            $0.register(SearchCategoryCell.self, forCellWithReuseIdentifier: SearchCategoryCell.identifier)
             $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
             $0.register(CategoryBoxCell.self, forCellWithReuseIdentifier: CategoryBoxCell.identifier)
             $0.register(ContentCardCell.self, forCellWithReuseIdentifier: ContentCardCell.identifier)
@@ -260,6 +260,18 @@ extension HomeViewController: UICollectionViewDataSource {
         case .popularStudy:
             guard let data = studyData else { return 0 }
             return data.passionateStudies.count
+        case .bookclubAndSeminar:
+            guard let data = studyData else { return 0 }
+            return data.insightStudies.count
+        case .newlyUploadedLecture:
+            guard let data = studyData else { return 0 }
+            return data.newStudies.count
+        case .recommendedMentoring:
+            guard let data = studyData else { return 0 }
+            return data.recommendedStudies.count
+        case .freeCommunity:
+            guard let data = studyData else { return 0 }
+            return data.freeStudies.count
         }
     }
 
@@ -295,6 +307,43 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             cell.configure(with: item)
             return cell
+        case .bookclubAndSeminar:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.insightStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .newlyUploadedLecture:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.newStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .recommendedMentoring:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.recommendedStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .freeCommunity:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.freeStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+
         }
     }
 
@@ -325,6 +374,62 @@ extension HomeViewController: UICollectionViewDataSource {
                 }
                 guard let data = studyData else { return header }
                 header.configure(title: data.passionateStudies.first?.category ?? "")
+                return header
+            }
+        case .bookclubAndSeminar:
+            if kind == HomeSectionHeader.elementKind {
+                guard let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: HomeSectionHeader.identifier,
+                    for: indexPath
+                ) as? HomeSectionHeader else {
+                    assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
+                    return UICollectionReusableView()
+                }
+                guard let data = studyData else { return header }
+                header.configure(title: data.insightStudies.first?.category ?? "")
+                return header
+            }
+        case .newlyUploadedLecture:
+            if kind == HomeSectionHeader.elementKind {
+                guard let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: HomeSectionHeader.identifier,
+                    for: indexPath
+                ) as? HomeSectionHeader else {
+                    assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
+                    return UICollectionReusableView()
+                }
+                guard let data = studyData else { return header }
+                header.configure(title: data.newStudies.first?.category ?? "")
+                return header
+            }
+        case .recommendedMentoring:
+            if kind == HomeSectionHeader.elementKind {
+                guard let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: HomeSectionHeader.identifier,
+                    for: indexPath
+                ) as? HomeSectionHeader else {
+                    assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
+                    return UICollectionReusableView()
+                }
+                guard let data = studyData else { return header }
+                header.configure(title: data.recommendedStudies.first?.category ?? "")
+                return header
+            }
+        case .freeCommunity:
+            if kind == HomeSectionHeader.elementKind {
+                guard let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: HomeSectionHeader.identifier,
+                    for: indexPath
+                ) as? HomeSectionHeader else {
+                    assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
+                    return UICollectionReusableView()
+                }
+                guard let data = studyData else { return header }
+                header.configure(title: data.freeStudies.first?.category ?? "")
                 return header
             }
         }
