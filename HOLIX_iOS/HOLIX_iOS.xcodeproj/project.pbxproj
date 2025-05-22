@@ -19,12 +19,6 @@
 		2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B869C2DCDD3D500C3ABF6 /* SnapKit */; };
 		2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5B86A12DCDD3E000C3ABF6 /* Then */; };
 		2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B86A92DCDEE0000C3ABF6 /* .swiftformat */; };
-		2F648C862DD9A3FA00A31931 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		2F648C872DD9A3FA00A31931 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		2F648CE92DD9FB3B00A31931 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		2F648EEC2DDDB62800A31931 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		2F648EF02DDDB62D00A31931 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		2F648EF12DDDB62D00A31931 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		2F648F5D2DDE1ACD00A31931 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2F648F552DDE1ACD00A31931 /* .gitkeep */; };
 		2F648F5E2DDE1ACD00A31931 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F512DDE1ACD00A31931 /* Endpoint.swift */; };
 		2F648F5F2DDE1ACD00A31931 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F4F2DDE1ACD00A31931 /* APIService.swift */; };
@@ -51,6 +45,10 @@
 		2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */; };
 		2FBBF6092DDEFECF00862C0D /* TopSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6082DDEFECF00862C0D /* TopSearchHeaderView.swift */; };
 		2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2FBBF60B2DDF055800862C0D /* Kingfisher */; };
+		2FBBF6102DDF0D3500862C0D /* ClubDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF60D2DDF0D3500862C0D /* ClubDetailViewController.swift */; };
+		2FBBF6112DDF0D3500862C0D /* ClubInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF60E2DDF0D3500862C0D /* ClubInfoView.swift */; };
+		2FBBF6152DDF0D3B00862C0D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6122DDF0D3B00862C0D /* MainTabBarController.swift */; };
+		2FBBF6162DDF0D3B00862C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6132DDF0D3B00862C0D /* ViewController.swift */; };
 		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
 		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB602DD735EF00E21D3D /* ChattingCell.swift */; };
@@ -104,6 +102,10 @@
 		2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionLayoutFactory.swift; sourceTree = "<group>"; };
 		2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2FBBF6082DDEFECF00862C0D /* TopSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchHeaderView.swift; sourceTree = "<group>"; };
+		2FBBF60D2DDF0D3500862C0D /* ClubDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailViewController.swift; sourceTree = "<group>"; };
+		2FBBF60E2DDF0D3500862C0D /* ClubInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubInfoView.swift; sourceTree = "<group>"; };
+		2FBBF6122DDF0D3B00862C0D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2FBBF6132DDF0D3B00862C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabelView.swift; sourceTree = "<group>"; };
 		4646CB602DD735EF00E21D3D /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
@@ -120,11 +122,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F5783552DD376030075A288 /* Base */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Base;
-			sourceTree = "<group>";
-		};
 		2F5783912DD43A880075A288 /* TopTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopTabBar;
@@ -133,11 +130,6 @@
 		2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CategoryTabBar;
-			sourceTree = "<group>";
-		};
-		46EAB1EF2DD5C9060084C5A8 /* ClubDetail */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ClubDetail;
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -205,9 +197,9 @@
 			children = (
 				2FBBF54B2DDEF4FB00862C0D /* MyClub */,
 				4646CA842DD6FDA400E21D3D /* Chatting */,
-				46EAB1EF2DD5C9060084C5A8 /* ClubDetail */,
+				2FBBF60F2DDF0D3500862C0D /* ClubDetail */,
 				2FBBF6002DDEFEC000862C0D /* Home */,
-				2F5783552DD376030075A288 /* Base */,
+				2FBBF6142DDF0D3B00862C0D /* Base */,
 				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
@@ -411,6 +403,24 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		2FBBF60F2DDF0D3500862C0D /* ClubDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF60D2DDF0D3500862C0D /* ClubDetailViewController.swift */,
+				2FBBF60E2DDF0D3500862C0D /* ClubInfoView.swift */,
+			);
+			path = ClubDetail;
+			sourceTree = "<group>";
+		};
+		2FBBF6142DDF0D3B00862C0D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF6122DDF0D3B00862C0D /* MainTabBarController.swift */,
+				2FBBF6132DDF0D3B00862C0D /* ViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		4646CA842DD6FDA400E21D3D /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,10 +457,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F5783552DD376030075A288 /* Base */,
 				2F5783912DD43A880075A288 /* TopTabBar */,
 				2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */,
-				46EAB1EF2DD5C9060084C5A8 /* ClubDetail */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
@@ -548,22 +556,18 @@
 				2FBBF5582DDEF54B00862C0D /* RecommendedClubModel.swift in Sources */,
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
-				2F648C872DD9A3FA00A31931 /* (null) in Sources */,
-				2F648C862DD9A3FA00A31931 /* (null) in Sources */,
-				2F648CE92DD9FB3B00A31931 /* (null) in Sources */,
-				2F648EEC2DDDB62800A31931 /* (null) in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
 				2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */,
 				2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */,
 				2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */,
+				2FBBF6152DDF0D3B00862C0D /* MainTabBarController.swift in Sources */,
+				2FBBF6162DDF0D3B00862C0D /* ViewController.swift in Sources */,
 				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
 				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
 				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
-				2F648EF02DDDB62D00A31931 /* (null) in Sources */,
-				2F648EF12DDDB62D00A31931 /* (null) in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
@@ -589,6 +593,8 @@
 				2F648F632DDE1ACD00A31931 /* StudyResponse.swift in Sources */,
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
+				2FBBF6102DDF0D3500862C0D /* ClubDetailViewController.swift in Sources */,
+				2FBBF6112DDF0D3500862C0D /* ClubInfoView.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
 				4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */,
@@ -612,6 +618,7 @@
 /* Begin XCBuildConfiguration section */
 		2F5B867B2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -644,6 +651,7 @@
 		};
 		2F5B867C2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -676,6 +684,7 @@
 		};
 		2F5B867D2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -740,6 +749,7 @@
 		};
 		2F5B867E2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
