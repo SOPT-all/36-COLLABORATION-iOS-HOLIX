@@ -52,6 +52,7 @@
 		2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */; };
 		2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */; };
 		2FBBF6092DDEFECF00862C0D /* TopSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6082DDEFECF00862C0D /* TopSearchHeaderView.swift */; };
+		2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2FBBF60B2DDF055800862C0D /* Kingfisher */; };
 		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
 		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB602DD735EF00E21D3D /* ChattingCell.swift */; };
@@ -155,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */,
 				2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */,
 				2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */,
 			);
@@ -469,6 +471,7 @@
 			packageProductDependencies = (
 				2F5B869C2DCDD3D500C3ABF6 /* SnapKit */,
 				2F5B86A12DCDD3E000C3ABF6 /* Then */,
+				2FBBF60B2DDF055800862C0D /* Kingfisher */,
 			);
 			productName = HOLIX_iOS;
 			productReference = 2F5B86672DCDD05500C3ABF6 /* HOLIX_iOS.app */;
@@ -501,6 +504,7 @@
 			packageReferences = (
 				2F5B869B2DCDD3D500C3ABF6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */,
+				2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F5B86682DCDD05500C3ABF6 /* Products */;
@@ -847,6 +851,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -859,6 +871,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		2FBBF60B2DDF055800862C0D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
