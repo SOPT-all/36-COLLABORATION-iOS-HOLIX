@@ -34,7 +34,6 @@
 		2F648F632DDE1ACD00A31931 /* StudyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F572DDE1ACD00A31931 /* StudyResponse.swift */; };
 		2F648F682DDE1B3900A31931 /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F642DDE1B3900A31931 /* BannerResponse.swift */; };
 		2F648F692DDE1B3900A31931 /* CategoryBoxMenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */; };
-		2F648F6A2DDE1B3900A31931 /* HomeItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F662DDE1B3900A31931 /* HomeItemResponse.swift */; };
 		2F648F6C2DDE1B7F00A31931 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F6B2DDE1B7F00A31931 /* UITextField.swift */; };
 		2FBBF54C2DDEF4FB00862C0D /* RecommendedClubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5442DDEF4FB00862C0D /* RecommendedClubCell.swift */; };
 		2FBBF54D2DDEF4FB00862C0D /* RecommendedClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5472DDEF4FB00862C0D /* RecommendedClubView.swift */; };
@@ -47,7 +46,6 @@
 		2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */; };
 		2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */; };
 		2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */; };
-		2FBBF6042DDEFEC000862C0D /* SearchCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F82DDEFEC000862C0D /* SearchCategoryCell.swift */; };
 		2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FB2DDEFEC000862C0D /* HomeSectionHeader.swift */; };
 		2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */; };
 		2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */; };
@@ -90,7 +88,6 @@
 		2F648F592DDE1ACD00A31931 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		2F648F642DDE1B3900A31931 /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
 		2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxMenuResponse.swift; sourceTree = "<group>"; };
-		2F648F662DDE1B3900A31931 /* HomeItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemResponse.swift; sourceTree = "<group>"; };
 		2F648F6B2DDE1B7F00A31931 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2FBBF5432DDEF4FB00862C0D /* MyClubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubCell.swift; sourceTree = "<group>"; };
 		2FBBF5442DDEF4FB00862C0D /* RecommendedClubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubCell.swift; sourceTree = "<group>"; };
@@ -103,7 +100,6 @@
 		2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxCell.swift; sourceTree = "<group>"; };
 		2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardCell.swift; sourceTree = "<group>"; };
-		2FBBF5F82DDEFEC000862C0D /* SearchCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryCell.swift; sourceTree = "<group>"; };
 		2FBBF5FB2DDEFEC000862C0D /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
 		2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionLayoutFactory.swift; sourceTree = "<group>"; };
 		2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -267,13 +263,6 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		2F648EEB2DDDB62800A31931 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
-			sourceTree = "<group>";
-		};
 		2F648F542DDE1ACD00A31931 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				2F648F572DDE1ACD00A31931 /* StudyResponse.swift */,
-				2F648EEB2DDDB62800A31931 /* Component */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -329,7 +317,6 @@
 				2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */,
 				2F648F642DDE1B3900A31931 /* BannerResponse.swift */,
 				2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */,
-				2F648F662DDE1B3900A31931 /* HomeItemResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,7 +371,6 @@
 				2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */,
 				2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */,
 				2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */,
-				2FBBF5F82DDEFEC000862C0D /* SearchCategoryCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -570,7 +556,6 @@
 				2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */,
 				2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */,
 				2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */,
-				2FBBF6042DDEFEC000862C0D /* SearchCategoryCell.swift in Sources */,
 				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
 				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
@@ -598,7 +583,6 @@
 				2F648F5F2DDE1ACD00A31931 /* APIService.swift in Sources */,
 				2F648F682DDE1B3900A31931 /* BannerResponse.swift in Sources */,
 				2F648F692DDE1B3900A31931 /* CategoryBoxMenuResponse.swift in Sources */,
-				2F648F6A2DDE1B3900A31931 /* HomeItemResponse.swift in Sources */,
 				2F648F602DDE1ACD00A31931 /* HTTPMethod.swift in Sources */,
 				2F648F612DDE1ACD00A31931 /* NetworkError.swift in Sources */,
 				2F648F622DDE1ACD00A31931 /* HomeService.swift in Sources */,
