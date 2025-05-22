@@ -11,11 +11,11 @@ import SnapKit
 import Then
 
 final class BubbleLabelView: UIView {
-    
+
     // MARK: - UI Components
 
     private let messageLabel = UILabel()
-    
+
     // MARK: - Lifecycle
 
     init(isSender: Bool) {
@@ -28,17 +28,17 @@ final class BubbleLabelView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - SetUI
 
     private func setUI() {
         self.addSubview(messageLabel)
     }
-    
+
     // MARK: - SetStyle
-    
+
      func setStyle(isSender: Bool) {
-        
+
         messageLabel.do {
             $0.numberOfLines = 0
             $0.textColor = .white
@@ -53,9 +53,9 @@ final class BubbleLabelView: UIView {
             ? [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner]
             : [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner]
     }
-    
+
     // MARK: - SetLayout
-    
+
     private func setLayout() {
         messageLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)

@@ -18,20 +18,20 @@ enum ChattingCellType {
 class ChattingCell: UITableViewCell {
 
     // MARK: - Properties
-    
+
     private var isSender = true
-    
+
     // MARK: - UI Components
-    
+
     private lazy var bubbleView = BubbleLabelView(isSender: true)
     private let profileImageView = UIImageView()
     private let nicknameLabel = UILabel()
     private let introductionLabel = UILabel()
     private let infoStackView = UIStackView()
     private let timeLabel = UILabel()
-    
+
      // MARK: - Lifecycle
-     
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUI()
@@ -42,9 +42,9 @@ class ChattingCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - SetUI
-    
+
     private func setUI() {
         infoStackView.addArrangedSubview(nicknameLabel)
         infoStackView.addArrangedSubview(introductionLabel)
@@ -52,17 +52,17 @@ class ChattingCell: UITableViewCell {
     }
 
     // MARK: - SetStyle
-    
+
     private func setStyle() {
         selectionStyle = .none
         backgroundColor = .clear
-        
+
         infoStackView.do {
             $0.axis = .horizontal
             $0.spacing = 4
             $0.alignment = .center
         }
-        
+
         nicknameLabel.do {
             $0.font = .pretendard(.body6_m_13)
             $0.textColor = .darkGray
@@ -73,18 +73,18 @@ class ChattingCell: UITableViewCell {
             $0.textColor = .lightGray
             $0.text = "· 안녕하세요"
         }
-        
+
         profileImageView.do {
             $0.layer.cornerRadius = 16
             $0.clipsToBounds = true
         }
-        
+
         timeLabel.do {
             $0.font = .pretendard(.label1_b_11)
             $0.textColor = .lightGray
         }
     }
-    
+
     // MARK: - SetLayout
 
     private func setLayout() {
@@ -117,7 +117,7 @@ class ChattingCell: UITableViewCell {
 // MARK: - Configure
 
 extension ChattingCell {
-    
+
     func configure(
         with message: String,
         nickname: String? = nil,

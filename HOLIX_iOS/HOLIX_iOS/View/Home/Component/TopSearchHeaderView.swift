@@ -1,8 +1,8 @@
 //
-//  SearchCategoryCell.swift
+//  SearchBarHeaderView.swift
 //  HOLIX_iOS
 //
-//  Created by 정정욱 on 5/18/25.
+//  Created by 정정욱 on 5/20/25.
 //
 
 import UIKit
@@ -10,17 +10,12 @@ import UIKit
 import SnapKit
 import Then
 
-final class SearchCategoryCell: UICollectionViewCell {
-
-    // MARK: - Properties
-
-    static let identifier = SearchCategoryCell.className
+final class SearchBarHeaderView: UIView {
 
     // MARK: - UI Components
 
     private let menuButton = UIButton()
     private let searchTextField = UITextField()
-    private let topTabBar = CategoryTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
 
     // MARK: - LifeCycle
 
@@ -38,12 +33,10 @@ final class SearchCategoryCell: UICollectionViewCell {
     // MARK: - Setup
 
     private func setUp() {
-        contentView
-            .addSubviews(
-                menuButton,
-                searchTextField,
-                topTabBar
-            )
+        addSubviews(
+            menuButton,
+            searchTextField
+        )
     }
 
     // MARK: - SetStyle
@@ -54,16 +47,16 @@ final class SearchCategoryCell: UICollectionViewCell {
         }
 
         searchTextField.do {
-              $0.placeholder = "무엇을 배우고 싶으신가요?"
-              $0.layer.cornerRadius = 20
-              $0.font = .pretendard(.body3_r_15)
-              $0.textColor = .gray03
-              $0.returnKeyType = .search
-              $0.addLeftPadding(18)
-              $0.layer.borderColor = UIColor.gray03.cgColor
-              $0.layer.borderWidth = 1
-              $0.setRightIcon(IconLiterals.ic_search_gray)
-          }
+            $0.placeholder = "무엇을 배우고 싶으신가요?"
+            $0.layer.cornerRadius = 20
+            $0.font = .pretendard(.body3_r_15)
+            $0.textColor = .gray03
+            $0.returnKeyType = .search
+            $0.addLeftPadding(18)
+            $0.layer.borderColor = UIColor.gray03.cgColor
+            $0.layer.borderWidth = 1
+            $0.setRightIcon(IconLiterals.ic_search_gray)
+        }
     }
 
     // MARK: - SetLayout
@@ -79,12 +72,6 @@ final class SearchCategoryCell: UICollectionViewCell {
             $0.leading.equalTo(menuButton.snp.trailing).offset(29)
             $0.centerY.equalTo(menuButton)
             $0.trailing.equalToSuperview().inset(46)
-            $0.height.equalTo(40)
-        }
-
-        topTabBar.snp.makeConstraints {
-            $0.top.equalTo(menuButton.snp.bottom).offset(12)
-            $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)
         }
     }

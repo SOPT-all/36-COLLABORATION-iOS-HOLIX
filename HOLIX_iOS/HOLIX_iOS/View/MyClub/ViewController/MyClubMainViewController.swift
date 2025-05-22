@@ -17,7 +17,7 @@ class MyClubMainViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private let topTabBar = TopTabBarView(items: ["내 클럽", "클래스", "멘토링"])
+    private let topTabBar = CategoryTabBarView(items: ["내 클럽", "클래스", "멘토링"])
 
     // MARK: - LifeCycle
 
