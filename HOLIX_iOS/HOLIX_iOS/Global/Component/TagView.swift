@@ -11,14 +11,14 @@ import SnapKit
 import Then
 
 final class TagListView: UIView {
-    
+
     // MARK: - Properties
     var onTap: (() -> Void)?
-    
+
     // MARK: - UI Components
-    
+
     private let tagButton = UIButton()
-  
+
     // MARK: - Lifecycle
 
     init(title: String) {
@@ -33,15 +33,15 @@ final class TagListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - SetUI
 
     private func setUI() {
         addSubview(tagButton)
     }
-    
+
     // MARK: - SetStyle
-    
+
     private func setStyle() {
         tagButton.do {
             $0.titleLabel?.font = .pretendard(.label3_r_11)
@@ -54,15 +54,15 @@ final class TagListView: UIView {
             $0.isEnabled = false
         }
     }
-    
+
     // MARK: - SetLayout
-    
+
     private func setLayout() {
         tagButton.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
-    
+
     // MARK: - SetupAction
 
     private func setupAction() {
