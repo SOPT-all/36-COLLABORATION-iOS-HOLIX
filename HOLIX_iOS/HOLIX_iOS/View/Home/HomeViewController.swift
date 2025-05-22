@@ -14,6 +14,11 @@ final class HomeViewController: UIViewController {
 
     // MARK: - Properties
 
+    private let hideThreshold: CGFloat = 80
+    private var topSearchHeaderConstraint: Constraint?
+    private var categoryTopTabBarConstraint: Constraint?
+    private var currentVisibilityState: TopHeaderVisibilityState = .visible
+
     private let bannerData = BannerResponse.mockData()
     private let bannerPageIndicatorImage = [
         ImageLiterals.pagebutton_01,
@@ -32,6 +37,8 @@ final class HomeViewController: UIViewController {
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
     )
+    private let topSearchHeaderView = SearchBarHeaderView()
+    private let categoryTopTabBar = CategoryTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
     private let bannerPageLabel = UILabel()
     private let bannerPageIndicatorImageView = UIImageView()
 
@@ -40,7 +47,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-
         setUp()
         setStyle()
         setLayout()
@@ -56,6 +62,8 @@ final class HomeViewController: UIViewController {
 
     private func setUp() {
         view.addSubviews(
+            topSearchHeaderView,
+            categoryTopTabBar,
             homeCollectionView,
             bannerPageLabel,
             bannerPageIndicatorImageView
@@ -91,8 +99,21 @@ final class HomeViewController: UIViewController {
     // MARK: - SetLayout
 
     private func setLayout() {
+        topSearchHeaderView.snp.makeConstraints {
+            topSearchHeaderConstraint = $0.top.equalTo(view.safeAreaLayoutGuide).constraint
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+
+        categoryTopTabBar.snp.makeConstraints {
+            categoryTopTabBarConstraint = $0.top.equalTo(topSearchHeaderView.snp.bottom).constraint
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+
         homeCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(categoryTopTabBar.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 
@@ -119,10 +140,8 @@ final class HomeViewController: UIViewController {
     //MARK: - Banner Section Indicator Method
 
     private func updateBannerOverlayPosition() {
-
         let indexPath = IndexPath(item: 0, section: HomeSectionType.banner.rawValue)
         guard let attributes = homeCollectionView.layoutAttributesForItem(at: indexPath) else { return }
-
 
         let cellFrame = attributes.frame
         let convertedFrame = homeCollectionView.convert(cellFrame, to: view)
@@ -146,11 +165,73 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - TopSearchHeader Transition
+
+private extension HomeViewController {
+    enum TopHeaderVisibilityState {
+        case visible
+        case hidden
+
+        var alpha: CGFloat {
+            switch self {
+            case .visible: return 1
+            case .hidden: return 0
+            }
+        }
+
+        var offset: CGFloat {
+            switch self {
+            case .visible: return 0
+            case .hidden: return -48
+            }
+        }
+    }
+
+    private func updateTabBarConstraints(for state: TopHeaderVisibilityState) {
+        categoryTopTabBarConstraint?.deactivate()
+
+        categoryTopTabBar.snp.remakeConstraints {
+            switch state {
+            case .visible:
+                categoryTopTabBarConstraint = $0.top.equalTo(topSearchHeaderView.snp.bottom).constraint
+            case .hidden:
+                categoryTopTabBarConstraint = $0.top.equalTo(view.safeAreaLayoutGuide).constraint
+            }
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(40)
+        }
+
+        topSearchHeaderConstraint?.update(offset: state.offset)
+    }
+
+    private func animateTopHeaderTransition(to state: TopHeaderVisibilityState) {
+        guard currentVisibilityState != state else { return }
+
+        view.layoutIfNeeded()
+        updateTabBarConstraints(for: state)
+
+        UIView.animate(withDuration: 0.25) {
+            self.topSearchHeaderView.alpha = state.alpha
+            self.view.layoutIfNeeded()
+        }
+
+        currentVisibilityState = state
+    }
+}
+
 // MARK: - UICollectionView Delegate & DataSource
 
 extension HomeViewController: UICollectionViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+
+        if offsetY > hideThreshold && currentVisibilityState != .hidden {
+            animateTopHeaderTransition(to: .hidden)
+        } else if offsetY <= hideThreshold && currentVisibilityState != .visible {
+            animateTopHeaderTransition(to: .visible)
+        }
+
         updateBannerOverlayPosition()
     }
 
@@ -175,8 +256,6 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let sectionType = HomeSectionType(rawValue: section) else { return 0 }
         switch sectionType {
-        case .searchCategory:
-            return 1
         case .banner:
             return bannerData.count
         case .categoryBoxMenu:
@@ -194,11 +273,6 @@ extension HomeViewController: UICollectionViewDataSource {
         }
 
         switch sectionType {
-        case .searchCategory:
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: SearchCategoryCell.identifier,
-                for: indexPath) as! SearchCategoryCell
-            return cell
         case .banner:
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: BannerCell.identifier,
@@ -238,8 +312,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
         switch sectionType {
         case .banner:
-            return UICollectionReusableView()
-        case .searchCategory:
             return UICollectionReusableView()
         case .categoryBoxMenu:
             return UICollectionReusableView()
