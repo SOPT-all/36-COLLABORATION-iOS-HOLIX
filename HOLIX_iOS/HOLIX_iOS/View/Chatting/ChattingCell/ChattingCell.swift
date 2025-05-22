@@ -78,6 +78,7 @@ class ChattingCell: UITableViewCell {
         profileImageView.do {
             $0.layer.cornerRadius = 16
             $0.clipsToBounds = true
+            $0.image = UIImage(named: "img_profile_noraml_ios_03")
         }
         
         timeLabel.do {
@@ -159,27 +160,12 @@ extension ChattingCell {
         timeLabel.text = createdAt
 
         if !isSender {
-            setProfileImage(with: profileImageURL ?? "")
-            profileImageView.image = UIImage(named: profileImage ?? "")
+            if let url = URL(string: profileImageURL ?? "") {
+                profileImageView.kf.setImage(with: url)
+            }
             nicknameLabel.text = nickname
             introductionLabel.text = introduction
         }
     }
-    
-    func setProfileImage(with url: String) {
-        if let url = URL(string: url) {
-            Task {
-                do {
-                    let (data, _) = try await URLSession.shared.data(from: url)
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self.profileImageView.image = image
-                        }
-                    }
-                } catch {
-                    print("이미지 로딩 실패: \(error)")
-                }
-            }
-        }
-    }
+
 }

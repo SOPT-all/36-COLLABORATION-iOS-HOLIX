@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 import Then
 
@@ -111,20 +112,8 @@ extension ClubDetailViewController {
     
     func updateUI(with detail: ClubDetailResponse) {
         clubInfoView.configure(with: detail)
-        
         if let url = URL(string: detail.data.url) {
-            Task {
-                do {
-                    let (data, _) = try await URLSession.shared.data(from: url)
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self.iconImageView.image = image
-                        }
-                    }
-                } catch {
-                    print("이미지 로딩 실패: \(error)")
-                }
-            }
+            iconImageView.kf.setImage(with: url)
         }
     }
 }
