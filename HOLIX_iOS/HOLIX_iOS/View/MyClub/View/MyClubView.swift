@@ -14,7 +14,7 @@ final class MyClubView: UIView {
 
     // MARK: - Properties
 
-    private var itemData = MyClubModel.dummy()
+    private var itemData: [Club] = []
     final let cellWidth: CGFloat = UIScreen.main.bounds.width * 165 / 375
     final let cellHeight: CGFloat = 174
 
@@ -108,5 +108,10 @@ extension MyClubView {
             let inset: CGFloat = 16
 
             return CGFloat(rows) * (cellHeight + spacing) - spacing + inset
-        }
+    }
+
+    func updateData(_ clubs: [Club]) {
+        self.itemData = clubs
+        self.clubCollectionView.reloadData()
+    }
 }
