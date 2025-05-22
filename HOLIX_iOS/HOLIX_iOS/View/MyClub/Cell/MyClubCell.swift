@@ -110,9 +110,10 @@ final class MyClubCell: UICollectionViewCell {
 // MARK: - Configure
 
 extension MyClubCell {
-    func dataBind(_ itemData: MyClubModel) {
-        thumbnail.image = itemData.thumbnail
-        titleLabel.text = itemData.title
-        memberLabel.text = itemData.member
+    func dataBind(_ club: Club) {
+        thumbnail.loadImage(from: club.url)
+        titleLabel.text = club.title
+        memberLabel.text = "멤버 " + club.participants
+        pinButton.isSelected = club.isPinned
     }
 }
