@@ -45,6 +45,7 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.alpha = 0
         navigationController?.setNavigationBarHidden(true, animated: false)
         setUp()
         setStyle()
@@ -213,9 +214,13 @@ final class HomeViewController: UIViewController {
         do {
             let response = try await HomeService.shared.getMain()
             self.studyData = response
+
             DispatchQueue.main.async {
                 self.homeCollectionView.reloadData()
                 self.homeRefreshControl.endRefreshing()
+                UIView.animate(withDuration: 0.3) {
+                    self.view.alpha = 1
+                }
             }
         } catch {
             print("홈 API 호출 실패: \(error)")
@@ -380,39 +385,39 @@ extension HomeViewController: UICollectionViewDataSource {
             return UICollectionReusableView()
         case .popularStudy:
             return makeSectionHeader(
-                  collectionView: collectionView,
-                  kind: kind,
-                  indexPath: indexPath,
-                  title: "\(studyData?.passionateStudies.first?.category ?? "") 🔥"
-              )
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: "\(studyData?.passionateStudies.first?.category ?? "") 🔥"
+            )
         case .bookclubAndSeminar:
             return makeSectionHeader(
-                  collectionView: collectionView,
-                  kind: kind,
-                  indexPath: indexPath,
-                  title: "\(studyData?.passionateStudies.first?.category ?? "") 💡"
-              )
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: "\(studyData?.passionateStudies.first?.category ?? "") 💡"
+            )
         case .newlyUploadedLecture:
             return makeSectionHeader(
-                  collectionView: collectionView,
-                  kind: kind,
-                  indexPath: indexPath,
-                  title: studyData?.newStudies.first?.category ?? ""
-              )
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: studyData?.newStudies.first?.category ?? ""
+            )
         case .recommendedMentoring:
             return makeSectionHeader(
-                  collectionView: collectionView,
-                  kind: kind,
-                  indexPath: indexPath,
-                  title: studyData?.recommendedStudies.first?.category ?? ""
-              )
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: studyData?.recommendedStudies.first?.category ?? ""
+            )
         case .freeCommunity:
             return makeSectionHeader(
-                  collectionView: collectionView,
-                  kind: kind,
-                  indexPath: indexPath,
-                  title: studyData?.freeStudies.first?.category ?? ""
-              )
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: studyData?.freeStudies.first?.category ?? ""
+            )
         }
     }
 

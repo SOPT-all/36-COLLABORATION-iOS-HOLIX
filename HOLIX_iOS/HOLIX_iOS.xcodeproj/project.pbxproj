@@ -199,7 +199,6 @@
 				4646CA842DD6FDA400E21D3D /* Chatting */,
 				2FBBF60F2DDF0D3500862C0D /* ClubDetail */,
 				2FBBF6002DDEFEC000862C0D /* Home */,
-				2FBBF6142DDF0D3B00862C0D /* Base */,
 				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
@@ -399,6 +398,7 @@
 				2FBBF5F92DDEFEC000862C0D /* Cell */,
 				2FBBF5FE2DDEFEC000862C0D /* Layout */,
 				2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */,
+				2FBBF6142DDF0D3B00862C0D /* Base */,
 			);
 			path = Home;
 			sourceTree = "<group>";
