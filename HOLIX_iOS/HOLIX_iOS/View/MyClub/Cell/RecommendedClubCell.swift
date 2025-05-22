@@ -116,6 +116,8 @@ final class RecommendedClubCell: UITableViewCell {
     }
 }
 
+// MARK: - dataBind
+
 extension RecommendedClubCell {
     func dataBind(_ itemData: RecommendedClubModel) {
         thumbnail.image = itemData.thumbnail

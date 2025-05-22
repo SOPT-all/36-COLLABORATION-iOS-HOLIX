@@ -52,7 +52,8 @@ class MyClubMainViewController: UIViewController {
     // MARK: - SetStyle
 
     func setStyle() {
-        view.backgroundColor = .white    }
+        view.backgroundColor = .white
+    }
 
     // MARK: - SetLayout
 
@@ -105,6 +106,4 @@ class MyClubMainViewController: UIViewController {
             }
         }
     }
-
-
 }
