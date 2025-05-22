@@ -104,7 +104,7 @@ final class HomeViewController: UIViewController {
         }
 
         categoryTopTabBar.snp.makeConstraints {
-            $0.top.equalTo(topSearchHeaderView.snp.bottom).offset(5)
+            $0.top.equalTo(topSearchHeaderView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(40)
         }
@@ -173,7 +173,7 @@ final class HomeViewController: UIViewController {
             self.topSearchHeaderView.isHidden = hidden
 
             self.categoryTopTabBar.snp.remakeConstraints {
-                $0.top.equalTo(hidden ? self.view.safeAreaLayoutGuide : self.topSearchHeaderView.snp.bottom)
+                $0.top.equalTo(hidden ? self.view.safeAreaLayoutGuide : self.topSearchHeaderView.snp.bottom).offset(hidden ? 0 : 10)
                 $0.leading.trailing.equalToSuperview()
                 $0.height.equalTo(40)
             }
@@ -188,13 +188,27 @@ final class HomeViewController: UIViewController {
     }
 }
 
+
 // MARK: - UICollectionView Delegate & DataSource
 
 extension HomeViewController: UICollectionViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset.y
-        setTopHeader(hidden: offset > hideThreshold)
+
+        // Top 헤더 숨김 처리
+        let offsetY = scrollView.contentOffset.y
+        setTopHeader(hidden: offsetY > hideThreshold)
+
+        // Banner Section Indicator 사라짐 처리
+        let hideThreshold: CGFloat = 30
+        let shouldHide = offsetY > hideThreshold
+        UIView.animate(withDuration: 0.2) {
+            self.bannerPageLabel.alpha = shouldHide ? 0 : 1
+            self.bannerPageIndicatorImageView.alpha = shouldHide ? 0 : 1
+        } completion: { _ in
+            self.bannerPageLabel.isHidden = shouldHide
+            self.bannerPageIndicatorImageView.isHidden = shouldHide
+        }
         updateBannerOverlayPosition()
     }
 
