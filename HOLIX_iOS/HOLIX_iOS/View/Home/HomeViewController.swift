@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
 
     private let hideThreshold: CGFloat = 80
     private var isTopHeaderHidden = false
+    private var didSelectInitialTab = false
     private let bannerData = BannerResponse.mockData()
     private let bannerPageIndicatorImage = [
         ImageLiterals.pagebutton_01,
@@ -27,7 +28,6 @@ final class HomeViewController: UIViewController {
     ]
     private let categoryBoxMenuData = CategoryBoxMenuResponse.mockData()
     private var studyData: StudyData? = nil
-
 
     // MARK: - UI Components
 
@@ -62,6 +62,9 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        guard !didSelectInitialTab else { return }
+        didSelectInitialTab = true
+        categoryTopTabBar.selectItem(at: 0)
         updateBannerOverlayPosition()
     }
 

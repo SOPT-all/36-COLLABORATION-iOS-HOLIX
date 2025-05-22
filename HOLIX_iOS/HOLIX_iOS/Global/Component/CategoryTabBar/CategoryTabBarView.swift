@@ -36,10 +36,6 @@ final class CategoryTabBarView: UIView {
         setDelegate()
         setStyle()
         setLayout()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.selectItem(at: 0)
-        }
     }
 
     required init?(coder: NSCoder) {
@@ -98,42 +94,29 @@ final class CategoryTabBarView: UIView {
 
     func selectItem(at index: Int) {
         guard index >= 0 && index < items.count else { return }
+
+        let previousIndex = selectedIndex
         selectedIndex = index
-        tabCollectionView.reloadData()
 
-        tabCollectionView.layoutIfNeeded()
-
-        tabCollectionView.scrollToItem(
-            at: IndexPath(item: index, section: 0),
-            at: .centeredHorizontally,
-            animated: true
-        )
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            self.updateIndicatorPosition(animated: true)
+        // 선택된 두 셀만 리로드 - tabCollectionView 전체 깜빡임 방지
+        tabCollectionView.performBatchUpdates {
+            let indexPaths = [IndexPath(item: previousIndex, section: 0),
+                              IndexPath(item: selectedIndex, section: 0)]
+            tabCollectionView.reloadItems(at: indexPaths)
         }
-    }
 
-    // MARK: - Indicator Update
-
-    func refreshIndicator() {
-        layoutIfNeeded()
-        updateIndicatorPosition(animated: false)
-    }
-
-    private func updateIndicatorPosition(animated: Bool) {
+        // 스크롤 및 indicator 애니메이션
+        tabCollectionView.scrollToItem(at: IndexPath(item: selectedIndex, section: 0),
+                                       at: .centeredHorizontally,
+                                       animated: true)
         guard let cell = tabCollectionView.cellForItem(at: IndexPath(item: selectedIndex, section: 0)) else { return }
         let cellFrame = cell.frame
 
         indicatorLeadingConstraint?.update(offset: cellFrame.origin.x)
         indicatorWidthConstraint?.update(offset: cellFrame.width)
-
-        if animated {
-            UIView.animate(withDuration: 0.25) {
-                self.tabCollectionView.layoutIfNeeded()
-            }
-        } else {
-            tabCollectionView.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.2) {
+            self.tabCollectionView.layoutIfNeeded()
         }
     }
 }
