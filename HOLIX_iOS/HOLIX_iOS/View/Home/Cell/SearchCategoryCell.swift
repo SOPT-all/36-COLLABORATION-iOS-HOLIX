@@ -78,7 +78,7 @@ final class SearchCategoryCell: UICollectionViewCell {
         searchTextField.snp.makeConstraints {
             $0.leading.equalTo(menuButton.snp.trailing).offset(29)
             $0.centerY.equalTo(menuButton)
-            $0.width.equalTo(300)
+            $0.trailing.equalToSuperview().inset(46)
             $0.height.equalTo(40)
         }
 
