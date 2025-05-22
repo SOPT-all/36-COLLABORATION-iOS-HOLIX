@@ -44,9 +44,9 @@ class MyClubMainViewController: UIViewController {
     // MARK: - Setup
 
     func setUp() {
-        view.addSubview(scrollView)
+        view.addSubviews(topTabBar, scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubviews(topTabBar, myClub, recommendedClub)
+        contentView.addSubviews(myClub, recommendedClub)
     }
 
     // MARK: - SetStyle
@@ -58,8 +58,14 @@ class MyClubMainViewController: UIViewController {
 
     func setLayout() {
 
+        topTabBar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(40)
+        }
+
         scrollView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.top.equalTo(topTabBar.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
 
@@ -68,14 +74,8 @@ class MyClubMainViewController: UIViewController {
             $0.width.equalToSuperview()
         }
 
-        topTabBar.snp.makeConstraints {
-            $0.top.trailing.equalToSuperview()
-            $0.leading.equalToSuperview().inset(16)
-            $0.height.equalTo(40)
-        }
-
         myClub.snp.makeConstraints {
-            $0.top.equalTo(topTabBar.snp.bottom).offset(20)
+            $0.top.equalToSuperview().offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(myClub.calculatedHeight())
         }
