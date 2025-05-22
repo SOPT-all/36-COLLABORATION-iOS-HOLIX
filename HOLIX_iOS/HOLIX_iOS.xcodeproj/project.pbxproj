@@ -41,6 +41,7 @@
 		46718D3E2DDF45420095098E /* ClubChattingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3D2DDF45420095098E /* ClubChattingService.swift */; };
 		46718D552DDF6E890095098E /* RecommendedClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D542DDF6E890095098E /* RecommendedClubModel.swift */; };
 		46718D562DDF6E890095098E /* MyClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D532DDF6E890095098E /* MyClubModel.swift */; };
+		46718D582DDF82EC0095098E /* ClubChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D572DDF82EC0095098E /* ClubChattingResponse.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -84,6 +85,7 @@
 		46718D3D2DDF45420095098E /* ClubChattingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingService.swift; sourceTree = "<group>"; };
 		46718D532DDF6E890095098E /* MyClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubModel.swift; sourceTree = "<group>"; };
 		46718D542DDF6E890095098E /* RecommendedClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubModel.swift; sourceTree = "<group>"; };
+		46718D572DDF82EC0095098E /* ClubChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingResponse.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			children = (
 				2F648F572DDE1ACD00A31931 /* StudyResponse.swift */,
 				46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */,
+				46718D572DDF82EC0095098E /* ClubChattingResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */,
 				46718D3E2DDF45420095098E /* ClubChattingService.swift in Sources */,
+				46718D582DDF82EC0095098E /* ClubChattingResponse.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				46EAB24B2DD6E32F0084C5A8 /* NoticeButton.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
