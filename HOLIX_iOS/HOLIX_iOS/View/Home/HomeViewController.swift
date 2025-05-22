@@ -16,7 +16,6 @@ final class HomeViewController: UIViewController {
 
     private let hideThreshold: CGFloat = 80
     private var isTopHeaderHidden = false
-
     private let bannerData = BannerResponse.mockData()
     private let bannerPageIndicatorImage = [
         ImageLiterals.pagebutton_01,
@@ -27,7 +26,8 @@ final class HomeViewController: UIViewController {
         ImageLiterals.pagebutton_06
     ]
     private let categoryBoxMenuData = CategoryBoxMenuResponse.mockData()
-    private let studyItemData = StudyItemModel.mockData()
+    private var studyData: StudyData? = nil
+
 
     // MARK: - UI Components
 
@@ -49,6 +49,13 @@ final class HomeViewController: UIViewController {
         setStyle()
         setLayout()
         setRegister()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Task {
+            await fetchHomeData()
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -187,15 +194,28 @@ final class HomeViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-}
 
+    //MARK: API
+
+    private func fetchHomeData() async {
+        do {
+            let response = try await HomeService.shared.getMain()
+
+            self.studyData = response
+
+            DispatchQueue.main.async {
+                self.homeCollectionView.reloadData()
+            }
+        } catch {
+            print("홈 API 호출 실패: \(error)")
+        }
+    }
+}
 
 // MARK: - UICollectionView Delegate & DataSource
 
 extension HomeViewController: UICollectionViewDelegate {
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
         // Top 헤더 숨김 처리
         let offsetY = scrollView.contentOffset.y
         setTopHeader(hidden: offsetY > hideThreshold)
@@ -226,7 +246,6 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return HomeSectionType.allCases.count
     }
@@ -239,7 +258,8 @@ extension HomeViewController: UICollectionViewDataSource {
         case .categoryBoxMenu:
             return categoryBoxMenuData.count
         case .popularStudy:
-            return studyItemData.count
+            guard let data = studyData else { return 0 }
+            return data.passionateStudies.count
         }
     }
 
@@ -270,7 +290,7 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: ContentCardCell.identifier,
                 for: indexPath) as! ContentCardCell
-            guard let item = studyItemData[indexPath.item].items.first else {
+            guard let item = studyData?.passionateStudies[indexPath.item] else {
                 return cell
             }
             cell.configure(with: item)
@@ -303,7 +323,8 @@ extension HomeViewController: UICollectionViewDataSource {
                     assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
                     return UICollectionReusableView()
                 }
-                header.configure(title: studyItemData[indexPath.item].title)
+                guard let data = studyData else { return header }
+                header.configure(title: data.passionateStudies.first?.category ?? "")
                 return header
             }
         }
