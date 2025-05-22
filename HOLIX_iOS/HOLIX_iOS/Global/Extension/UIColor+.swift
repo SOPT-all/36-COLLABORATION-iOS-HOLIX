@@ -24,6 +24,7 @@ extension UIColor {
     static var gray05 = UIColor(hex: "#9E9EA4")
     static var gray06 = UIColor(hex: "#616167")
     static var gray07 = UIColor(hex: "#424248")
+    static var clubHomeBackground = UIColor(hex: "#2E2F34")
 }
 
 extension UIColor {
