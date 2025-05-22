@@ -11,10 +11,10 @@ final class HomeService {
 
     static let shared = HomeService()
 
-    func getMain() async throws -> StudyResponse {
+    func getMain() async throws -> StudyData {
         return try await APIService.shared.request(
             path: Endpoint.Main.getMain.path,
             method: Endpoint.Main.getMain.method,
-            responseType: StudyResponse.self)
+            responseType: StudyResponse.self).data
     }
 }

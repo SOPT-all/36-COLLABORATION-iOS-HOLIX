@@ -33,6 +33,12 @@ class MyClubMainViewController: UIViewController {
         setLayout()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        DispatchQueue.main.async {
+            self.topTabBar.selectItem(at: 0)
+        }
+    }
 
     // MARK: - Setup
 
@@ -61,7 +67,8 @@ class MyClubMainViewController: UIViewController {
         }
 
         topTabBar.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.trailing.equalToSuperview()
+            $0.leading.equalToSuperview().inset(16)
             $0.height.equalTo(40)
         }
 
@@ -78,4 +85,3 @@ class MyClubMainViewController: UIViewController {
         }
     }
 }
-

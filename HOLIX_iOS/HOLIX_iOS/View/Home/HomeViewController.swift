@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
 
     private let hideThreshold: CGFloat = 80
     private var isTopHeaderHidden = false
-
+    private var didSelectInitialTab = false
     private let bannerData = BannerResponse.mockData()
     private let bannerPageIndicatorImage = [
         ImageLiterals.pagebutton_01,
@@ -27,7 +27,7 @@ final class HomeViewController: UIViewController {
         ImageLiterals.pagebutton_06
     ]
     private let categoryBoxMenuData = CategoryBoxMenuResponse.mockData()
-    private let studyItemData = StudyItemModel.mockData()
+    private var studyData: StudyData? = nil
 
     // MARK: - UI Components
 
@@ -35,6 +35,7 @@ final class HomeViewController: UIViewController {
         frame: .zero,
         collectionViewLayout: self.createCompositionalLayout()
     )
+    private let homeRefreshControl = UIRefreshControl()
     private let topSearchHeaderView = SearchBarHeaderView()
     private let categoryTopTabBar = CategoryTabBarView(items: ["추천", "강의", "스터디", "북클럽", "멘토링", "커뮤니티"])
     private let bannerPageLabel = UILabel()
@@ -44,6 +45,7 @@ final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.alpha = 0
         navigationController?.setNavigationBarHidden(true, animated: false)
         setUp()
         setStyle()
@@ -51,8 +53,18 @@ final class HomeViewController: UIViewController {
         setRegister()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Task {
+            await fetchHomeData()
+        }
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        guard !didSelectInitialTab else { return }
+        didSelectInitialTab = true
+        categoryTopTabBar.selectItem(at: 0)
         updateBannerOverlayPosition()
     }
 
@@ -77,6 +89,7 @@ final class HomeViewController: UIViewController {
             $0.dataSource = self
             $0.showsHorizontalScrollIndicator = false
             $0.showsVerticalScrollIndicator = false
+            $0.refreshControl = homeRefreshControl
         }
 
         bannerPageLabel.do {
@@ -92,6 +105,10 @@ final class HomeViewController: UIViewController {
         bannerPageIndicatorImageView.do {
             $0.contentMode = .scaleAspectFit
             $0.image = bannerPageIndicatorImage[0]
+        }
+
+        homeRefreshControl.do {
+            $0.addTarget(self, action: #selector(refreshControlTriggered) , for: .valueChanged)
         }
     }
 
@@ -112,7 +129,8 @@ final class HomeViewController: UIViewController {
 
         homeCollectionView.snp.makeConstraints {
             $0.top.equalTo(categoryTopTabBar.snp.bottom)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
         }
     }
 
@@ -120,7 +138,6 @@ final class HomeViewController: UIViewController {
 
     private func setRegister() {
         homeCollectionView.do {
-            $0.register(SearchCategoryCell.self, forCellWithReuseIdentifier: SearchCategoryCell.identifier)
             $0.register(BannerCell.self, forCellWithReuseIdentifier: BannerCell.identifier)
             $0.register(CategoryBoxCell.self, forCellWithReuseIdentifier: CategoryBoxCell.identifier)
             $0.register(ContentCardCell.self, forCellWithReuseIdentifier: ContentCardCell.identifier)
@@ -187,15 +204,37 @@ final class HomeViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-}
 
+    //MARK: API
+
+    @objc private func refreshControlTriggered() {
+        Task {
+            await fetchHomeData()
+        }
+    }
+
+    private func fetchHomeData() async {
+        do {
+            let response = try await HomeService.shared.getMain()
+            self.studyData = response
+
+            DispatchQueue.main.async {
+                self.homeCollectionView.reloadData()
+                self.homeRefreshControl.endRefreshing()
+                UIView.animate(withDuration: 0.3) {
+                    self.view.alpha = 1
+                }
+            }
+        } catch {
+            print("홈 API 호출 실패: \(error)")
+        }
+    }
+}
 
 // MARK: - UICollectionView Delegate & DataSource
 
 extension HomeViewController: UICollectionViewDelegate {
-
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
         // Top 헤더 숨김 처리
         let offsetY = scrollView.contentOffset.y
         setTopHeader(hidden: offsetY > hideThreshold)
@@ -226,12 +265,14 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return HomeSectionType.allCases.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         guard let sectionType = HomeSectionType(rawValue: section) else { return 0 }
         switch sectionType {
         case .banner:
@@ -239,13 +280,29 @@ extension HomeViewController: UICollectionViewDataSource {
         case .categoryBoxMenu:
             return categoryBoxMenuData.count
         case .popularStudy:
-            return studyItemData.count
+            guard let data = studyData else { return 0 }
+            return data.passionateStudies.count
+        case .bookclubAndSeminar:
+            guard let data = studyData else { return 0 }
+            return data.insightStudies.count
+        case .newlyUploadedLecture:
+            guard let data = studyData else { return 0 }
+            return data.newStudies.count
+        case .recommendedMentoring:
+            guard let data = studyData else { return 0 }
+            return data.recommendedStudies.count
+        case .freeCommunity:
+            guard let data = studyData else { return 0 }
+            return data.freeStudies.count
         }
     }
 
     //MARK: - Cell Configure
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let sectionType = HomeSectionType(rawValue: indexPath.section) else {
             return UICollectionViewCell()
         }
@@ -270,7 +327,43 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: ContentCardCell.identifier,
                 for: indexPath) as! ContentCardCell
-            guard let item = studyItemData[indexPath.item].items.first else {
+            guard let item = studyData?.passionateStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .bookclubAndSeminar:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.insightStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .newlyUploadedLecture:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.newStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .recommendedMentoring:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.recommendedStudies[indexPath.item] else {
+                return cell
+            }
+            cell.configure(with: item)
+            return cell
+        case .freeCommunity:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ContentCardCell.identifier,
+                for: indexPath) as! ContentCardCell
+            guard let item = studyData?.freeStudies[indexPath.item] else {
                 return cell
             }
             cell.configure(with: item)
@@ -294,19 +387,63 @@ extension HomeViewController: UICollectionViewDataSource {
         case .categoryBoxMenu:
             return UICollectionReusableView()
         case .popularStudy:
-            if kind == HomeSectionHeader.elementKind {
-                guard let header = collectionView.dequeueReusableSupplementaryView(
-                    ofKind: kind,
-                    withReuseIdentifier: HomeSectionHeader.identifier,
-                    for: indexPath
-                ) as? HomeSectionHeader else {
-                    assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
-                    return UICollectionReusableView()
-                }
-                header.configure(title: studyItemData[indexPath.item].title)
-                return header
-            }
+            return makeSectionHeader(
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: "\(studyData?.passionateStudies.first?.category ?? "") 🔥"
+            )
+        case .bookclubAndSeminar:
+            return makeSectionHeader(
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: "\(studyData?.passionateStudies.first?.category ?? "") 💡"
+            )
+        case .newlyUploadedLecture:
+            return makeSectionHeader(
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: studyData?.newStudies.first?.category ?? ""
+            )
+        case .recommendedMentoring:
+            return makeSectionHeader(
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: studyData?.recommendedStudies.first?.category ?? ""
+            )
+        case .freeCommunity:
+            return makeSectionHeader(
+                collectionView: collectionView,
+                kind: kind,
+                indexPath: indexPath,
+                title: studyData?.freeStudies.first?.category ?? ""
+            )
         }
-        return UICollectionReusableView()
+    }
+
+    private func makeSectionHeader(
+        collectionView: UICollectionView,
+        kind: String,
+        indexPath: IndexPath,
+        title: String
+    ) -> UICollectionReusableView {
+        guard kind == HomeSectionHeader.elementKind else {
+            return UICollectionReusableView()
+        }
+
+        guard let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: HomeSectionHeader.identifier,
+            for: indexPath
+        ) as? HomeSectionHeader else {
+            assertionFailure("❌ HomeSectionHeader 캐스팅 실패")
+            return UICollectionReusableView()
+        }
+
+        header.configure(title: title)
+        return header
     }
 }
