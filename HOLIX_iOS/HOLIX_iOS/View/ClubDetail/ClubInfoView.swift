@@ -214,7 +214,6 @@ final class ClubInfoView: UIView {
 }
 
 extension ClubInfoView {
-    
     func configure(with detail: ClubDetailResponse) {
         titleLabel.text = detail.data.title
         memberLabel.text = detail.data.participants

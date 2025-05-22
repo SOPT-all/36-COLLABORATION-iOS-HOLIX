@@ -24,5 +24,3 @@ struct ClubDetailData: Codable {
     let participants: String
     let notice: String
 }
-
-
