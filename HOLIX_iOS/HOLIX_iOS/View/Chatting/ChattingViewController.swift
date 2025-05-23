@@ -212,6 +212,7 @@ extension ChattingViewController {
     private func setupDismissKeyboardGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
         view.addGestureRecognizer(tapGesture)
     }
 
@@ -220,6 +221,17 @@ extension ChattingViewController {
     }
 
 }
+
+extension ChattingViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view is UIButton || touch.view is UITextView {
+            return false
+        }
+        return true
+    }
+}
+
+// MARK: - API Connects
 
 extension ChattingViewController {
     func fetchClubChatting(clubId: String) async throws -> ClubChattingResponse? {

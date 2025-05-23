@@ -36,7 +36,6 @@
 		2FBBF5502DDEF4FB00862C0D /* MyClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5462DDEF4FB00862C0D /* MyClubView.swift */; };
 		2FBBF5572DDEF54B00862C0D /* MyClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */; };
 		2FBBF5582DDEF54B00862C0D /* RecommendedClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */; };
-		2FBBF55A2DDEF59800862C0D /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */; };
 		2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */; };
 		2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */; };
 		2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */; };
@@ -58,10 +57,12 @@
 		465E84D62DDCAD0100FF05BF /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84D12DDCAD0100FF05BF /* DividerView.swift */; };
 		46718D3C2DDF44DD0095098E /* ClubDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */; };
 		46718D3E2DDF45420095098E /* ClubChattingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3D2DDF45420095098E /* ClubChattingService.swift */; };
-		46718D552DDF6E890095098E /* RecommendedClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D542DDF6E890095098E /* RecommendedClubModel.swift */; };
-		46718D562DDF6E890095098E /* MyClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D532DDF6E890095098E /* MyClubModel.swift */; };
 		46718D582DDF82EC0095098E /* ClubChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D572DDF82EC0095098E /* ClubChattingResponse.swift */; };
-		46718EC92DDF97220095098E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 46718EC82DDF97220095098E /* Kingfisher */; };
+		467190652DE009550095098E /* ClubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467190642DE009550095098E /* ClubResponse.swift */; };
+		467190672DE00AFC0095098E /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467190662DE00AFC0095098E /* UIImageView.swift */; };
+		4671906E2DE00E710095098E /* ClubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4671906D2DE00E710095098E /* ClubService.swift */; };
+		467190702DE00F5A0095098E /* ChattingCreateRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4671906F2DE00F5A0095098E /* ChattingCreateRequestDTO.swift */; };
+		467190722DE033940095098E /* PostChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467190712DE033940095098E /* PostChattingResponse.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -100,7 +101,6 @@
 		2FBBF5492DDEF4FB00862C0D /* MyClubMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubMainViewController.swift; sourceTree = "<group>"; };
 		2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubModel.swift; sourceTree = "<group>"; };
 		2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubModel.swift; sourceTree = "<group>"; };
-		2FBBF5592DDEF59800862C0D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxCell.swift; sourceTree = "<group>"; };
 		2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardCell.swift; sourceTree = "<group>"; };
@@ -124,6 +124,11 @@
 		46718D532DDF6E890095098E /* MyClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubModel.swift; sourceTree = "<group>"; };
 		46718D542DDF6E890095098E /* RecommendedClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubModel.swift; sourceTree = "<group>"; };
 		46718D572DDF82EC0095098E /* ClubChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingResponse.swift; sourceTree = "<group>"; };
+		467190642DE009550095098E /* ClubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubResponse.swift; sourceTree = "<group>"; };
+		467190662DE00AFC0095098E /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		4671906D2DE00E710095098E /* ClubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubService.swift; sourceTree = "<group>"; };
+		4671906F2DE00F5A0095098E /* ChattingCreateRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCreateRequestDTO.swift; sourceTree = "<group>"; };
+		467190712DE033940095098E /* PostChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostChattingResponse.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +143,8 @@
 			path = TopTabBar;
 			sourceTree = "<group>";
 		};
-		2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */ = {
+		2FBBF5ED2DDEFE2E00862C0D /* Home */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -149,12 +153,9 @@
 			path = MyClub;
 			sourceTree = "<group>";
 		};
-		46EAB1EF2DD5C9060084C5A8 /* ClubDetail */ = {
+		4671906A2DE00B900095098E /* CategoryTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ClubDetail;
-
 			path = CategoryTabBar;
-
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -169,9 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */,
-
 				2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */,
 				2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */,
 			);
@@ -222,9 +221,7 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-
 				2FBBF54B2DDEF4FB00862C0D /* MyClub */,
-
 				4646CA842DD6FDA400E21D3D /* Chatting */,
 				2FBBF60F2DDF0D3500862C0D /* ClubDetail */,
 				2FBBF6002DDEFEC000862C0D /* Home */,
@@ -249,7 +246,8 @@
 		2F5B86982DCDD3AE00C3ABF6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */,
+				4671906A2DE00B900095098E /* CategoryTabBar */,
+				2FBBF5ED2DDEFE2E00862C0D /* Home */,
 				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
 				465E84392DDAE3ED00FF05BF /* CustomTextView.swift */,
 				465E848D2DDB67AB00FF05BF /* TagView.swift */,
@@ -262,6 +260,7 @@
 		2F5B86992DCDD3AE00C3ABF6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				467190662DE00AFC0095098E /* UIImageView.swift */,
 				2F648F6B2DDE1B7F00A31931 /* UITextField.swift */,
 				B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */,
 				2F5783412DD34C340075A288 /* IconLiterals.swift */,
@@ -286,7 +285,6 @@
 		2F648F542DDE1ACD00A31931 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2FBBF5592DDEF59800862C0D /* Config.xcconfig */,
 				2F648F4F2DDE1ACD00A31931 /* APIService.swift */,
 				2F648F512DDE1ACD00A31931 /* Endpoint.swift */,
 				2F648F522DDE1ACD00A31931 /* HTTPMethod.swift */,
@@ -299,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				2F648F552DDE1ACD00A31931 /* .gitkeep */,
+				4671906F2DE00F5A0095098E /* ChattingCreateRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -306,9 +305,11 @@
 		2F648F582DDE1ACD00A31931 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				467190642DE009550095098E /* ClubResponse.swift */,
 				2F648F572DDE1ACD00A31931 /* StudyResponse.swift */,
 				46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */,
 				46718D572DDF82EC0095098E /* ClubChattingResponse.swift */,
+				467190712DE033940095098E /* PostChattingResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -316,6 +317,7 @@
 		2F648F5A2DDE1ACD00A31931 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4671906D2DE00E710095098E /* ClubService.swift */,
 				2F648F592DDE1ACD00A31931 /* HomeService.swift */,
 				46718D3D2DDF45420095098E /* ClubChattingService.swift */,
 			);
@@ -336,10 +338,8 @@
 		2F648F672DDE1B3900A31931 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-
 				2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */,
 				2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */,
-
 				2F648F642DDE1B3900A31931 /* BannerResponse.swift */,
 				2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */,
 			);
@@ -350,6 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				2F5783912DD43A880075A288 /* TopTabBar */,
+				46718D492DDF66FE0095098E /* MyClub */,
+				46718D542DDF6E890095098E /* RecommendedClubModel.swift */,
+				46718D532DDF6E890095098E /* MyClubModel.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -492,21 +495,16 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2F5783912DD43A880075A288 /* TopTabBar */,
-
-				2F57841E2DD4446F0075A288 /* Home */,
+				2FBBF5ED2DDEFE2E00862C0D /* Home */,
 				46718D492DDF66FE0095098E /* MyClub */,
-
-				2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */,
-
+				4671906A2DE00B900095098E /* CategoryTabBar */,
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
 			packageProductDependencies = (
 				2F5B869C2DCDD3D500C3ABF6 /* SnapKit */,
 				2F5B86A12DCDD3E000C3ABF6 /* Then */,
-
 				2FBBF60B2DDF055800862C0D /* Kingfisher */,
-
 			);
 			productName = HOLIX_iOS;
 			productReference = 2F5B86672DCDD05500C3ABF6 /* HOLIX_iOS.app */;
@@ -539,9 +537,7 @@
 			packageReferences = (
 				2F5B869B2DCDD3D500C3ABF6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */,
-
 				2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */,
-
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F5B86682DCDD05500C3ABF6 /* Products */;
@@ -559,7 +555,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */,
-				2FBBF55A2DDEF59800862C0D /* Config.xcconfig in Resources */,
 				2F5B86802DCDD25500C3ABF6 /* .gitignore in Resources */,
 				2F5B868F2DCDD37F00C3ABF6 /* Assets.xcassets in Resources */,
 				2F5B86912DCDD37F00C3ABF6 /* LaunchScreen.storyboard in Resources */,
@@ -600,9 +595,7 @@
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
-
 				46718D3C2DDF44DD0095098E /* ClubDetailResponse.swift in Sources */,
-
 				2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */,
 				2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */,
 				2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */,
@@ -610,9 +603,11 @@
 				2FBBF6162DDF0D3B00862C0D /* ViewController.swift in Sources */,
 				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
+				4671906E2DE00E710095098E /* ClubService.swift in Sources */,
 				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
-
+				467190652DE009550095098E /* ClubResponse.swift in Sources */,
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
+				467190672DE00AFC0095098E /* UIImageView.swift in Sources */,
 				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
@@ -632,15 +627,11 @@
 				2FBBF54D2DDEF4FB00862C0D /* RecommendedClubView.swift in Sources */,
 				2FBBF54E2DDEF4FB00862C0D /* MyClubMainViewController.swift in Sources */,
 				2FBBF54F2DDEF4FB00862C0D /* MyClubCell.swift in Sources */,
+				467190702DE00F5A0095098E /* ChattingCreateRequestDTO.swift in Sources */,
 				2FBBF5502DDEF4FB00862C0D /* MyClubView.swift in Sources */,
 				2F648F5F2DDE1ACD00A31931 /* APIService.swift in Sources */,
 				2F648F682DDE1B3900A31931 /* BannerResponse.swift in Sources */,
 				2F648F692DDE1B3900A31931 /* CategoryBoxMenuResponse.swift in Sources */,
-
-				2F648F6A2DDE1B3900A31931 /* HomeItemResponse.swift in Sources */,
-				46718D552DDF6E890095098E /* RecommendedClubModel.swift in Sources */,
-				46718D562DDF6E890095098E /* MyClubModel.swift in Sources */,
-
 				2F648F602DDE1ACD00A31931 /* HTTPMethod.swift in Sources */,
 				2F648F612DDE1ACD00A31931 /* NetworkError.swift in Sources */,
 				2F648F622DDE1ACD00A31931 /* HomeService.swift in Sources */,
@@ -650,6 +641,7 @@
 				2FBBF6102DDF0D3500862C0D /* ClubDetailViewController.swift in Sources */,
 				2FBBF6112DDF0D3500862C0D /* ClubInfoView.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
+				467190722DE033940095098E /* PostChattingResponse.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
 				4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */,
 				2FBBF6092DDEFECF00862C0D /* TopSearchHeaderView.swift in Sources */,
@@ -672,7 +664,6 @@
 /* Begin XCBuildConfiguration section */
 		2F5B867B2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -705,7 +696,6 @@
 		};
 		2F5B867C2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -738,7 +728,6 @@
 		};
 		2F5B867D2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -803,7 +792,6 @@
 		};
 		2F5B867E2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -899,11 +887,9 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-
 		2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
-
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.3.2;
@@ -922,11 +908,9 @@
 			package = 2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
-
 		2FBBF60B2DDF055800862C0D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */;
-
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

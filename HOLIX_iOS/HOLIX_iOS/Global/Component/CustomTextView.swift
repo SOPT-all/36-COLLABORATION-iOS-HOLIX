@@ -34,6 +34,7 @@ final class CustomTextView: UIView {
         setUI()
         setStyle()
         setLayout()
+        setAddTarget()
         textView.delegate = self
     }
 
@@ -129,6 +130,12 @@ final class CustomTextView: UIView {
             $0.height.equalTo(26)
         }
     }
+    
+    // MARK: - SetAddTarget
+    
+    private func setAddTarget() {
+        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
+    }
 }
 
 // MARK: - UITextViewDelegate
@@ -217,4 +224,20 @@ extension CustomTextView {
        private func updateTagVisibility() {
            tagScrollView.isHidden = tagStackView.arrangedSubviews.isEmpty
        }
+    
+    @objc func sendButtonDidTap() {
+        let message = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !message.isEmpty else { return }
+        Task {
+            do {
+                print("전송되는 메세지 \(message)")
+                let DTO = ChattingCreateRequestDTO(contents: message)
+                let response = try await ClubChattingService.shared.postClubChatting(clubId: "1", contents: DTO)
+                    print("채팅 전송 성공: \(response)")
+                self.textView.text = nil
+            } catch {
+                print("채팅 전송 실패: \(error)")
+            }
+        }
+    }
 }

@@ -24,4 +24,15 @@ final class ClubChattingService {
             method: Endpoint.Club.getClubChat(clubId: clubId).method,
             responseType: ClubChattingResponse.self)
     }
+    
+    func postClubChatting(clubId: String,contents:ChattingCreateRequestDTO) async throws -> PostChattingResponse {
+        
+        let requestBody = try JSONEncoder().encode(contents)
+        
+        return try await APIService.shared.request(
+            path: Endpoint.Club.postClubChat(clubId: clubId).path,
+            method: Endpoint.Club.postClubChat(clubId: clubId).method,
+            body: requestBody,
+            responseType: PostChattingResponse.self)
+    }
 }
