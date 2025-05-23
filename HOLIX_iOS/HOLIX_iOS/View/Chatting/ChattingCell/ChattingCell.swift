@@ -20,10 +20,8 @@ class ChattingCell: UITableViewCell {
     // MARK: - Properties
 
     private var isSender = true
-
     private var profileImageURL: String?
     
-
     // MARK: - UI Components
 
     private lazy var bubbleView = BubbleLabelView(isSender: true)
@@ -169,5 +167,4 @@ extension ChattingCell {
             introductionLabel.text = introduction
         }
     }
-
 }

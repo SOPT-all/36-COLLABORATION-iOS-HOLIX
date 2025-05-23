@@ -59,3 +59,8 @@ struct Chatting: Codable {
         return "-"
     }
 }
+
+enum ChattingType: String {
+    case user = "USER"
+    case system = "SYSTEM"
+}

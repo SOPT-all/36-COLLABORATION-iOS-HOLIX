@@ -124,6 +124,7 @@ final class ChattingViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .white
         tableView.register(ChattingCell.self, forCellReuseIdentifier: "ChattingCell")
+        tableView.register(SystemMessageCell.self, forCellReuseIdentifier: "SystemMessageCell")
     }
 
     private func tagScrollView() {
@@ -148,15 +149,34 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else { return UITableViewCell() }
 
         let chat = chattingList[indexPath.row]
-        cell.configure(
-            with: chat.contents,
-            nickname: chat.isMine ? nil : chat.userName,
-            profileImage: chat.isMine ? nil : chat.imageUrl,
-            isSender: chat.isMine,
-            introduction: chat.isMine ? nil : chat.introduction,
-            createdAt: chat.formattedCreatedAt
-        )
-        return cell
+        
+        switch ChattingType(rawValue: chat.chattingType) {
+        case .user:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(
+                with: chat.contents,
+                nickname: chat.userName,
+                profileImage: chat.imageUrl,
+                isSender: chat.isMine,
+                introduction: chat.introduction,
+                createdAt: chat.formattedCreatedAt
+            )
+            return cell
+
+        case .system:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemMessageCell", for: indexPath) as? SystemMessageCell else {
+                return UITableViewCell()
+            }
+            cell.configure(text: chat.contents)
+            return cell
+
+        case .none:
+            return UITableViewCell()
+        }
+
     }
 }
 

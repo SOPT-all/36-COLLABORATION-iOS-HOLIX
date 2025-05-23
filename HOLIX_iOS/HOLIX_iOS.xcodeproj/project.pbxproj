@@ -63,6 +63,7 @@
 		4671906E2DE00E710095098E /* ClubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4671906D2DE00E710095098E /* ClubService.swift */; };
 		467190702DE00F5A0095098E /* ChattingCreateRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4671906F2DE00F5A0095098E /* ChattingCreateRequestDTO.swift */; };
 		467190722DE033940095098E /* PostChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467190712DE033940095098E /* PostChattingResponse.swift */; };
+		467190742DE039F60095098E /* SystemMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467190732DE039F60095098E /* SystemMessageCell.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -129,6 +130,7 @@
 		4671906D2DE00E710095098E /* ClubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubService.swift; sourceTree = "<group>"; };
 		4671906F2DE00F5A0095098E /* ChattingCreateRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCreateRequestDTO.swift; sourceTree = "<group>"; };
 		467190712DE033940095098E /* PostChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostChattingResponse.swift; sourceTree = "<group>"; };
+		467190732DE039F60095098E /* SystemMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMessageCell.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 			children = (
 				4646CB602DD735EF00E21D3D /* ChattingCell.swift */,
 				4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */,
+				467190732DE039F60095098E /* SystemMessageCell.swift */,
 			);
 			path = ChattingCell;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
 				4671906E2DE00E710095098E /* ClubService.swift in Sources */,
+				467190742DE039F60095098E /* SystemMessageCell.swift in Sources */,
 				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
 				467190652DE009550095098E /* ClubResponse.swift in Sources */,
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
