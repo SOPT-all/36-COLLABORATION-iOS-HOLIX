@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 import Then
 
@@ -111,7 +112,9 @@ final class MyClubCell: UICollectionViewCell {
 
 extension MyClubCell {
     func dataBind(_ club: Club) {
-        thumbnail.loadImage(from: club.url)
+        if let url = URL(string: club.url) {
+            thumbnail.kf.setImage(with: url)
+        }
         titleLabel.text = club.title
         memberLabel.text = "멤버 " + club.participants
         pinButton.isSelected = club.isPinned

@@ -14,7 +14,7 @@ import Then
 final class ClubDetailViewController: UIViewController {
 
     // MARK: - UI Components
-    
+
     private let customNavigationBar = CustomNavigationBar(hasMenuButton: false)
     private let iconImageView = UIImageView()
     private let clubInfoView = ClubInfoView()
@@ -26,7 +26,7 @@ final class ClubDetailViewController: UIViewController {
         setUI()
         setStyle()
         setLayout()
-        loadClubInfo(clubId: "3")
+        setDelegate()
     }
 
     // MARK: - SetUI
@@ -79,12 +79,32 @@ final class ClubDetailViewController: UIViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
+
+
+    // MARK: - SetDelegate
+
+    private func setDelegate() {
+        customNavigationBar.delegate = self
+        clubInfoView.onEnterButtonTapped = { [weak self] clubId, clubTitle in
+            self?.navigateToChatting(clubId: clubId, title: clubTitle)
+        }
+    }
+
+    // MARK: - navigateToChatting
+
+    private func navigateToChatting(clubId: String, title: String) {
+        let vc = ChattingViewController()
+        vc.clubTitle = title
+        vc.hidesBottomBarWhenPushed = true
+        vc.clubTitle = clubInfoView.currentClubTitle
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.loadChatting(clubId: clubId)
+    }
 }
 
-// MARK: - API Connects
 
 extension ClubDetailViewController {
-    
+
     func fetchClubDetail(clubId: String) async throws -> ClubDetailResponse? {
         do {
             let detail = try await ClubChattingService.shared.getClubDetail(clubId: clubId)
@@ -95,7 +115,7 @@ extension ClubDetailViewController {
             return nil
         }
     }
-    
+
     func loadClubInfo(clubId: String) {
         Task {
             do {
@@ -116,4 +136,15 @@ extension ClubDetailViewController {
             iconImageView.kf.setImage(with: url)
         }
     }
+}
+
+// MARK: - Delegate
+
+extension ClubDetailViewController: CustomNavigationBarDelegate {
+    func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func didTapSearchButton() {}
+    func didTapMenuButton() {}
 }

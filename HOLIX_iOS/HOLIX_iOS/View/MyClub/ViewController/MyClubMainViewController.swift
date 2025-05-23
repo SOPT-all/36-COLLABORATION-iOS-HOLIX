@@ -32,6 +32,7 @@ class MyClubMainViewController: UIViewController {
         setStyle()
         setLayout()
         fetchClubData()
+        setActions()
     }
 
     override func viewDidLayoutSubviews() {
@@ -44,22 +45,30 @@ class MyClubMainViewController: UIViewController {
     // MARK: - Setup
 
     func setUp() {
-        view.addSubview(scrollView)
+        view.addSubviews(topTabBar, scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubviews(topTabBar, myClub, recommendedClub)
+        contentView.addSubviews(myClub, recommendedClub)
     }
 
     // MARK: - SetStyle
 
     func setStyle() {
-        view.backgroundColor = .white    }
+        view.backgroundColor = .white
+    }
 
     // MARK: - SetLayout
 
     func setLayout() {
 
+        topTabBar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.height.equalTo(40)
+        }
+
         scrollView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(topTabBar.snp.bottom)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
 
         contentView.snp.makeConstraints {
@@ -67,14 +76,8 @@ class MyClubMainViewController: UIViewController {
             $0.width.equalToSuperview()
         }
 
-        topTabBar.snp.makeConstraints {
-            $0.top.trailing.equalToSuperview()
-            $0.leading.equalToSuperview().inset(16)
-            $0.height.equalTo(40)
-        }
-
         myClub.snp.makeConstraints {
-            $0.top.equalTo(topTabBar.snp.bottom).offset(20)
+            $0.top.equalToSuperview().offset(20)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(myClub.calculatedHeight())
         }
@@ -105,5 +108,20 @@ class MyClubMainViewController: UIViewController {
         }
     }
 
+    // MARK: - setActions
 
+    private func setActions() {
+        myClub.onClubTapped = { [weak self] clubId in
+            self?.navigateToClubDetail(clubId: clubId)
+        }
+    }
+
+    // MARK: - navigateToClubDetail
+
+    private func navigateToClubDetail(clubId: String) {
+        let detailVC = ClubDetailViewController()
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.loadClubInfo(clubId: clubId)
+    }
 }

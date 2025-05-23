@@ -16,6 +16,17 @@ final class ChattingViewController: UIViewController {
 
     private var customTextViewHeightConstraint: Constraint?
     private var customTextViewBottomConstraint: Constraint?
+
+    var clubTitle: String?
+
+    // MARK: - UI Components
+
+    private let customNavigationBar = CustomNavigationBar(
+        titleLabel: "",
+        hasMenuButton: true
+    )
+
+
     private var chattingList = [Chatting]() {
         didSet {
             DispatchQueue.main.async {
@@ -45,9 +56,12 @@ final class ChattingViewController: UIViewController {
         setLayout()
         setupTableView()
         tagScrollView()
+        setDelegate()
         setupDismissKeyboardGesture()
+
         bindActions()
         loadChatting(clubId: "1")
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +83,9 @@ final class ChattingViewController: UIViewController {
                 tableView,
                 textView
             )
+        if let clubTitle = clubTitle {
+            customNavigationBar.setTitle(clubTitle)
+        }
     }
 
     // MARK: - SetStyle
@@ -136,6 +153,12 @@ final class ChattingViewController: UIViewController {
         textView.addTag(title: "UIK12312it")
         textView.addTag(title: "Swi1ft")
         textView.addTag(title: "UIKit")
+    }
+
+    // MARK: - SetDelegate
+
+    private func setDelegate() {
+        customNavigationBar.delegate = self
     }
 }
 
@@ -300,7 +323,9 @@ extension ChattingViewController: UIGestureRecognizerDelegate {
     }
 }
 
-// MARK: - API Connects
+
+// MARK: - Fetching & Loading
+
 
 extension ChattingViewController {
     func fetchClubChatting(clubId: String) async throws -> ClubChattingResponse? {
@@ -313,7 +338,7 @@ extension ChattingViewController {
             return nil
         }
     }
-    
+
     func loadChatting(clubId: String) {
         Task {
             do {
@@ -356,4 +381,15 @@ extension ChattingViewController {
         let indexPath = IndexPath(row: row, section: section)
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
     }
+}
+
+// MARK: - CustomNavigationBarDelegate
+
+extension ChattingViewController: CustomNavigationBarDelegate {
+    func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func didTapSearchButton() {}
+    func didTapMenuButton() {}
 }

@@ -72,8 +72,6 @@ final class RecommendedClubCell: UITableViewCell {
         }
 
         statusLabel.do {
-            $0.textColor = .main_blue
-            $0.backgroundColor = .light_blue
             $0.font = .pretendard(.label2_m_11)
             $0.textAlignment = .center
             $0.layer.cornerRadius = 3
@@ -111,13 +109,14 @@ final class RecommendedClubCell: UITableViewCell {
         }
 
         statusLabel.snp.makeConstraints {
-            $0.top.equalTo(hostLabel.snp.bottom)
+            $0.centerY.equalTo(memberLabel.snp.centerY)
             $0.leading.equalTo(memberLabel.snp.trailing).offset(4)
             $0.height.equalTo(19)
-            $0.width.equalTo(37)
         }
     }
 }
+
+// MARK: - dataBind
 
 extension RecommendedClubCell {
     func dataBind(_ itemData: RecommendedClubModel) {
@@ -125,7 +124,26 @@ extension RecommendedClubCell {
         titleLabel.text = itemData.title
         hostLabel.text = itemData.host
         memberLabel.text = itemData.member
-        statusLabel.text = itemData.status
+
+        if itemData.isRecruiting {
+            statusLabel.do {
+                $0.text = "모집중"
+                $0.textColor = .main_blue
+                $0.backgroundColor = .light_blue
+            }
+            statusLabel.snp.makeConstraints {
+                $0.width.equalTo(37)
+            }
+        } else {
+            statusLabel.do {
+                $0.text = "마감"
+                $0.textColor = .alert_red
+                $0.backgroundColor = .light_red
+            }
+            statusLabel.snp.makeConstraints {
+                $0.width.equalTo(28)
+            }
+        }
     }
 }
 

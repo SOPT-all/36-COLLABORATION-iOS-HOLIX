@@ -40,13 +40,13 @@ struct Chatting: Codable {
             "yyyy-MM-dd'T'HH:mm:ss.SSSSSS",
             "yyyy-MM-dd'T'HH:mm:ss"
         ]
-        
+
         for format in formats {
             let formatter = DateFormatter()
             formatter.dateFormat = format
             formatter.locale = Locale(identifier: "en_US_POSIX")
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
-            
+
             if let date = formatter.date(from: createdAt) {
                 let displayFormatter = DateFormatter()
                 displayFormatter.dateFormat = "HH:mm"

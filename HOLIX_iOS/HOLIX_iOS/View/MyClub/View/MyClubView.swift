@@ -17,6 +17,7 @@ final class MyClubView: UIView {
     private var itemData: [Club] = []
     final let cellWidth: CGFloat = UIScreen.main.bounds.width * 165 / 375
     final let cellHeight: CGFloat = 174
+    var onClubTapped: ((String) -> Void)?
 
     // MARK: - UI Components
 
@@ -44,7 +45,6 @@ final class MyClubView: UIView {
     private func setUI() {
         addSubview(clubCollectionView)
         clubCollectionView.register(MyClubCell.self, forCellWithReuseIdentifier: MyClubCell.identifier)
-
     }
 
     // MARK: - SetDelegate
@@ -52,7 +52,6 @@ final class MyClubView: UIView {
     private func setDelegate() {
         clubCollectionView.delegate = self
         clubCollectionView.dataSource = self
-
     }
 
     // MARK: - SetStyle
@@ -62,8 +61,6 @@ final class MyClubView: UIView {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = .zero
-
-
     }
 
     // MARK: - SetLayout
@@ -71,12 +68,19 @@ final class MyClubView: UIView {
     private func setLayout() {
         clubCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-
         }
     }
 }
 
 // MARK: - UICollectionView Delegate & DataSource
+
+extension MyClubView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedClub = itemData[indexPath.item]
+        print("선택된 클럽: ", selectedClub.clubId)
+        onClubTapped?("\(selectedClub.clubId)")
+    }
+}
 
 extension MyClubView: UICollectionViewDelegateFlowLayout {
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
@@ -99,8 +103,10 @@ extension MyClubView: UICollectionViewDataSource {
     }
 }
 
-// MARK: - 계산 함수
 extension MyClubView {
+
+    // MARK: - caculateHeight
+
     func calculatedHeight() -> CGFloat {
             let itemCount = itemData.count
             let rows = Int(ceil(Double(itemCount) / 2.0))
@@ -109,6 +115,8 @@ extension MyClubView {
 
             return CGFloat(rows) * (cellHeight + spacing) - spacing + inset
     }
+
+    // MARK: - updateData
 
     func updateData(_ clubs: [Club]) {
         self.itemData = clubs

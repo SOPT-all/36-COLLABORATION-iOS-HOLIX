@@ -17,7 +17,7 @@ final class ClubChattingService {
             method: Endpoint.Club.getClubDetail(clubId: clubId).method,
             responseType: ClubDetailResponse.self)
     }
-    
+
     func getClubChatting(clubId: String) async throws -> ClubChattingResponse {
         return try await APIService.shared.request(
             path: Endpoint.Club.getClubChat(clubId: clubId).path,
