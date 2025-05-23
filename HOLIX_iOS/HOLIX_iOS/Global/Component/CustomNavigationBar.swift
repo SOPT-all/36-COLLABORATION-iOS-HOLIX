@@ -114,6 +114,7 @@ final class CustomNavigationBar: UIView {
         titleLabel.snp.makeConstraints {
             $0.leading.equalTo(self.backButton.snp.trailing).offset(16)
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(240)
         }
 
         buttonStackView.snp.makeConstraints {
