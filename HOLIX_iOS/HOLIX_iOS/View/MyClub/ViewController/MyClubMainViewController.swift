@@ -32,6 +32,7 @@ class MyClubMainViewController: UIViewController {
         setStyle()
         setLayout()
         fetchClubData()
+        setActions()
     }
 
     override func viewDidLayoutSubviews() {
@@ -105,5 +106,22 @@ class MyClubMainViewController: UIViewController {
                 print("클럽 데이터 불러오기 실패: \(error)")
             }
         }
+    }
+
+    // MARK: - setActions
+
+    private func setActions() {
+        myClub.onClubTapped = { [weak self] clubId in
+            self?.navigateToClubDetail(clubId: clubId)
+        }
+    }
+
+    // MARK: - navigateToClubDetail
+
+    private func navigateToClubDetail(clubId: String) {
+        let detailVC = ClubDetailViewController()
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.loadClubInfo(clubId: clubId)
     }
 }

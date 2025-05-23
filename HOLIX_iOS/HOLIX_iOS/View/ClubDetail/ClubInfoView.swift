@@ -20,6 +20,9 @@ final class ClubInfoView: UIView {
                       "ic_club_category_ios_quiz"]
 
     let labelTexts = ["모임", "멘토링", "클래스", "퀴즈"]
+    var onEnterButtonTapped: ((String, String) -> Void)?
+    private var currentClubId: String?
+    var currentClubTitle: String?
 
     // MARK: - UI Components
 
@@ -41,6 +44,7 @@ final class ClubInfoView: UIView {
         setUI()
         setStyle()
         setLayout()
+        setAddTarget()
     }
 
     required init?(coder: NSCoder) {
@@ -60,7 +64,6 @@ final class ClubInfoView: UIView {
             enterButton,
             speechBubble
         )
-
     }
 
     // MARK: - SetStyle
@@ -211,6 +214,17 @@ final class ClubInfoView: UIView {
 
         return stackView
     }
+
+    // MARK: - SetAddTarget
+
+    private func setAddTarget() {
+        enterButton.addTarget(self, action: #selector(enterButtonDidTap), for: .touchUpInside)
+    }
+
+    @objc private func enterButtonDidTap() {
+        guard let id = currentClubId, let title = currentClubTitle else { return }
+        onEnterButtonTapped?(id, title)
+    }
 }
 
 extension ClubInfoView {
@@ -218,5 +232,7 @@ extension ClubInfoView {
         titleLabel.text = detail.data.title
         memberLabel.text = detail.data.participants
         noticeButton.textLabel.text = detail.data.notice
+        currentClubId = "\(detail.data.clubId)"
+        currentClubTitle = "\(detail.data.title)"
     }
 }

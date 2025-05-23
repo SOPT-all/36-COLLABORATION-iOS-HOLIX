@@ -41,7 +41,6 @@ final class CustomNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     init(titleLabel: String = "", hasMenuButton: Bool, tintColor: UIColor = .black) {
 
         super.init(frame: .zero)
@@ -115,6 +114,7 @@ final class CustomNavigationBar: UIView {
         titleLabel.snp.makeConstraints {
             $0.leading.equalTo(self.backButton.snp.trailing).offset(16)
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(240)
         }
 
         buttonStackView.snp.makeConstraints {
@@ -134,6 +134,10 @@ final class CustomNavigationBar: UIView {
         searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
         menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
 
+    }
+
+    func setTitle(_ title: String) {
+        self.titleLabel.text = title
     }
 
     // MARK: - Button Actions

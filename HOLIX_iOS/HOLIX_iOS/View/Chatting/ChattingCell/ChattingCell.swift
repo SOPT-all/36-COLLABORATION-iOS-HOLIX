@@ -22,7 +22,7 @@ class ChattingCell: UITableViewCell {
     private var isSender = true
 
     private var profileImageURL: String?
-    
+
 
     // MARK: - UI Components
 

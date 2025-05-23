@@ -114,7 +114,7 @@ final class CategoryTabBarView: UIView {
 
         indicatorLeadingConstraint?.update(offset: cellFrame.origin.x)
         indicatorWidthConstraint?.update(offset: cellFrame.width)
-        
+
         UIView.animate(withDuration: 0.2) {
             self.tabCollectionView.layoutIfNeeded()
         }
