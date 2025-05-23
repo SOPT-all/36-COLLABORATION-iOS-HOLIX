@@ -82,7 +82,7 @@ final class ClubDetailViewController: UIViewController {
 
 
 extension ClubDetailViewController {
-    
+
     func fetchClubDetail(clubId: String) async throws -> ClubDetailResponse? {
         do {
             let detail = try await ClubChattingService.shared.getClubDetail(clubId: clubId)
@@ -93,7 +93,7 @@ extension ClubDetailViewController {
             return nil
         }
     }
-    
+
     func loadClubInfo(clubId: String) {
         Task {
             do {
@@ -108,7 +108,7 @@ extension ClubDetailViewController {
         }
     }
 
-    
+
     func updateUI(with detail: ClubDetailResponse) {
         clubInfoView.configure(with: detail)
         if let url = URL(string: detail.data.url) {

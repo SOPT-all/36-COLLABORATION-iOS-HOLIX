@@ -24,7 +24,7 @@ final class ChattingViewController: UIViewController {
         hasMenuButton: true
     )
 
-    
+
     private var chattingList = [Chatting]() {
         didSet {
             DispatchQueue.main.async {
@@ -232,7 +232,7 @@ extension ChattingViewController {
             return nil
         }
     }
-    
+
     func loadChatting(clubId: String) {
         Task {
             do {
