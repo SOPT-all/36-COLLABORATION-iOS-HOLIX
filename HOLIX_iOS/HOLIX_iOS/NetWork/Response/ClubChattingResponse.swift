@@ -64,3 +64,26 @@ enum ChattingType: String {
     case user = "USER"
     case system = "SYSTEM"
 }
+
+extension Chatting {
+    var createdDateOnly: String {
+        let formats = [
+            "yyyy-MM-dd'T'HH:mm:ss.SSSSSS",
+            "yyyy-MM-dd'T'HH:mm:ss"
+        ]
+        for format in formats {
+            let formatter = DateFormatter()
+            formatter.dateFormat = format
+            formatter.locale = Locale(identifier: "en_US_POSIX")
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            if let date = formatter.date(from: createdAt) {
+                let displayFormatter = DateFormatter()
+                displayFormatter.dateFormat = "yyyy년 M월 d일"
+                displayFormatter.locale = Locale(identifier: "ko_KR")
+                displayFormatter.timeZone = TimeZone.current
+                return displayFormatter.string(from: date)
+            }
+        }
+        return "알 수 없음"
+    }
+}

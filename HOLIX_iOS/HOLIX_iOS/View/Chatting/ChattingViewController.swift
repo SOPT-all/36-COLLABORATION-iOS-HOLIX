@@ -16,15 +16,6 @@ final class ChattingViewController: UIViewController {
 
     private var customTextViewHeightConstraint: Constraint?
     private var customTextViewBottomConstraint: Constraint?
-
-    // MARK: - UI Components
-
-    private let customNavigationBar = CustomNavigationBar(
-        titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
-        hasMenuButton: true
-    )
-
-    
     private var chattingList = [Chatting]() {
         didSet {
             DispatchQueue.main.async {
@@ -33,9 +24,17 @@ final class ChattingViewController: UIViewController {
             }
         }
     }
-    private let tableView = UITableView()
-    private let textView = CustomTextView()
+    var groupedChatting: [(date: String, chatList: [Chatting])] = []
+    
+    // MARK: - UI Components
 
+    private let customNavigationBar = CustomNavigationBar(
+        titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
+        hasMenuButton: true
+    )
+    private let tableView = UITableView(frame: .zero, style: .grouped)
+    private let textView = CustomTextView()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -142,14 +141,46 @@ final class ChattingViewController: UIViewController {
 // MARK: - UITableViewDelegate,UITableViewDataSource
 
 extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
 
+        let label = UILabel()
+        label.text = groupedChatting[section].date
+        label.textAlignment = .center
+        label.font = .pretendard(.body4_b_13)
+        label.textColor = .darkGray
+
+        headerView.addSubview(label)
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+        ])
+
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 15
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return groupedChatting.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return groupedChatting[section].date
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        chattingList.count
+        return groupedChatting[section].chatList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let chat = chattingList[indexPath.row]
+        let chat = groupedChatting[indexPath.section].chatList[indexPath.row]
         
         switch ChattingType(rawValue: chat.chattingType) {
         case .user:
@@ -275,6 +306,9 @@ extension ChattingViewController {
                 }
                 let chattingList = chatting.data.chattingList
                 self.chattingList = chattingList
+                self.groupChattingByDate(chattingList)
+                self.tableView.reloadData()
+                self.scrollToBottom(animated: true)
             } catch {
                 print("에러: \(error)")
             }
@@ -284,6 +318,15 @@ extension ChattingViewController {
     private func bindActions() {
         textView.onSendSuccess = { [weak self] in
             self?.loadChatting(clubId: "1")
+        }
+    }
+    
+    func groupChattingByDate(_ chatList: [Chatting]) {
+        let groupedDict = Dictionary(grouping: chatList) { $0.createdDateOnly }
+        let sortedKeys = groupedDict.keys.sorted { $0 < $1 }
+
+        groupedChatting = sortedKeys.map { key in
+            (date: key, chatList: groupedDict[key] ?? [])
         }
     }
     
