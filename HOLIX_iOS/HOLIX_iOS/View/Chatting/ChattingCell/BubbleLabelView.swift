@@ -44,7 +44,7 @@ final class BubbleLabelView: UIView {
             $0.textColor = .white
             $0.backgroundColor = .clear
             $0.lineBreakMode = .byCharWrapping
-            $0.font = .pretendard(.body1_sb_15)
+            $0.font = .pretendard(.body3_r_15)
         }
 
         backgroundColor = isSender ? .systemBlue : .lightGray

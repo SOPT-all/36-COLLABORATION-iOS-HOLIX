@@ -52,13 +52,15 @@
 		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
 		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB602DD735EF00E21D3D /* ChattingCell.swift */; };
-		4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB622DD7397900E21D3D /* ChattingMockData.swift */; };
 		465E843A2DDAE3ED00FF05BF /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84392DDAE3ED00FF05BF /* CustomTextView.swift */; };
 		465E848E2DDB67AB00FF05BF /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E848D2DDB67AB00FF05BF /* TagView.swift */; };
 		465E84D62DDCAD0100FF05BF /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84D12DDCAD0100FF05BF /* DividerView.swift */; };
 		46718D3C2DDF44DD0095098E /* ClubDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */; };
 		46718D3E2DDF45420095098E /* ClubChattingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3D2DDF45420095098E /* ClubChattingService.swift */; };
 		46718D582DDF82EC0095098E /* ClubChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D572DDF82EC0095098E /* ClubChattingResponse.swift */; };
+		467191152DE0A4D80095098E /* ChattingCreateRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467191142DE0A4D80095098E /* ChattingCreateRequestDTO.swift */; };
+		467191172DE0A5480095098E /* PostChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467191162DE0A5480095098E /* PostChattingResponse.swift */; };
+		467191192DE0A5D80095098E /* SystemMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467191182DE0A5D80095098E /* SystemMessageCell.swift */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -114,13 +116,15 @@
 		4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabelView.swift; sourceTree = "<group>"; };
 		4646CB602DD735EF00E21D3D /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
-		4646CB622DD7397900E21D3D /* ChattingMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMockData.swift; sourceTree = "<group>"; };
 		465E84392DDAE3ED00FF05BF /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		465E848D2DDB67AB00FF05BF /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		465E84D12DDCAD0100FF05BF /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailResponse.swift; sourceTree = "<group>"; };
 		46718D3D2DDF45420095098E /* ClubChattingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingService.swift; sourceTree = "<group>"; };
 		46718D572DDF82EC0095098E /* ClubChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingResponse.swift; sourceTree = "<group>"; };
+		467191142DE0A4D80095098E /* ChattingCreateRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCreateRequestDTO.swift; sourceTree = "<group>"; };
+		467191162DE0A5480095098E /* PostChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostChattingResponse.swift; sourceTree = "<group>"; };
+		467191182DE0A5D80095098E /* SystemMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMessageCell.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				2F648F552DDE1ACD00A31931 /* .gitkeep */,
+				467191142DE0A4D80095098E /* ChattingCreateRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				2F648F572DDE1ACD00A31931 /* StudyResponse.swift */,
 				46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */,
 				46718D572DDF82EC0095098E /* ClubChattingResponse.swift */,
+				467191162DE0A5480095098E /* PostChattingResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -435,7 +441,6 @@
 			children = (
 				465E850F2DDD5BBD00FF05BF /* ChattingCell */,
 				4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */,
-				4646CB622DD7397900E21D3D /* ChattingMockData.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 			children = (
 				4646CB602DD735EF00E21D3D /* ChattingCell.swift */,
 				4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */,
+				467191182DE0A5D80095098E /* SystemMessageCell.swift */,
 			);
 			path = ChattingCell;
 			sourceTree = "<group>";
@@ -577,7 +583,7 @@
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
 				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
-				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
+				467191192DE0A5D80095098E /* SystemMessageCell.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */,
@@ -610,6 +616,8 @@
 				2FBBF6112DDF0D3500862C0D /* ClubInfoView.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
+				467191172DE0A5480095098E /* PostChattingResponse.swift in Sources */,
+				467191152DE0A4D80095098E /* ChattingCreateRequestDTO.swift in Sources */,
 				4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */,
 				2FBBF6092DDEFECF00862C0D /* TopSearchHeaderView.swift in Sources */,
 			);
