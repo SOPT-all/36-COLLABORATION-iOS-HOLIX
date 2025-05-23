@@ -21,10 +21,13 @@ class ChattingCell: UITableViewCell {
 
     private var isSender = true
 
+    private var profileImageURL: String?
+    
+
     // MARK: - UI Components
 
     private lazy var bubbleView = BubbleLabelView(isSender: true)
-    private let profileImageView = UIImageView()
+    private var profileImageView = UIImageView()
     private let nicknameLabel = UILabel()
     private let introductionLabel = UILabel()
     private let infoStackView = UIStackView()
@@ -77,6 +80,7 @@ class ChattingCell: UITableViewCell {
         profileImageView.do {
             $0.layer.cornerRadius = 16
             $0.clipsToBounds = true
+            $0.image = UIImage(named: "img_profile_noraml_ios_03")
         }
 
         timeLabel.do {
@@ -122,7 +126,9 @@ extension ChattingCell {
         with message: String,
         nickname: String? = nil,
         profileImage: String? = nil,
-        isSender: Bool
+        isSender: Bool,
+        introduction: String? = nil,
+        createdAt: String
     ) {
         self.isSender = isSender
         bubbleView.configure(with: message)
@@ -130,6 +136,7 @@ extension ChattingCell {
 
         profileImageView.isHidden = isSender
         infoStackView.isHidden = isSender
+        profileImageURL = profileImage
 
         bubbleView.snp.remakeConstraints {
             $0.top.equalTo(isSender ? contentView.snp.top : nicknameLabel.snp.bottom).offset(4)
@@ -152,11 +159,15 @@ extension ChattingCell {
             $0.bottom.equalToSuperview().inset(4)
         }
 
-        timeLabel.text = "오후 19:22"
+        timeLabel.text = createdAt
 
         if !isSender {
-            profileImageView.image = UIImage(named: profileImage ?? "")
+            if let url = URL(string: profileImageURL ?? "") {
+                profileImageView.kf.setImage(with: url)
+            }
             nicknameLabel.text = nickname
+            introductionLabel.text = introduction
         }
     }
+
 }
