@@ -107,9 +107,9 @@ class MyClubMainViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - setActions
-    
+
     private func setActions() {
         myClub.onClubTapped = { [weak self] clubId in
             self?.navigateToClubDetail(clubId: clubId)
@@ -117,10 +117,11 @@ class MyClubMainViewController: UIViewController {
     }
 
     // MARK: - navigateToClubDetail
-    
+
     private func navigateToClubDetail(clubId: String) {
         let detailVC = ClubDetailViewController()
-            self.navigationController?.pushViewController(detailVC, animated: true)
-            detailVC.loadClubInfo(clubId: clubId)
+        detailVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.loadClubInfo(clubId: clubId)
     }
 }
