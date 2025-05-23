@@ -34,7 +34,6 @@ final class ClubDetailViewController: UIViewController {
     private func setUI() {
         self.view.addSubviews(customNavigationBar,iconImageView,clubInfoView)
         customNavigationBar.layer.zPosition = 1
-
     }
 
     // MARK: - SetStyle
@@ -85,16 +84,18 @@ final class ClubDetailViewController: UIViewController {
 
     private func setDelegate() {
         customNavigationBar.delegate = self
-        clubInfoView.onEnterButtonTapped = { [weak self] clubId in
-            self?.navigateToChatting(clubId: clubId)
+        clubInfoView.onEnterButtonTapped = { [weak self] clubId, clubTitle in
+            self?.navigateToChatting(clubId: clubId, title: clubTitle)
         }
     }
 
     // MARK: - navigateToChatting
 
-    private func navigateToChatting(clubId: String) {
+    private func navigateToChatting(clubId: String, title: String) {
         let vc = ChattingViewController()
+        vc.clubTitle = title
         vc.hidesBottomBarWhenPushed = true
+        vc.clubTitle = clubInfoView.currentClubTitle
         self.navigationController?.pushViewController(vc, animated: true)
         vc.loadChatting(clubId: clubId)
     }

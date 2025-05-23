@@ -41,7 +41,6 @@ final class CustomNavigationBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     init(titleLabel: String = "", hasMenuButton: Bool, tintColor: UIColor = .black) {
 
         super.init(frame: .zero)
@@ -134,6 +133,11 @@ final class CustomNavigationBar: UIView {
         searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
         menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
 
+    }
+
+    func setTitle(_ title: String) {
+        self.titleLabel.text = title
+        print("🔥title: ", title)
     }
 
     // MARK: - Button Actions

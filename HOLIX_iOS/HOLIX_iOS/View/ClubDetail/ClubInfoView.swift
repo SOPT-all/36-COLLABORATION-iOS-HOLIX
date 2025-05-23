@@ -20,8 +20,9 @@ final class ClubInfoView: UIView {
                       "ic_club_category_ios_quiz"]
 
     let labelTexts = ["모임", "멘토링", "클래스", "퀴즈"]
-    var onEnterButtonTapped: ((String) -> Void)?
+    var onEnterButtonTapped: ((String, String) -> Void)?
     private var currentClubId: String?
+    var currentClubTitle: String?
 
     // MARK: - UI Components
 
@@ -221,11 +222,8 @@ final class ClubInfoView: UIView {
     }
 
     @objc private func enterButtonDidTap() {
-        guard let id = currentClubId else {
-            print("clubId 없음")
-            return
-        }
-        onEnterButtonTapped?(id)
+        guard let id = currentClubId, let title = currentClubTitle else { return }
+        onEnterButtonTapped?(id, title)
     }
 }
 
@@ -235,5 +233,6 @@ extension ClubInfoView {
         memberLabel.text = detail.data.participants
         noticeButton.textLabel.text = detail.data.notice
         currentClubId = "\(detail.data.clubId)"
+        currentClubTitle = "\(detail.data.title)"
     }
 }

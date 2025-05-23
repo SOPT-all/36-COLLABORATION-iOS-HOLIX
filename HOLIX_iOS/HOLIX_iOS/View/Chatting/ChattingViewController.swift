@@ -16,14 +16,14 @@ final class ChattingViewController: UIViewController {
 
     private var customTextViewHeightConstraint: Constraint?
     private var customTextViewBottomConstraint: Constraint?
+    var clubTitle: String?
 
     // MARK: - UI Components
 
     private let customNavigationBar = CustomNavigationBar(
-        titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
+        titleLabel: "",
         hasMenuButton: true
     )
-
 
     private var chattingList = [Chatting]() {
         didSet {
@@ -67,6 +67,9 @@ final class ChattingViewController: UIViewController {
                 tableView,
                 textView
             )
+        if let clubTitle = clubTitle {
+            customNavigationBar.setTitle(clubTitle)
+        }
     }
 
     // MARK: - SetStyle
