@@ -25,7 +25,6 @@ final class ClubDetailViewController: UIViewController {
         setUI()
         setStyle()
         setLayout()
-        loadClubInfo(clubId: "3")
     }
 
     // MARK: - SetUI
