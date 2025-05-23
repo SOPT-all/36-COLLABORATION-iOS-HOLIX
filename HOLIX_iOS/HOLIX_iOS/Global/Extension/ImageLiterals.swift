@@ -66,6 +66,10 @@ enum ImageLiterals {
     static var pagebutton_04: UIImage { .load(name: "pagebutton_ios_04") }
     static var pagebutton_05: UIImage { .load(name: "pagebutton_ios_05") }
     static var pagebutton_06: UIImage { .load(name: "pagebutton_ios_06") }
+    
+    static var ic_search_white_ios: UIImage { .load(name: "ic_search_white_ios") }
+    static var ic_hambeger_ios: UIImage { .load(name: "ic_hambeger_ios") }
+    
 }
 
 extension UIImage {

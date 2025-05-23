@@ -30,7 +30,8 @@ final class ChattingViewController: UIViewController {
 
     private let customNavigationBar = CustomNavigationBar(
         titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
-        hasMenuButton: true
+        hasMenuButton: true,
+        tintColor: .black
     )
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private let textView = CustomTextView()
@@ -148,7 +149,7 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
         let label = UILabel()
         label.text = groupedChatting[section].date
         label.textAlignment = .center
-        label.font = .pretendard(.body4_b_13)
+        label.font = .pretendard(.label3_r_11)
         label.textColor = .darkGray
 
         headerView.addSubview(label)
@@ -162,32 +163,48 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(
+        _ tableView: UITableView,
+        heightForHeaderInSection section: Int
+    ) -> CGFloat {
         return 15
     }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(
+        in tableView: UITableView
+    ) -> Int {
         return groupedChatting.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(
+        _ tableView: UITableView,
+        titleForHeaderInSection section: Int
+    ) -> String? {
         return groupedChatting[section].date
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
         return groupedChatting[section].chatList.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
 
         let chat = groupedChatting[indexPath.section].chatList[indexPath.row]
         
         switch ChattingType(rawValue: chat.chattingType) {
         case .user:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "ChattingCell",
+                for: indexPath
+            ) as? ChattingCell else {
                 return UITableViewCell()
             }
-            
             cell.configure(
                 with: chat.contents,
                 nickname: chat.userName,
@@ -199,7 +216,10 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
 
         case .system:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SystemMessageCell", for: indexPath) as? SystemMessageCell else {
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "SystemMessageCell",
+                for: indexPath
+            ) as? SystemMessageCell else {
                 return UITableViewCell()
             }
             cell.configure(text: chat.contents)

@@ -13,6 +13,7 @@ import Then
 final class TagListView: UIView {
 
     // MARK: - Properties
+    
     var onTap: (() -> Void)?
 
     // MARK: - UI Components
@@ -44,7 +45,7 @@ final class TagListView: UIView {
 
     private func setStyle() {
         tagButton.do {
-            $0.titleLabel?.font = .pretendard(.label3_r_11)
+            $0.titleLabel?.font = .pretendard(.body7_r_13)
             $0.setTitleColor(.black, for: .normal)
             $0.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
             $0.layer.cornerRadius = 4

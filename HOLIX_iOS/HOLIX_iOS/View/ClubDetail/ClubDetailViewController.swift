@@ -34,7 +34,6 @@ final class ClubDetailViewController: UIViewController {
     private func setUI() {
         self.view.addSubviews(customNavigationBar,iconImageView,clubInfoView)
         customNavigationBar.layer.zPosition = 1
-
     }
 
     // MARK: - SetStyle
@@ -43,7 +42,7 @@ final class ClubDetailViewController: UIViewController {
         self.view.backgroundColor = .clubHomeBackground
 
         iconImageView.do {
-            $0.image = UIImage(named: "img_1_ios")
+            $0.image = .img1Ios
             $0.contentMode = .scaleAspectFill
             $0.backgroundColor = .clubHomeBackground
         }

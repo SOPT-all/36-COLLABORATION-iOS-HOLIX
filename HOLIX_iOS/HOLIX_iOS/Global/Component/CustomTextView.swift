@@ -74,8 +74,8 @@ final class CustomTextView: UIView {
 
         tagScrollView.do {
             $0.backgroundColor = .clear
-            $0.showsVerticalScrollIndicator = true
-            $0.showsHorizontalScrollIndicator = true
+            $0.showsVerticalScrollIndicator = false
+            $0.showsHorizontalScrollIndicator = false
             $0.isScrollEnabled = true
             $0.bounces = true
             $0.clipsToBounds = true

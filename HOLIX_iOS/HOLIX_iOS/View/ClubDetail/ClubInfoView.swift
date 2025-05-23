@@ -60,7 +60,6 @@ final class ClubInfoView: UIView {
             enterButton,
             speechBubble
         )
-
     }
 
     // MARK: - SetStyle
@@ -69,18 +68,18 @@ final class ClubInfoView: UIView {
         titleLabel.do {
             $0.text = "💰 디자이너로서 성공하고 싶은 사람들이 모인 방"
             $0.textColor = .black
-            $0.font = .pretendard(.title3_b_15)
+            $0.font = .pretendard(.title1_b_17)
         }
 
         memberIcon.do {
-            $0.image = UIImage(named: "ic_chatting_menu_ios_member")
+            $0.image = .icChattingMenuIosMember
             $0.tintColor = .lightGray
         }
 
         memberLabel.do {
             $0.text = "멤버 130명 / 500명"
             $0.textColor = .gray05
-            $0.font = .pretendard(.label3_r_11)
+            $0.font = .pretendard(.body6_m_13)
         }
 
         noticeButton.do {
@@ -103,7 +102,7 @@ final class ClubInfoView: UIView {
 
         speechBubble.do {
             $0.backgroundColor = .clear
-            $0.image = UIImage(named: "speech_bubble_ios")
+            $0.image = .speechBubbleIos
         }
     }
 

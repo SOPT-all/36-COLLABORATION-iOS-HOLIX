@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - PostChattingResponse
+
 struct PostChattingResponse: Codable {
     let code: Int
     let message: String

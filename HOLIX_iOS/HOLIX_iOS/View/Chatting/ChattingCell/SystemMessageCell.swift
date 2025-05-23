@@ -43,7 +43,7 @@ final class SystemMessageCell: UITableViewCell {
 
         messageLabel.do {
             $0.textAlignment = .center
-            $0.font = .pretendard(.body5_sb_13)
+            $0.font = .pretendard(.label3_r_11)
             $0.textColor = .gray
             $0.numberOfLines = 0
         }
