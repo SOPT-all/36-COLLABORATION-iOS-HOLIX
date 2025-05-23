@@ -11,14 +11,14 @@ import SnapKit
 import Then
 
 final class ChattingViewController: UIViewController {
-    
+
     // MARK: - Properties
-    
+
     private var customTextViewHeightConstraint: Constraint?
     private var customTextViewBottomConstraint: Constraint?
-    
+
     // MARK: - UI Components
-   
+
     private let customNavigationBar = CustomNavigationBar(
         titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
         hasMenuButton: true
@@ -34,9 +34,9 @@ final class ChattingViewController: UIViewController {
     }
     private let tableView = UITableView()
     private let textView = CustomTextView()
-    
+
     // MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -47,7 +47,7 @@ final class ChattingViewController: UIViewController {
         setupDismissKeyboardGesture()
         loadChatting(clubId: "1")
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addKeyboardNotifications()
@@ -57,9 +57,9 @@ final class ChattingViewController: UIViewController {
         super.viewWillDisappear(animated)
         removeKeyboardNotifications()
     }
-    
+
     // MARK: - SetUI
-    
+
     private func setUI() {
         self.view
             .addSubviews(
@@ -68,9 +68,9 @@ final class ChattingViewController: UIViewController {
                 textView
             )
     }
-    
+
     // MARK: - SetStyle
-    
+
     private func setStyle() {
         self.view.backgroundColor = .white
         tableView.do {
@@ -78,44 +78,44 @@ final class ChattingViewController: UIViewController {
             $0.backgroundColor = .white
             $0.showsVerticalScrollIndicator = false
         }
-        
+
         textView.do {
             $0.backgroundColor = .white
         }
     }
-    
+
     // MARK: - SetLayout
-    
+
     private func setLayout() {
         customNavigationBar.snp.makeConstraints {
             $0.top.equalTo(self.view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(50)
         }
-        
+
         tableView.snp.makeConstraints {
             $0.top.equalTo(customNavigationBar.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalTo(textView.snp.top)
         }
-        
+
         textView.snp.makeConstraints {
             $0.top.equalTo(tableView.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
             self.customTextViewBottomConstraint = $0.bottom.equalToSuperview().constraint
         }
-        
+
         textView.onHeightChange = { [weak self] newHeight in
             guard let self = self else { return }
-            
+
             self.customTextViewHeightConstraint?.update(offset: newHeight)
-            
+
             UIView.animate(withDuration: 0.2) {
                 self.view.layoutIfNeeded()
             }
         }
     }
-    
+
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -125,7 +125,7 @@ final class ChattingViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.register(ChattingCell.self, forCellReuseIdentifier: "ChattingCell")
     }
-    
+
     private func tagScrollView() {
         textView.addTag(title: "Swift")
         textView.addTag(title: "UIKit")
@@ -139,14 +139,14 @@ final class ChattingViewController: UIViewController {
 // MARK: - UITableViewDelegate,UITableViewDataSource
 
 extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
-  
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         chattingList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else { return UITableViewCell() }
-        
+
         let chat = chattingList[indexPath.row]
         cell.configure(
             with: chat.contents,
@@ -163,7 +163,7 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Keyboard
 
 extension ChattingViewController {
-    
+
     private func addKeyboardNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(_:)),
@@ -207,8 +207,8 @@ extension ChattingViewController {
             self.textView.movePlusButtonToBottom(false)
         }
     }
-    
-    
+
+
     private func setupDismissKeyboardGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
@@ -218,7 +218,7 @@ extension ChattingViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
+
 }
 
 extension ChattingViewController {

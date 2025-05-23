@@ -9,13 +9,14 @@ import UIKit
 
 import SnapKit
 import Then
+import Kingfisher
 
 final class ContentCardCell: UICollectionViewCell {
 
     // MARK: - Properties
 
     static let identifier = ContentCardCell.className
-    private var studyTag = [TagModel]()
+    private var studyTag = [Tag]()
 
     // MARK: - UI Components
 
@@ -158,8 +159,10 @@ final class ContentCardCell: UICollectionViewCell {
 //MARK: - Configure
 
 extension ContentCardCell {
-    func configure(with model: StudyItemModel) {
-        studyBannerImageView.image = model.image
+    func configure(with model: Study) {
+        if let url = URL(string: model.url) {
+            studyBannerImageView.kf.setImage(with: url)
+        }
         studyTitleLabel.text = model.studyTitle
         studyLeaderLabel.text = model.studyLeader
         priceLabel.text = model.price

@@ -17,7 +17,7 @@ class MyClubMainViewController: UIViewController {
 
     // MARK: - UI Components
 
-    private let topTabBar = TopTabBarView(items: ["내 클럽", "클래스", "멘토링"])
+    private let topTabBar = CategoryTabBarView(items: ["내 클럽", "클래스", "멘토링"])
 
     // MARK: - LifeCycle
 
@@ -31,8 +31,15 @@ class MyClubMainViewController: UIViewController {
         setUp()
         setStyle()
         setLayout()
+        fetchClubData()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        DispatchQueue.main.async {
+            self.topTabBar.selectItem(at: 0)
+        }
+    }
 
     // MARK: - Setup
 
@@ -61,7 +68,8 @@ class MyClubMainViewController: UIViewController {
         }
 
         topTabBar.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.trailing.equalToSuperview()
+            $0.leading.equalToSuperview().inset(16)
             $0.height.equalTo(40)
         }
 
@@ -77,5 +85,25 @@ class MyClubMainViewController: UIViewController {
             $0.bottom.equalToSuperview()
         }
     }
-}
 
+    // MARK: - FetchData
+
+    private func fetchClubData() {
+        Task {
+            do {
+                let response = try await ClubService.shared.getClub()
+                let clubs = response.data.clubs
+
+                self.myClub.updateData(clubs)
+                let height = self.myClub.calculatedHeight()
+                self.myClub.snp.updateConstraints {
+                    $0.height.equalTo(height)
+                }
+            } catch {
+                print("클럽 데이터 불러오기 실패: \(error)")
+            }
+        }
+    }
+
+
+}

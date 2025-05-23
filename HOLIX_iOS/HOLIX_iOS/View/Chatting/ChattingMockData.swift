@@ -30,7 +30,7 @@ final class DummyChattingData {
     static func generate() -> [ChattingResponseDTO] {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
-        
+
         return [
             ChattingResponseDTO(
                 chattingId: 1,

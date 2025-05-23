@@ -28,8 +28,27 @@
 		2F648F632DDE1ACD00A31931 /* StudyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F572DDE1ACD00A31931 /* StudyResponse.swift */; };
 		2F648F682DDE1B3900A31931 /* BannerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F642DDE1B3900A31931 /* BannerResponse.swift */; };
 		2F648F692DDE1B3900A31931 /* CategoryBoxMenuResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */; };
-		2F648F6A2DDE1B3900A31931 /* HomeItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F662DDE1B3900A31931 /* HomeItemResponse.swift */; };
 		2F648F6C2DDE1B7F00A31931 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F648F6B2DDE1B7F00A31931 /* UITextField.swift */; };
+		2FBBF54C2DDEF4FB00862C0D /* RecommendedClubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5442DDEF4FB00862C0D /* RecommendedClubCell.swift */; };
+		2FBBF54D2DDEF4FB00862C0D /* RecommendedClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5472DDEF4FB00862C0D /* RecommendedClubView.swift */; };
+		2FBBF54E2DDEF4FB00862C0D /* MyClubMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5492DDEF4FB00862C0D /* MyClubMainViewController.swift */; };
+		2FBBF54F2DDEF4FB00862C0D /* MyClubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5432DDEF4FB00862C0D /* MyClubCell.swift */; };
+		2FBBF5502DDEF4FB00862C0D /* MyClubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5462DDEF4FB00862C0D /* MyClubView.swift */; };
+		2FBBF5572DDEF54B00862C0D /* MyClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */; };
+		2FBBF5582DDEF54B00862C0D /* RecommendedClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */; };
+		2FBBF55A2DDEF59800862C0D /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */; };
+		2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */; };
+		2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */; };
+		2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */; };
+		2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FB2DDEFEC000862C0D /* HomeSectionHeader.swift */; };
+		2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */; };
+		2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */; };
+		2FBBF6092DDEFECF00862C0D /* TopSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6082DDEFECF00862C0D /* TopSearchHeaderView.swift */; };
+		2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2FBBF60B2DDF055800862C0D /* Kingfisher */; };
+		2FBBF6102DDF0D3500862C0D /* ClubDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF60D2DDF0D3500862C0D /* ClubDetailViewController.swift */; };
+		2FBBF6112DDF0D3500862C0D /* ClubInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF60E2DDF0D3500862C0D /* ClubInfoView.swift */; };
+		2FBBF6152DDF0D3B00862C0D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6122DDF0D3B00862C0D /* MainTabBarController.swift */; };
+		2FBBF6162DDF0D3B00862C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBBF6132DDF0D3B00862C0D /* ViewController.swift */; };
 		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
 		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB602DD735EF00E21D3D /* ChattingCell.swift */; };
@@ -73,8 +92,26 @@
 		2F648F592DDE1ACD00A31931 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		2F648F642DDE1B3900A31931 /* BannerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerResponse.swift; sourceTree = "<group>"; };
 		2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxMenuResponse.swift; sourceTree = "<group>"; };
-		2F648F662DDE1B3900A31931 /* HomeItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemResponse.swift; sourceTree = "<group>"; };
 		2F648F6B2DDE1B7F00A31931 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		2FBBF5432DDEF4FB00862C0D /* MyClubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubCell.swift; sourceTree = "<group>"; };
+		2FBBF5442DDEF4FB00862C0D /* RecommendedClubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubCell.swift; sourceTree = "<group>"; };
+		2FBBF5462DDEF4FB00862C0D /* MyClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubView.swift; sourceTree = "<group>"; };
+		2FBBF5472DDEF4FB00862C0D /* RecommendedClubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubView.swift; sourceTree = "<group>"; };
+		2FBBF5492DDEF4FB00862C0D /* MyClubMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubMainViewController.swift; sourceTree = "<group>"; };
+		2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubModel.swift; sourceTree = "<group>"; };
+		2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubModel.swift; sourceTree = "<group>"; };
+		2FBBF5592DDEF59800862C0D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBoxCell.swift; sourceTree = "<group>"; };
+		2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardCell.swift; sourceTree = "<group>"; };
+		2FBBF5FB2DDEFEC000862C0D /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
+		2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionLayoutFactory.swift; sourceTree = "<group>"; };
+		2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2FBBF6082DDEFECF00862C0D /* TopSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSearchHeaderView.swift; sourceTree = "<group>"; };
+		2FBBF60D2DDF0D3500862C0D /* ClubDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailViewController.swift; sourceTree = "<group>"; };
+		2FBBF60E2DDF0D3500862C0D /* ClubInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubInfoView.swift; sourceTree = "<group>"; };
+		2FBBF6122DDF0D3B00862C0D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2FBBF6132DDF0D3B00862C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabelView.swift; sourceTree = "<group>"; };
 		4646CB602DD735EF00E21D3D /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
@@ -96,18 +133,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F5783552DD376030075A288 /* Base */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Base;
-			sourceTree = "<group>";
-		};
 		2F5783912DD43A880075A288 /* TopTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopTabBar;
 			sourceTree = "<group>";
 		};
-		2F57841E2DD4446F0075A288 /* Home */ = {
+		2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -119,6 +152,9 @@
 		46EAB1EF2DD5C9060084C5A8 /* ClubDetail */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ClubDetail;
+
+			path = CategoryTabBar;
+
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -133,7 +169,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46718EC92DDF97220095098E /* Kingfisher in Frameworks */,
+
+				2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */,
+
 				2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */,
 				2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */,
 			);
@@ -149,6 +187,7 @@
 				2F5B867F2DCDD25500C3ABF6 /* .gitignore */,
 				2F5B868E2DCDD37F00C3ABF6 /* HOLIX_iOS */,
 				2F5B86682DCDD05500C3ABF6 /* Products */,
+				2FBBF5142DDEF4CF00862C0D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,11 +222,12 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				46718D492DDF66FE0095098E /* MyClub */,
+
+				2FBBF54B2DDEF4FB00862C0D /* MyClub */,
+
 				4646CA842DD6FDA400E21D3D /* Chatting */,
-				46EAB1EF2DD5C9060084C5A8 /* ClubDetail */,
-				2F57841E2DD4446F0075A288 /* Home */,
-				2F5783552DD376030075A288 /* Base */,
+				2FBBF60F2DDF0D3500862C0D /* ClubDetail */,
+				2FBBF6002DDEFEC000862C0D /* Home */,
 				468B03782DD4341200A90492 /* TestViewController.swift */,
 			);
 			path = View;
@@ -209,7 +249,7 @@
 		2F5B86982DCDD3AE00C3ABF6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				2F5783912DD43A880075A288 /* TopTabBar */,
+				2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */,
 				468B03242DD425BD00A90492 /* CustomNavigationBar.swift */,
 				465E84392DDAE3ED00FF05BF /* CustomTextView.swift */,
 				465E848D2DDB67AB00FF05BF /* TagView.swift */,
@@ -246,6 +286,7 @@
 		2F648F542DDE1ACD00A31931 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2FBBF5592DDEF59800862C0D /* Config.xcconfig */,
 				2F648F4F2DDE1ACD00A31931 /* APIService.swift */,
 				2F648F512DDE1ACD00A31931 /* Endpoint.swift */,
 				2F648F522DDE1ACD00A31931 /* HTTPMethod.swift */,
@@ -295,13 +336,123 @@
 		2F648F672DDE1B3900A31931 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				46718D532DDF6E890095098E /* MyClubModel.swift */,
-				46718D542DDF6E890095098E /* RecommendedClubModel.swift */,
+
+				2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */,
+				2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */,
+
 				2F648F642DDE1B3900A31931 /* BannerResponse.swift */,
 				2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */,
-				2F648F662DDE1B3900A31931 /* HomeItemResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2FBBF5142DDEF4CF00862C0D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				2F5783912DD43A880075A288 /* TopTabBar */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		2FBBF5452DDEF4FB00862C0D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5432DDEF4FB00862C0D /* MyClubCell.swift */,
+				2FBBF5442DDEF4FB00862C0D /* RecommendedClubCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2FBBF5482DDEF4FB00862C0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5462DDEF4FB00862C0D /* MyClubView.swift */,
+				2FBBF5472DDEF4FB00862C0D /* RecommendedClubView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FBBF54A2DDEF4FB00862C0D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5492DDEF4FB00862C0D /* MyClubMainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2FBBF54B2DDEF4FB00862C0D /* MyClub */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5452DDEF4FB00862C0D /* Cell */,
+				2FBBF5482DDEF4FB00862C0D /* View */,
+				2FBBF54A2DDEF4FB00862C0D /* ViewController */,
+			);
+			path = MyClub;
+			sourceTree = "<group>";
+		};
+		2FBBF5F92DDEFEC000862C0D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5F52DDEFEC000862C0D /* BannerCell.swift */,
+				2FBBF5F62DDEFEC000862C0D /* CategoryBoxCell.swift */,
+				2FBBF5F72DDEFEC000862C0D /* ContentCardCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2FBBF5FA2DDEFEC000862C0D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF6082DDEFECF00862C0D /* TopSearchHeaderView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		2FBBF5FC2DDEFEC000862C0D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5FB2DDEFEC000862C0D /* HomeSectionHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		2FBBF5FE2DDEFEC000862C0D /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5FD2DDEFEC000862C0D /* HomeSectionLayoutFactory.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		2FBBF6002DDEFEC000862C0D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF5FA2DDEFEC000862C0D /* Component */,
+				2FBBF5FC2DDEFEC000862C0D /* Header */,
+				2FBBF5F92DDEFEC000862C0D /* Cell */,
+				2FBBF5FE2DDEFEC000862C0D /* Layout */,
+				2FBBF5FF2DDEFEC000862C0D /* HomeViewController.swift */,
+				2FBBF6142DDF0D3B00862C0D /* Base */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2FBBF60F2DDF0D3500862C0D /* ClubDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF60D2DDF0D3500862C0D /* ClubDetailViewController.swift */,
+				2FBBF60E2DDF0D3500862C0D /* ClubInfoView.swift */,
+			);
+			path = ClubDetail;
+			sourceTree = "<group>";
+		};
+		2FBBF6142DDF0D3B00862C0D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2FBBF6122DDF0D3B00862C0D /* MainTabBarController.swift */,
+				2FBBF6132DDF0D3B00862C0D /* ViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		4646CA842DD6FDA400E21D3D /* Chatting */ = {
@@ -340,18 +491,22 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F5783552DD376030075A288 /* Base */,
 				2F5783912DD43A880075A288 /* TopTabBar */,
+
 				2F57841E2DD4446F0075A288 /* Home */,
 				46718D492DDF66FE0095098E /* MyClub */,
-				46EAB1EF2DD5C9060084C5A8 /* ClubDetail */,
+
+				2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */,
+
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
 			packageProductDependencies = (
 				2F5B869C2DCDD3D500C3ABF6 /* SnapKit */,
 				2F5B86A12DCDD3E000C3ABF6 /* Then */,
-				46718EC82DDF97220095098E /* Kingfisher */,
+
+				2FBBF60B2DDF055800862C0D /* Kingfisher */,
+
 			);
 			productName = HOLIX_iOS;
 			productReference = 2F5B86672DCDD05500C3ABF6 /* HOLIX_iOS.app */;
@@ -384,7 +539,9 @@
 			packageReferences = (
 				2F5B869B2DCDD3D500C3ABF6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */,
-				46718EC72DDF97220095098E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+
+				2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F5B86682DCDD05500C3ABF6 /* Products */;
@@ -402,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5B86AA2DCDEE0000C3ABF6 /* .swiftformat in Resources */,
+				2FBBF55A2DDEF59800862C0D /* Config.xcconfig in Resources */,
 				2F5B86802DCDD25500C3ABF6 /* .gitignore in Resources */,
 				2F5B868F2DCDD37F00C3ABF6 /* Assets.xcassets in Resources */,
 				2F5B86912DCDD37F00C3ABF6 /* LaunchScreen.storyboard in Resources */,
@@ -437,10 +595,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBBF5572DDEF54B00862C0D /* MyClubModel.swift in Sources */,
+				2FBBF5582DDEF54B00862C0D /* RecommendedClubModel.swift in Sources */,
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
+
 				46718D3C2DDF44DD0095098E /* ClubDetailResponse.swift in Sources */,
+
+				2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */,
+				2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */,
+				2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */,
+				2FBBF6152DDF0D3B00862C0D /* MainTabBarController.swift in Sources */,
+				2FBBF6162DDF0D3B00862C0D /* ViewController.swift in Sources */,
+				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
+				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
+				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
+
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
 				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
@@ -457,21 +628,31 @@
 				465E84D62DDCAD0100FF05BF /* DividerView.swift in Sources */,
 				2F648F6C2DDE1B7F00A31931 /* UITextField.swift in Sources */,
 				2F648F5E2DDE1ACD00A31931 /* Endpoint.swift in Sources */,
+				2FBBF54C2DDEF4FB00862C0D /* RecommendedClubCell.swift in Sources */,
+				2FBBF54D2DDEF4FB00862C0D /* RecommendedClubView.swift in Sources */,
+				2FBBF54E2DDEF4FB00862C0D /* MyClubMainViewController.swift in Sources */,
+				2FBBF54F2DDEF4FB00862C0D /* MyClubCell.swift in Sources */,
+				2FBBF5502DDEF4FB00862C0D /* MyClubView.swift in Sources */,
 				2F648F5F2DDE1ACD00A31931 /* APIService.swift in Sources */,
 				2F648F682DDE1B3900A31931 /* BannerResponse.swift in Sources */,
 				2F648F692DDE1B3900A31931 /* CategoryBoxMenuResponse.swift in Sources */,
+
 				2F648F6A2DDE1B3900A31931 /* HomeItemResponse.swift in Sources */,
 				46718D552DDF6E890095098E /* RecommendedClubModel.swift in Sources */,
 				46718D562DDF6E890095098E /* MyClubModel.swift in Sources */,
+
 				2F648F602DDE1ACD00A31931 /* HTTPMethod.swift in Sources */,
 				2F648F612DDE1ACD00A31931 /* NetworkError.swift in Sources */,
 				2F648F622DDE1ACD00A31931 /* HomeService.swift in Sources */,
 				2F648F632DDE1ACD00A31931 /* StudyResponse.swift in Sources */,
 				468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */,
 				B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */,
+				2FBBF6102DDF0D3500862C0D /* ClubDetailViewController.swift in Sources */,
+				2FBBF6112DDF0D3500862C0D /* ClubInfoView.swift in Sources */,
 				468B03792DD4341200A90492 /* TestViewController.swift in Sources */,
 				468B02882DD411DF00A90492 /* UIColor+.swift in Sources */,
 				4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */,
+				2FBBF6092DDEFECF00862C0D /* TopSearchHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +672,7 @@
 /* Begin XCBuildConfiguration section */
 		2F5B867B2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -523,6 +705,7 @@
 		};
 		2F5B867C2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +738,7 @@
 		};
 		2F5B867D2DCDD05700C3ABF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -619,6 +803,7 @@
 		};
 		2F5B867E2DCDD05700C3ABF6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FBBF5592DDEF59800862C0D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -714,9 +899,11 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		46718EC72DDF97220095098E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+
+		2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.3.2;
@@ -735,9 +922,11 @@
 			package = 2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
-		46718EC82DDF97220095098E /* Kingfisher */ = {
+
+		2FBBF60B2DDF055800862C0D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 46718EC72DDF97220095098E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

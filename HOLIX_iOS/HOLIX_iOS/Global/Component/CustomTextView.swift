@@ -11,24 +11,24 @@ import SnapKit
 import Then
 
 final class CustomTextView: UIView {
-    
+
     // MARK: - Properties
-    
+
     private var plusButtonTopConstraint: Constraint?
     private var sendButtonTopConstraint: Constraint?
     private var textViewHeightConstraint: Constraint?
     var onHeightChange: ((CGFloat) -> Void)?
-   
+
     // MARK: - UI Components
-    
+
     private let plusButton = UIButton()
     private let textView = UITextView()
     private let sendButton = UIButton()
     private let tagScrollView = UIScrollView()
     private let tagStackView = UIStackView()
-    
+
     // MARK: - Lifecycle
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -36,27 +36,27 @@ final class CustomTextView: UIView {
         setLayout()
         textView.delegate = self
     }
-    
+
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - SetUI
-    
+
     private func setUI() {
         self.addSubviews(plusButton,textView,sendButton,tagScrollView)
         tagScrollView.addSubview(tagStackView)
     }
-    
+
     // MARK: - SetStyle
-    
+
     private func setStyle() {
-        
+
         plusButton.do {
             $0.setImage(.icAddCircleIos, for: .normal)
         }
-        
+
         textView.do {
             $0.backgroundColor = .white
             $0.text = "텍스트를 입력해주세요"
@@ -66,11 +66,11 @@ final class CustomTextView: UIView {
             $0.textContainerInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
 
         }
-        
+
         sendButton.do {
             $0.setImage(.icSendIos, for: .normal)
         }
-        
+
         tagScrollView.do {
             $0.backgroundColor = .clear
             $0.showsVerticalScrollIndicator = true
@@ -80,7 +80,7 @@ final class CustomTextView: UIView {
             $0.clipsToBounds = true
             $0.isHidden = true
         }
-        
+
         tagStackView.do {
             $0.backgroundColor = .clear
             $0.axis = .horizontal
@@ -90,18 +90,18 @@ final class CustomTextView: UIView {
             $0.isHidden = true
         }
     }
-    
+
     // MARK: - SetLayout
-    
+
     private func setLayout() {
-       
+
         plusButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(20)
             $0.size.equalTo(21)
             plusButtonTopConstraint = $0.top.equalToSuperview().offset(10).constraint
         }
 
-        
+
         textView.snp.makeConstraints {
             $0.leading.equalTo(plusButton.snp.trailing).offset(8)
             $0.trailing.equalToSuperview().inset(50)
@@ -109,13 +109,13 @@ final class CustomTextView: UIView {
             self.textViewHeightConstraint = $0.height.equalTo(40).constraint
             $0.width.equalTo(290)
         }
-        
+
         sendButton.snp.makeConstraints {
             $0.leading.equalTo(textView.snp.trailing).offset(8)
             $0.top.equalToSuperview().offset(10)
             $0.size.equalTo(21)
         }
-        
+
         tagScrollView.snp.makeConstraints {
             $0.leading.equalTo(plusButton.snp.trailing).offset(8)
             $0.trailing.equalTo(sendButton.snp.leading).offset(-8)
@@ -123,7 +123,7 @@ final class CustomTextView: UIView {
             $0.bottom.equalToSuperview().inset(1)
             $0.height.equalTo(26)
         }
-        
+
         tagStackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
             $0.height.equalTo(26)
@@ -142,7 +142,7 @@ extension CustomTextView: UITextViewDelegate {
             return
         }
     }
-        
+
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "텍스트를 입력해주세요"
@@ -156,7 +156,7 @@ extension CustomTextView: UITextViewDelegate {
 
         let width = textView.bounds.width > 0 ? textView.bounds.width : UIScreen.main.bounds.width - 50
         let estimatedSize = textView.sizeThatFits(CGSize(width: width, height: .infinity))
-        
+
         let finalHeight = min(estimatedSize.height, maxHeight)
 
         textView.isScrollEnabled = estimatedSize.height > maxHeight
@@ -178,17 +178,17 @@ extension CustomTextView: UITextViewDelegate {
 // MARK: - Functions
 
 extension CustomTextView {
-    
+
     func movePlusButtonToBottom(_ move: Bool) {
         plusButtonTopConstraint?.deactivate()
 
         plusButton.snp.makeConstraints {
             if move {
                 plusButtonTopConstraint = $0.top.equalTo(tagScrollView.snp.top).offset(6).constraint
-                
+
                 tagScrollView.isHidden = false
                 tagStackView.isHidden = false
-                
+
             } else {
                 plusButtonTopConstraint = $0.top.equalToSuperview().offset(10).constraint
                 tagScrollView.isHidden = true
@@ -200,7 +200,7 @@ extension CustomTextView {
             self.layoutIfNeeded()
         }
     }
-    
+
     func addTag(title: String) {
            let tagView = TagListView(title: title)
            tagView.onTap = { [weak self, weak tagView] in

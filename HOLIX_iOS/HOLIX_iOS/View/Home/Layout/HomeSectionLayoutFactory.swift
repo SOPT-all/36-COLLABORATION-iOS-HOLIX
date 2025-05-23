@@ -8,10 +8,13 @@
 import UIKit
 
 enum HomeSectionType: Int, CaseIterable {
-    case searchCategory = 0
-    case banner
+    case banner = 0
     case categoryBoxMenu
     case popularStudy
+    case bookclubAndSeminar
+    case newlyUploadedLecture
+    case recommendedMentoring
+    case freeCommunity
 }
 
 struct HomeSectionLayoutFactory {
@@ -19,16 +22,21 @@ struct HomeSectionLayoutFactory {
     static func create() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { sectionNumber, _ in
             let section: NSCollectionLayoutSection
-
             switch HomeSectionType(rawValue: sectionNumber) {
-            case .searchCategory:
-                section = makeSearchCategorySection()
             case .banner:
                 section = makeBannerSection()
             case .categoryBoxMenu:
                 section = makeCategoryBoxMenuSection()
             case .popularStudy:
-                section = makePopularStudySection()
+                section = makeStudyListSection()
+            case .bookclubAndSeminar:
+                section = makeStudyListSection()
+            case .newlyUploadedLecture:
+                section = makeStudyListSection()
+            case .recommendedMentoring:
+                section = makeStudyListSection()
+            case .freeCommunity:
+                section = makeStudyListSection()
             case .none:
                 section = makeBannerSection()
             }
@@ -36,26 +44,7 @@ struct HomeSectionLayoutFactory {
         }
     }
 
-    private static func makeSearchCategorySection() -> NSCollectionLayoutSection {
-
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(90))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-
-        return section
-    }
-
     private static func makeBannerSection() -> NSCollectionLayoutSection {
-
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
@@ -74,7 +63,6 @@ struct HomeSectionLayoutFactory {
     }
 
     private static func makeCategoryBoxMenuSection() -> NSCollectionLayoutSection {
-
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0 / 4.0),
             heightDimension: .absolute(72)
@@ -97,8 +85,7 @@ struct HomeSectionLayoutFactory {
         return section
     }
 
-    private static func makePopularStudySection() -> NSCollectionLayoutSection {
-
+    private static func makeStudyListSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
@@ -107,7 +94,7 @@ struct HomeSectionLayoutFactory {
 
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .absolute(228),
-            heightDimension: .absolute(277)
+            heightDimension: .absolute(316)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
