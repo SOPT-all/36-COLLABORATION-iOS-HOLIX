@@ -138,7 +138,6 @@ final class CustomNavigationBar: UIView {
 
     func setTitle(_ title: String) {
         self.titleLabel.text = title
-        print("🔥title: ", title)
     }
 
     // MARK: - Button Actions
