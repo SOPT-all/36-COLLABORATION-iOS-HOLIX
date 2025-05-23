@@ -25,6 +25,7 @@ final class ClubDetailViewController: UIViewController {
         setUI()
         setStyle()
         setLayout()
+        setDelegate()
     }
 
     // MARK: - SetUI
@@ -78,8 +79,12 @@ final class ClubDetailViewController: UIViewController {
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }
-}
 
+    // MARK: - SetDelegate
+    private func setDelegate() {
+        customNavigationBar.delegate = self
+    }
+}
 
 extension ClubDetailViewController {
 
@@ -108,11 +113,21 @@ extension ClubDetailViewController {
         }
     }
 
-
     func updateUI(with detail: ClubDetailResponse) {
         clubInfoView.configure(with: detail)
         if let url = URL(string: detail.data.url) {
             iconImageView.kf.setImage(with: url)
         }
     }
+}
+
+// MARK: - Delegate
+
+extension ClubDetailViewController: CustomNavigationBarDelegate {
+    func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func didTapSearchButton() {}
+    func didTapMenuButton() {}
 }
