@@ -44,7 +44,6 @@ final class MyClubView: UIView {
     private func setUI() {
         addSubview(clubCollectionView)
         clubCollectionView.register(MyClubCell.self, forCellWithReuseIdentifier: MyClubCell.identifier)
-
     }
 
     // MARK: - SetDelegate
@@ -52,7 +51,6 @@ final class MyClubView: UIView {
     private func setDelegate() {
         clubCollectionView.delegate = self
         clubCollectionView.dataSource = self
-
     }
 
     // MARK: - SetStyle
@@ -62,8 +60,6 @@ final class MyClubView: UIView {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = .zero
-
-
     }
 
     // MARK: - SetLayout
@@ -71,7 +67,6 @@ final class MyClubView: UIView {
     private func setLayout() {
         clubCollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-
         }
     }
 }
@@ -99,8 +94,10 @@ extension MyClubView: UICollectionViewDataSource {
     }
 }
 
-// MARK: - 계산 함수
 extension MyClubView {
+    
+    // MARK: - caculateHeight
+    
     func calculatedHeight() -> CGFloat {
             let itemCount = itemData.count
             let rows = Int(ceil(Double(itemCount) / 2.0))
@@ -109,6 +106,8 @@ extension MyClubView {
 
             return CGFloat(rows) * (cellHeight + spacing) - spacing + inset
     }
+    
+    // MARK: - updateData
 
     func updateData(_ clubs: [Club]) {
         self.itemData = clubs

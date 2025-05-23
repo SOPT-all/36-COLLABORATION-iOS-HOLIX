@@ -68,6 +68,8 @@
 		46EAB24B2DD6E32F0084C5A8 /* NoticeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EAB24A2DD6E32F0084C5A8 /* NoticeButton.swift */; };
 		B060301F2DD26514002205F5 /* UIFont+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */; };
 		B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */; };
+		B0A41ED72DDF9833000D128A /* ClubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A41ED62DDF9833000D128A /* ClubResponse.swift */; };
+		B0A41ED92DDF983D000D128A /* ClubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A41ED82DDF983D000D128A /* ClubService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,14 +132,11 @@
 		46EAB24A2DD6E32F0084C5A8 /* NoticeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeButton.swift; sourceTree = "<group>"; };
 		B060301E2DD2650B002205F5 /* UIFont+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Pretendard.swift"; sourceTree = "<group>"; };
 		B09D885F2DD47B8300AD423E /* NSAttributedString+Pretendard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Pretendard.swift"; sourceTree = "<group>"; };
+		B0A41ED62DDF9833000D128A /* ClubResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubResponse.swift; sourceTree = "<group>"; };
+		B0A41ED82DDF983D000D128A /* ClubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F5783912DD43A880075A288 /* TopTabBar */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = TopTabBar;
-			sourceTree = "<group>";
-		};
 		2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 
@@ -306,6 +305,7 @@
 		2F648F582DDE1ACD00A31931 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				B0A41ED62DDF9833000D128A /* ClubResponse.swift */,
 				2F648F572DDE1ACD00A31931 /* StudyResponse.swift */,
 				46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */,
 				46718D572DDF82EC0095098E /* ClubChattingResponse.swift */,
@@ -316,6 +316,7 @@
 		2F648F5A2DDE1ACD00A31931 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B0A41ED82DDF983D000D128A /* ClubService.swift */,
 				2F648F592DDE1ACD00A31931 /* HomeService.swift */,
 				46718D3D2DDF45420095098E /* ClubChattingService.swift */,
 			);
@@ -349,7 +350,6 @@
 		2FBBF5142DDEF4CF00862C0D /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				2F5783912DD43A880075A288 /* TopTabBar */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -491,7 +491,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F5783912DD43A880075A288 /* TopTabBar */,
 
 				2F57841E2DD4446F0075A288 /* Home */,
 				46718D492DDF66FE0095098E /* MyClub */,
@@ -597,6 +596,7 @@
 			files = (
 				2FBBF5572DDEF54B00862C0D /* MyClubModel.swift in Sources */,
 				2FBBF5582DDEF54B00862C0D /* RecommendedClubModel.swift in Sources */,
+				B0A41ED72DDF9833000D128A /* ClubResponse.swift in Sources */,
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
@@ -607,6 +607,7 @@
 				2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */,
 				2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */,
 				2FBBF6152DDF0D3B00862C0D /* MainTabBarController.swift in Sources */,
+				B0A41ED92DDF983D000D128A /* ClubService.swift in Sources */,
 				2FBBF6162DDF0D3B00862C0D /* ViewController.swift in Sources */,
 				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
