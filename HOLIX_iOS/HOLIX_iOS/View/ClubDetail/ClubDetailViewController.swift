@@ -14,6 +14,7 @@ import Then
 final class ClubDetailViewController: UIViewController {
 
     // MARK: - UI Components
+
     private let customNavigationBar = CustomNavigationBar(hasMenuButton: false)
     private let iconImageView = UIImageView()
     private let clubInfoView = ClubInfoView()
@@ -81,8 +82,21 @@ final class ClubDetailViewController: UIViewController {
     }
 
     // MARK: - SetDelegate
+
     private func setDelegate() {
         customNavigationBar.delegate = self
+        clubInfoView.onEnterButtonTapped = { [weak self] clubId in
+            self?.navigateToChatting(clubId: clubId)
+        }
+    }
+
+    // MARK: - navigateToChatting
+
+    private func navigateToChatting(clubId: String) {
+        let vc = ChattingViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.loadChatting(clubId: clubId)
     }
 }
 
