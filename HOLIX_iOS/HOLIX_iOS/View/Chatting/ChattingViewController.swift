@@ -221,6 +221,8 @@ extension ChattingViewController {
 
 }
 
+// MARK: - Fetching & Loading
+
 extension ChattingViewController {
     func fetchClubChatting(clubId: String) async throws -> ClubChattingResponse? {
         do {
