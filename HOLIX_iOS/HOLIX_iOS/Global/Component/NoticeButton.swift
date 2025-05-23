@@ -47,18 +47,18 @@ final class NoticeButton: UIButton {
 
         iconImageView.do {
             $0.contentMode = .scaleAspectFit
-            $0.image = UIImage(named: "ic_speaker_ios")
+            $0.image = .icSpeakerIos
         }
 
         textLabel.do {
             $0.font = .pretendard(.body6_m_13)
-            $0.textColor = .label
+            $0.textColor = .gray07
             $0.text = "입장후 간단하게 자기소개를 포함한 인사를 부탁드립니다 하하하하하"
         }
 
         chevronImageView.do {
             $0.contentMode = .scaleAspectFit
-            $0.image = UIImage(systemName: "chevron.right")
+            $0.image = .icArrowRightGrayIos
             $0.tintColor = .systemGray
         }
 

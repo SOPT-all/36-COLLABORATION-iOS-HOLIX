@@ -20,9 +20,7 @@ class ChattingCell: UITableViewCell {
     // MARK: - Properties
 
     private var isSender = true
-
     private var profileImageURL: String?
-
 
     // MARK: - UI Components
 
@@ -72,7 +70,7 @@ class ChattingCell: UITableViewCell {
         }
 
         introductionLabel.do {
-            $0.font = .pretendard(.label1_b_11)
+            $0.font = .pretendard(.label2_m_11)
             $0.textColor = .lightGray
             $0.text = "· 안녕하세요"
         }
@@ -80,11 +78,11 @@ class ChattingCell: UITableViewCell {
         profileImageView.do {
             $0.layer.cornerRadius = 16
             $0.clipsToBounds = true
-            $0.image = UIImage(named: "img_profile_noraml_ios_03")
+            $0.image = .imgProfileNoramlIos03
         }
 
         timeLabel.do {
-            $0.font = .pretendard(.label1_b_11)
+            $0.font = .pretendard(.label4_m_9)
             $0.textColor = .lightGray
         }
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - ClubDetail
+// MARK: - ClubDetailResponse
 
 struct ClubDetailResponse: Codable {
     let code: Int

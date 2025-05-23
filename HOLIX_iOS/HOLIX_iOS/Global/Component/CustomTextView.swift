@@ -18,6 +18,7 @@ final class CustomTextView: UIView {
     private var sendButtonTopConstraint: Constraint?
     private var textViewHeightConstraint: Constraint?
     var onHeightChange: ((CGFloat) -> Void)?
+    var onSendSuccess: (() -> Void)?
 
     // MARK: - UI Components
 
@@ -34,6 +35,7 @@ final class CustomTextView: UIView {
         setUI()
         setStyle()
         setLayout()
+        setAddTarget()
         textView.delegate = self
     }
 
@@ -73,8 +75,8 @@ final class CustomTextView: UIView {
 
         tagScrollView.do {
             $0.backgroundColor = .clear
-            $0.showsVerticalScrollIndicator = true
-            $0.showsHorizontalScrollIndicator = true
+            $0.showsVerticalScrollIndicator = false
+            $0.showsHorizontalScrollIndicator = false
             $0.isScrollEnabled = true
             $0.bounces = true
             $0.clipsToBounds = true
@@ -129,6 +131,13 @@ final class CustomTextView: UIView {
             $0.height.equalTo(26)
         }
     }
+    
+    // MARK: - SetAddTarget
+
+    private func setAddTarget() {
+        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
+    }
+    
 }
 
 // MARK: - UITextViewDelegate
@@ -217,4 +226,21 @@ extension CustomTextView {
        private func updateTagVisibility() {
            tagScrollView.isHidden = tagStackView.arrangedSubviews.isEmpty
        }
+    
+    @objc func sendButtonDidTap() {
+        let message = textView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !message.isEmpty else { return }
+        Task {
+            do {
+                print("전송되는 메세지 \(message)")
+                let DTO = ChattingCreateRequestDTO(contents: message)
+                let response = try await ClubChattingService.shared.postClubChatting(clubId: "1", contents: DTO)
+                    print("채팅 전송 성공: \(response)")
+                self.textView.text = nil
+                self.onSendSuccess?()
+            } catch {
+                print("채팅 전송 실패: \(error)")
+            }
+        }
+    }
 }

@@ -76,7 +76,7 @@ final class CustomNavigationBar: UIView {
         self.backgroundColor = .white
 
         backButton.do {
-            $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            $0.setImage(.icArrowLeftWhiteIos.withRenderingMode(.alwaysTemplate), for: .normal)
             $0.tintColor = .tintColor
         }
 
@@ -86,12 +86,12 @@ final class CustomNavigationBar: UIView {
         }
 
         searchButton.do {
-            $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+            $0.setImage(.icSearchWhiteIos, for: .normal)
             $0.tintColor = .tintColor
         }
 
         menuButton.do {
-            $0.setImage(UIImage(systemName: "line.3.horizontal"), for: .normal)
+            $0.setImage(.icHambegerIos, for: .normal)
             $0.tintColor = .tintColor
         }
 
@@ -133,7 +133,6 @@ final class CustomNavigationBar: UIView {
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
         searchButton.addTarget(self, action: #selector(searchButtonDidTap), for: .touchUpInside)
         menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
-
     }
 
     func setTitle(_ title: String) {

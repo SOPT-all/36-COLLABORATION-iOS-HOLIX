@@ -17,6 +17,17 @@ final class ChattingViewController: UIViewController {
     private var customTextViewHeightConstraint: Constraint?
     private var customTextViewBottomConstraint: Constraint?
     var clubTitle: String?
+    
+    private var chattingList = [Chatting]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.scrollToBottom(animated: true)
+            }
+        }
+    }
+    
+    var groupedChatting: [(date: String, chatList: [Chatting])] = []
 
     // MARK: - UI Components
 
@@ -24,15 +35,7 @@ final class ChattingViewController: UIViewController {
         titleLabel: "",
         hasMenuButton: true
     )
-
-    private var chattingList = [Chatting]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: .zero, style: .grouped)
     private let textView = CustomTextView()
 
     // MARK: - Lifecycle
@@ -46,6 +49,8 @@ final class ChattingViewController: UIViewController {
         tagScrollView()
         setDelegate()
         setupDismissKeyboardGesture()
+        bindActions()
+        loadChatting(clubId: "1")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -127,6 +132,7 @@ final class ChattingViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = .white
         tableView.register(ChattingCell.self, forCellReuseIdentifier: "ChattingCell")
+        tableView.register(SystemMessageCell.self, forCellReuseIdentifier: "SystemMessageCell")
     }
 
     private func tagScrollView() {
@@ -148,25 +154,93 @@ final class ChattingViewController: UIViewController {
 // MARK: - UITableViewDelegate,UITableViewDataSource
 
 extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        let label = UILabel()
+        label.text = groupedChatting[section].date
+        label.textAlignment = .center
+        label.font = .pretendard(.label3_r_11)
+        label.textColor = .darkGray
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        chattingList.count
+        headerView.addSubview(label)
+
+        label.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+        ])
+
+        return headerView
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else { return UITableViewCell() }
+    func tableView(
+            _ tableView: UITableView,
+            heightForHeaderInSection section: Int
+        ) -> CGFloat {
+            return 15
+        }
 
-        let chat = chattingList[indexPath.row]
-        cell.configure(
-            with: chat.contents,
-            nickname: chat.isMine ? nil : chat.userName,
-            profileImage: chat.isMine ? nil : chat.imageUrl,
-            isSender: chat.isMine,
-            introduction: chat.isMine ? nil : chat.introduction,
-            createdAt: chat.formattedCreatedAt
-        )
-        return cell
-    }
+        func numberOfSections(
+            in tableView: UITableView
+        ) -> Int {
+            return groupedChatting.count
+        }
+
+        func tableView(
+            _ tableView: UITableView,
+            titleForHeaderInSection section: Int
+        ) -> String? {
+            return groupedChatting[section].date
+        }
+
+        func tableView(
+            _ tableView: UITableView,
+            numberOfRowsInSection section: Int
+        ) -> Int {
+            return groupedChatting[section].chatList.count
+        }
+    
+    func tableView(
+            _ tableView: UITableView,
+            cellForRowAt indexPath: IndexPath
+        ) -> UITableViewCell {
+
+            let chat = groupedChatting[indexPath.section].chatList[indexPath.row]
+
+            switch ChattingType(rawValue: chat.chattingType) {
+            case .user:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "ChattingCell",
+                    for: indexPath
+                ) as? ChattingCell else {
+                    return UITableViewCell()
+                }
+                cell.configure(
+                    with: chat.contents,
+                    nickname: chat.userName,
+                    profileImage: chat.imageUrl,
+                    isSender: chat.isMine,
+                    introduction: chat.introduction,
+                    createdAt: chat.formattedCreatedAt
+                )
+                return cell
+
+            case .system:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "SystemMessageCell",
+                    for: indexPath
+                ) as? SystemMessageCell else {
+                    return UITableViewCell()
+                }
+                cell.configure(text: chat.contents)
+                return cell
+
+            case .none:
+                return UITableViewCell()
+            }
+        }
 }
 
 // MARK: - Keyboard
@@ -221,6 +295,7 @@ extension ChattingViewController {
     private func setupDismissKeyboardGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
         view.addGestureRecognizer(tapGesture)
     }
 
@@ -228,6 +303,15 @@ extension ChattingViewController {
         view.endEditing(true)
     }
 
+}
+
+extension ChattingViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view is UIButton || touch.view is UITextView {
+            return false
+        }
+        return true
+    }
 }
 
 // MARK: - Fetching & Loading
@@ -253,10 +337,38 @@ extension ChattingViewController {
                 }
                 let chattingList = chatting.data.chattingList
                 self.chattingList = chattingList
+                self.groupChattingByDate(chattingList)
+                self.tableView.reloadData()
+                self.scrollToBottom(animated: true)
             } catch {
                 print("에러: \(error)")
             }
         }
+    }
+    
+    private func bindActions() {
+        textView.onSendSuccess = { [weak self] in
+            self?.loadChatting(clubId: "1")
+        }
+    }
+
+    func groupChattingByDate(_ chatList: [Chatting]) {
+        let groupedDict = Dictionary(grouping: chatList) { $0.createdDateOnly }
+        let sortedKeys = groupedDict.keys.sorted { $0 < $1 }
+
+        groupedChatting = sortedKeys.map { key in
+            (date: key, chatList: groupedDict[key] ?? [])
+        }
+    }
+
+    func scrollToBottom(animated: Bool) {
+        guard tableView.numberOfSections > 0 else { return }
+        let section = tableView.numberOfSections - 1
+        let row = tableView.numberOfRows(inSection: section) - 1
+        guard row >= 0 else { return }
+
+        let indexPath = IndexPath(row: row, section: section)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
     }
 }
 
