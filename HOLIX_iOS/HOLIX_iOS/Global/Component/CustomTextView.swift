@@ -39,7 +39,6 @@ final class CustomTextView: UIView {
         textView.delegate = self
     }
 
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -103,7 +102,6 @@ final class CustomTextView: UIView {
             plusButtonTopConstraint = $0.top.equalToSuperview().offset(10).constraint
         }
 
-
         textView.snp.makeConstraints {
             $0.leading.equalTo(plusButton.snp.trailing).offset(8)
             $0.trailing.equalToSuperview().inset(50)
@@ -139,7 +137,7 @@ final class CustomTextView: UIView {
     }
 }
 
-// MARK: - UITextViewDelegate
+    // MARK: - UITextViewDelegate
 
 extension CustomTextView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {

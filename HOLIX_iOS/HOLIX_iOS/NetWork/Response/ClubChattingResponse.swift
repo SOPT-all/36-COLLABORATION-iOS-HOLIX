@@ -58,14 +58,7 @@ struct Chatting: Codable {
         print("날짜 파싱 실패: \(createdAt)")
         return "-"
     }
-}
-
-enum ChattingType: String {
-    case user = "USER"
-    case system = "SYSTEM"
-}
-
-extension Chatting {
+    
     var createdDateOnly: String {
         let formats = [
             "yyyy-MM-dd'T'HH:mm:ss.SSSSSS",
@@ -86,4 +79,11 @@ extension Chatting {
         }
         return "알 수 없음"
     }
+}
+
+// MARK: - ChattingType
+
+enum ChattingType: String {
+    case user = "USER"
+    case system = "SYSTEM"
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - ChattingCreateRequestDTO
+
 struct ChattingCreateRequestDTO: Codable {
     let contents: String
 }

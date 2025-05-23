@@ -208,7 +208,6 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
         case .none:
             return UITableViewCell()
         }
-
     }
 }
 
@@ -260,7 +259,6 @@ extension ChattingViewController {
         }
     }
 
-
     private func setupDismissKeyboardGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
@@ -271,7 +269,6 @@ extension ChattingViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-
 }
 
 extension ChattingViewController: UIGestureRecognizerDelegate {

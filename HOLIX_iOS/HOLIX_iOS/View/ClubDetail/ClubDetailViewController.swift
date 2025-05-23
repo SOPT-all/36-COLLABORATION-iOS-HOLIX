@@ -14,6 +14,7 @@ import Then
 final class ClubDetailViewController: UIViewController {
 
     // MARK: - UI Components
+    
     private let customNavigationBar = CustomNavigationBar(hasMenuButton: false)
     private let iconImageView = UIImageView()
     private let clubInfoView = ClubInfoView()
@@ -81,6 +82,7 @@ final class ClubDetailViewController: UIViewController {
     }
 }
 
+// MARK: - API Connects
 
 extension ClubDetailViewController {
     
@@ -109,7 +111,6 @@ extension ClubDetailViewController {
         }
     }
 
-    
     func updateUI(with detail: ClubDetailResponse) {
         clubInfoView.configure(with: detail)
         if let url = URL(string: detail.data.url) {

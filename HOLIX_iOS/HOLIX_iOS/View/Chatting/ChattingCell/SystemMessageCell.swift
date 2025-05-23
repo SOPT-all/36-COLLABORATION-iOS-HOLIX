@@ -11,8 +11,12 @@ import SnapKit
 import Then
 
 final class SystemMessageCell: UITableViewCell {
-
+  
+    // MARK: - UI Components
+    
     private let messageLabel = UILabel()
+    
+    // MARK: - Lifecycle
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,10 +28,14 @@ final class SystemMessageCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - SetUI
 
     private func setUI() {
         contentView.addSubview(messageLabel)
     }
+    
+    // MARK: - SetStyle
 
     private func setStyle() {
         selectionStyle = .none
@@ -40,6 +48,8 @@ final class SystemMessageCell: UITableViewCell {
             $0.numberOfLines = 0
         }
     }
+    
+    // MARK: - SetLayout
 
     private func setLayout() {
         messageLabel.snp.makeConstraints {
@@ -49,7 +59,11 @@ final class SystemMessageCell: UITableViewCell {
             $0.trailing.lessThanOrEqualToSuperview().offset(-20)
         }
     }
+}
 
+// MARK: - Configure
+
+extension SystemMessageCell {
     func configure(text: String) {
         messageLabel.text = text
     }

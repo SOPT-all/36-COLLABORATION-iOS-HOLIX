@@ -51,7 +51,6 @@
 		4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */; };
 		4646CAE12DD734BF00E21D3D /* BubbleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */; };
 		4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB602DD735EF00E21D3D /* ChattingCell.swift */; };
-		4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4646CB622DD7397900E21D3D /* ChattingMockData.swift */; };
 		465E843A2DDAE3ED00FF05BF /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84392DDAE3ED00FF05BF /* CustomTextView.swift */; };
 		465E848E2DDB67AB00FF05BF /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E848D2DDB67AB00FF05BF /* TagView.swift */; };
 		465E84D62DDCAD0100FF05BF /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84D12DDCAD0100FF05BF /* DividerView.swift */; };
@@ -116,7 +115,6 @@
 		4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		4646CAE02DD734BF00E21D3D /* BubbleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabelView.swift; sourceTree = "<group>"; };
 		4646CB602DD735EF00E21D3D /* ChattingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingCell.swift; sourceTree = "<group>"; };
-		4646CB622DD7397900E21D3D /* ChattingMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingMockData.swift; sourceTree = "<group>"; };
 		465E84392DDAE3ED00FF05BF /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		465E848D2DDB67AB00FF05BF /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		465E84D12DDCAD0100FF05BF /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -465,7 +463,6 @@
 			children = (
 				465E850F2DDD5BBD00FF05BF /* ChattingCell */,
 				4646CA852DD6FDDF00E21D3D /* ChattingViewController.swift */,
-				4646CB622DD7397900E21D3D /* ChattingMockData.swift */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -612,7 +609,6 @@
 				467190652DE009550095098E /* ClubResponse.swift in Sources */,
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
 				467190672DE00AFC0095098E /* UIImageView.swift in Sources */,
-				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */,
