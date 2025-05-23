@@ -44,8 +44,8 @@ final class ChattingViewController: UIViewController {
         setLayout()
         setupTableView()
         tagScrollView()
+        setDelegate()
         setupDismissKeyboardGesture()
-        loadChatting(clubId: "1")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -133,6 +133,12 @@ final class ChattingViewController: UIViewController {
         textView.addTag(title: "UIK12312it")
         textView.addTag(title: "Swi1ft")
         textView.addTag(title: "UIKit")
+    }
+
+    // MARK: - SetDelegate
+
+    private func setDelegate() {
+        customNavigationBar.delegate = self
     }
 }
 
@@ -249,4 +255,15 @@ extension ChattingViewController {
             }
         }
     }
+}
+
+// MARK: - CustomNavigationBarDelegate
+
+extension ChattingViewController: CustomNavigationBarDelegate {
+    func didTapBackButton() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func didTapSearchButton() {}
+    func didTapMenuButton() {}
 }
