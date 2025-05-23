@@ -178,7 +178,7 @@ final class ClubInfoView: UIView {
             $0.axis = .vertical
             $0.alignment = .center
             $0.distribution = .fill
-            $0.spacing = 0
+            $0.spacing = 8
         }
 
         let imageName = index < imageNames.count ? imageNames[index] : ""
@@ -213,3 +213,10 @@ final class ClubInfoView: UIView {
     }
 }
 
+extension ClubInfoView {
+    func configure(with detail: ClubDetailResponse) {
+        titleLabel.text = detail.data.title
+        memberLabel.text = detail.data.participants
+        noticeButton.textLabel.text = detail.data.notice
+    }
+}

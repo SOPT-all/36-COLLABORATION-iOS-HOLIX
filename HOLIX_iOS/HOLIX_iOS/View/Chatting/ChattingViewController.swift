@@ -23,7 +23,15 @@ final class ChattingViewController: UIViewController {
         titleLabel:"iOS 개발자로써 성공하고 싶은 사람들",
         hasMenuButton: true
     )
-    private var chattingList = DummyChattingData.generate()
+
+    
+    private var chattingList = [Chatting]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     private let tableView = UITableView()
     private let textView = CustomTextView()
 
@@ -37,6 +45,7 @@ final class ChattingViewController: UIViewController {
         setupTableView()
         tagScrollView()
         setupDismissKeyboardGesture()
+        loadChatting(clubId: "1")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -142,8 +151,10 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(
             with: chat.contents,
             nickname: chat.isMine ? nil : chat.userName,
-            profileImage: "img_profile_noraml_ios_04",
-            isSender: chat.isMine
+            profileImage: chat.isMine ? nil : chat.imageUrl,
+            isSender: chat.isMine,
+            introduction: chat.isMine ? nil : chat.introduction,
+            createdAt: chat.formattedCreatedAt
         )
         return cell
     }
@@ -208,4 +219,32 @@ extension ChattingViewController {
         view.endEditing(true)
     }
 
+}
+
+extension ChattingViewController {
+    func fetchClubChatting(clubId: String) async throws -> ClubChattingResponse? {
+        do {
+            let chatting = try await ClubChattingService.shared.getClubChatting(clubId: clubId)
+            print("클럽 정보 조회 성공: \(chatting)")
+            return chatting
+        } catch {
+            print("클럽 정보 조회 실패: \(error)")
+            return nil
+        }
+    }
+    
+    func loadChatting(clubId: String) {
+        Task {
+            do {
+                guard let chatting = try await fetchClubChatting(clubId: clubId) else {
+                    print("클럽 정보가 없습니다")
+                    return
+                }
+                let chattingList = chatting.data.chattingList
+                self.chattingList = chattingList
+            } catch {
+                print("에러: \(error)")
+            }
+        }
+    }
 }

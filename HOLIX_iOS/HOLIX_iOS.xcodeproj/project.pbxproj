@@ -56,6 +56,12 @@
 		465E843A2DDAE3ED00FF05BF /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84392DDAE3ED00FF05BF /* CustomTextView.swift */; };
 		465E848E2DDB67AB00FF05BF /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E848D2DDB67AB00FF05BF /* TagView.swift */; };
 		465E84D62DDCAD0100FF05BF /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E84D12DDCAD0100FF05BF /* DividerView.swift */; };
+		46718D3C2DDF44DD0095098E /* ClubDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */; };
+		46718D3E2DDF45420095098E /* ClubChattingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D3D2DDF45420095098E /* ClubChattingService.swift */; };
+		46718D552DDF6E890095098E /* RecommendedClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D542DDF6E890095098E /* RecommendedClubModel.swift */; };
+		46718D562DDF6E890095098E /* MyClubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D532DDF6E890095098E /* MyClubModel.swift */; };
+		46718D582DDF82EC0095098E /* ClubChattingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718D572DDF82EC0095098E /* ClubChattingResponse.swift */; };
+		46718EC92DDF97220095098E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 46718EC82DDF97220095098E /* Kingfisher */; };
 		468B02882DD411DF00A90492 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B02872DD411DF00A90492 /* UIColor+.swift */; };
 		468B03252DD425BD00A90492 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03242DD425BD00A90492 /* CustomNavigationBar.swift */; };
 		468B03792DD4341200A90492 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B03782DD4341200A90492 /* TestViewController.swift */; };
@@ -115,6 +121,11 @@
 		465E84392DDAE3ED00FF05BF /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		465E848D2DDB67AB00FF05BF /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		465E84D12DDCAD0100FF05BF /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubDetailResponse.swift; sourceTree = "<group>"; };
+		46718D3D2DDF45420095098E /* ClubChattingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingService.swift; sourceTree = "<group>"; };
+		46718D532DDF6E890095098E /* MyClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClubModel.swift; sourceTree = "<group>"; };
+		46718D542DDF6E890095098E /* RecommendedClubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedClubModel.swift; sourceTree = "<group>"; };
+		46718D572DDF82EC0095098E /* ClubChattingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubChattingResponse.swift; sourceTree = "<group>"; };
 		468B02872DD411DF00A90492 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		468B03242DD425BD00A90492 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		468B03782DD4341200A90492 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +139,21 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+
+			path = Home;
+			sourceTree = "<group>";
+		};
+		46718D492DDF66FE0095098E /* MyClub */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MyClub;
+			sourceTree = "<group>";
+		};
+		46EAB1EF2DD5C9060084C5A8 /* ClubDetail */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ClubDetail;
+
 			path = CategoryTabBar;
+
 			sourceTree = "<group>";
 		};
 		B06030202DD2660C002205F5 /* Font */ = {
@@ -143,7 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				2FBBF60C2DDF055800862C0D /* Kingfisher in Frameworks */,
+
 				2F5B869D2DCDD3D500C3ABF6 /* SnapKit in Frameworks */,
 				2F5B86A22DCDD3E000C3ABF6 /* Then in Frameworks */,
 			);
@@ -194,7 +221,9 @@
 		2F5B868D2DCDD37F00C3ABF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+
 				2FBBF54B2DDEF4FB00862C0D /* MyClub */,
+
 				4646CA842DD6FDA400E21D3D /* Chatting */,
 				2FBBF60F2DDF0D3500862C0D /* ClubDetail */,
 				2FBBF6002DDEFEC000862C0D /* Home */,
@@ -278,6 +307,8 @@
 			children = (
 				B0A41ED62DDF9833000D128A /* ClubResponse.swift */,
 				2F648F572DDE1ACD00A31931 /* StudyResponse.swift */,
+				46718D3B2DDF44DD0095098E /* ClubDetailResponse.swift */,
+				46718D572DDF82EC0095098E /* ClubChattingResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -287,6 +318,7 @@
 			children = (
 				B0A41ED82DDF983D000D128A /* ClubService.swift */,
 				2F648F592DDE1ACD00A31931 /* HomeService.swift */,
+				46718D3D2DDF45420095098E /* ClubChattingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -305,8 +337,10 @@
 		2F648F672DDE1B3900A31931 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+
 				2FBBF5552DDEF54B00862C0D /* MyClubModel.swift */,
 				2FBBF5562DDEF54B00862C0D /* RecommendedClubModel.swift */,
+
 				2F648F642DDE1B3900A31931 /* BannerResponse.swift */,
 				2F648F652DDE1B3900A31931 /* CategoryBoxMenuResponse.swift */,
 			);
@@ -457,14 +491,21 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+
+				2F57841E2DD4446F0075A288 /* Home */,
+				46718D492DDF66FE0095098E /* MyClub */,
+
 				2FBBF5ED2DDEFE2E00862C0D /* CategoryTabBar */,
+
 				B06030202DD2660C002205F5 /* Font */,
 			);
 			name = HOLIX_iOS;
 			packageProductDependencies = (
 				2F5B869C2DCDD3D500C3ABF6 /* SnapKit */,
 				2F5B86A12DCDD3E000C3ABF6 /* Then */,
+
 				2FBBF60B2DDF055800862C0D /* Kingfisher */,
+
 			);
 			productName = HOLIX_iOS;
 			productReference = 2F5B86672DCDD05500C3ABF6 /* HOLIX_iOS.app */;
@@ -497,7 +538,9 @@
 			packageReferences = (
 				2F5B869B2DCDD3D500C3ABF6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */,
+
 				2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2F5B86682DCDD05500C3ABF6 /* Products */;
@@ -557,6 +600,9 @@
 				2F5B86922DCDD37F00C3ABF6 /* AppDelegate.swift in Sources */,
 				2F57841C2DD43EB20075A288 /* UIView.swift in Sources */,
 				2F5783402DD34C270075A288 /* ImageLiterals.swift in Sources */,
+
+				46718D3C2DDF44DD0095098E /* ClubDetailResponse.swift in Sources */,
+
 				2FBBF6012DDEFEC000862C0D /* BannerCell.swift in Sources */,
 				2FBBF6022DDEFEC000862C0D /* CategoryBoxCell.swift in Sources */,
 				2FBBF6032DDEFEC000862C0D /* ContentCardCell.swift in Sources */,
@@ -566,11 +612,14 @@
 				2FBBF6052DDEFEC000862C0D /* HomeSectionHeader.swift in Sources */,
 				2FBBF6062DDEFEC000862C0D /* HomeSectionLayoutFactory.swift in Sources */,
 				2FBBF6072DDEFEC000862C0D /* HomeViewController.swift in Sources */,
+
 				4646CA862DD6FDDF00E21D3D /* ChattingViewController.swift in Sources */,
 				4646CB632DD7397900E21D3D /* ChattingMockData.swift in Sources */,
 				B09D88602DD47B8300AD423E /* NSAttributedString+Pretendard.swift in Sources */,
 				2F5783422DD34C340075A288 /* IconLiterals.swift in Sources */,
 				4646CB612DD735EF00E21D3D /* ChattingCell.swift in Sources */,
+				46718D3E2DDF45420095098E /* ClubChattingService.swift in Sources */,
+				46718D582DDF82EC0095098E /* ClubChattingResponse.swift in Sources */,
 				2F5B86932DCDD37F00C3ABF6 /* SceneDelegate.swift in Sources */,
 				46EAB24B2DD6E32F0084C5A8 /* NoticeButton.swift in Sources */,
 				2F57841A2DD43E9D0075A288 /* NSObject+ClassName.swift in Sources */,
@@ -588,6 +637,11 @@
 				2F648F5F2DDE1ACD00A31931 /* APIService.swift in Sources */,
 				2F648F682DDE1B3900A31931 /* BannerResponse.swift in Sources */,
 				2F648F692DDE1B3900A31931 /* CategoryBoxMenuResponse.swift in Sources */,
+
+				2F648F6A2DDE1B3900A31931 /* HomeItemResponse.swift in Sources */,
+				46718D552DDF6E890095098E /* RecommendedClubModel.swift in Sources */,
+				46718D562DDF6E890095098E /* MyClubModel.swift in Sources */,
+
 				2F648F602DDE1ACD00A31931 /* HTTPMethod.swift in Sources */,
 				2F648F612DDE1ACD00A31931 /* NetworkError.swift in Sources */,
 				2F648F622DDE1ACD00A31931 /* HomeService.swift in Sources */,
@@ -846,9 +900,11 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+
 		2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
+
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.3.2;
@@ -867,9 +923,11 @@
 			package = 2F5B86A02DCDD3E000C3ABF6 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
 		};
+
 		2FBBF60B2DDF055800862C0D /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FBBF60A2DDF055800862C0D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
