@@ -29,6 +29,7 @@ final class ChattingViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.scrollToBottom(animated: true)
             }
         }
     }
@@ -45,6 +46,7 @@ final class ChattingViewController: UIViewController {
         setupTableView()
         tagScrollView()
         setupDismissKeyboardGesture()
+        bindActions()
         loadChatting(clubId: "1")
     }
 
@@ -146,7 +148,6 @@ extension ChattingViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChattingCell", for: indexPath) as? ChattingCell else { return UITableViewCell() }
 
         let chat = chattingList[indexPath.row]
         
@@ -278,5 +279,21 @@ extension ChattingViewController {
                 print("에러: \(error)")
             }
         }
+    }
+
+    private func bindActions() {
+        textView.onSendSuccess = { [weak self] in
+            self?.loadChatting(clubId: "1")
+        }
+    }
+    
+    func scrollToBottom(animated: Bool) {
+        guard tableView.numberOfSections > 0 else { return }
+        let section = tableView.numberOfSections - 1
+        let row = tableView.numberOfRows(inSection: section) - 1
+        guard row >= 0 else { return }
+
+        let indexPath = IndexPath(row: row, section: section)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
     }
 }

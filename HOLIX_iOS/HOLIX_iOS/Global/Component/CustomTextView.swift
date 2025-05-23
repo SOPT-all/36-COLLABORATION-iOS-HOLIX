@@ -18,6 +18,7 @@ final class CustomTextView: UIView {
     private var sendButtonTopConstraint: Constraint?
     private var textViewHeightConstraint: Constraint?
     var onHeightChange: ((CGFloat) -> Void)?
+    var onSendSuccess: (() -> Void)?
 
     // MARK: - UI Components
 
@@ -235,6 +236,7 @@ extension CustomTextView {
                 let response = try await ClubChattingService.shared.postClubChatting(clubId: "1", contents: DTO)
                     print("채팅 전송 성공: \(response)")
                 self.textView.text = nil
+                self.onSendSuccess?()
             } catch {
                 print("채팅 전송 실패: \(error)")
             }
